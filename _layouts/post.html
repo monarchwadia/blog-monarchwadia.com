@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<article>
+  <header>
+    <h1>{{page.title | escape}}</h1>
+    <p>
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {%- assign date_format = site.config.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+
+      {%- if page.author -%}
+      <span>{{page.author}}</span>
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div>{{ content }}</div>
+
+  {# I could add links to various discussions here (i.e. Reddit, Hacker News, etc). I could specify these in the post's
+  frontmatter #}
+
+  <a href="{{ page.url | relative_url }}" hidden></a>
+</article>
