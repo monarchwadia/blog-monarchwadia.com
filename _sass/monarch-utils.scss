@@ -1,0 +1,51 @@
+@layer utils {
+    // ------------------------------- Variables -------------------------------
+
+    $colors: (
+        primary: (
+            background: #f5f5f5,
+            text: #333
+        ),
+        secondary: (
+            background: #333,
+            text: #f5f5f5
+        )
+    );
+
+    $spacing: (
+        0: 0,
+        1: .25rem,
+        2: .5rem,
+        3: 1rem,
+        4: 2rem,
+        5: 4rem,
+        6: 8rem,
+        7: 16rem
+    );
+
+    //  ------------------------------- Flexbox -------------------------------
+
+    .flex { display: flex };
+    .flex-row { flex-direction: row; }
+    .flex-col { flex-direction: col; }
+
+    // gaps
+    @each $key, $val in $spacing {
+        .gap-#{$key} { gap: $val; }
+    }
+
+    // ------------------------------- Padding -------------------------------
+
+    @each $key, $val in $spacing {
+        .p-#{$key} { padding: $val; }
+    }
+
+    // ------------------------------- Blocktypes -------------------------------
+
+    @each $key, $val in $colors {
+        .bg-#{$key} { background-color: map-get($val, "background"); }
+        .text-#{$key} { color: map-get($val, "text"); }
+        .#{$key} { @extend .bg-#{$key}; @extend .text-#{$key}; }
+    }
+
+}

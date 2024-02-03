@@ -1,0 +1,13 @@
+@layer components {
+  .link {
+    text-decoration: underline;
+
+    &:visited {
+      opacity: 0.8
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
