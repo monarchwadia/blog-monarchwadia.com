@@ -1,3 +1,4 @@
+@import "variables";
 @import "monarch-utils";
 
 @layer components {
@@ -18,5 +19,11 @@
     @extend .px-2;
     @extend .py-1;
     cursor: pointer;
+  }
+
+  // this is a top-level container class that can be used to wrap a component.
+  // the component will then be sized in a way that is consistent with the rest of the app.
+  .container {
+    @extend .px-4;
   }
 }

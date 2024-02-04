@@ -45,5 +45,4 @@
     @each $key, $val in $font-size {
         .text-#{$key} { font-size: $val; }
     }
-
 }
