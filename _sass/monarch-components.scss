@@ -25,9 +25,9 @@
   // padding-left: 100px;
   $content-sizes: (
     sm: (container-width: 700px,  padding: 10px),
-    md: (container-width: 700px,  padding: 0),
-    lg: (container-width: 500px,  padding: 0),
-    xl: (container-width: 600px,  padding: 0)
+    md: (container-width: 800px,  padding: 0),
+    lg: (container-width: 800px,  padding: 0),
+    xl: (container-width: 800px,  padding: 0)
   );
 
   // this is a top-level container class that can be used to wrap a component.
