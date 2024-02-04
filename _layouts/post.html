@@ -17,10 +17,10 @@ layout: default
     </p>
   </header>
 
-  <div>{{ content }}</div>
+  <div class="flex flex-col gap-3">{{ content }}</div>
 
-  {# I could add links to various discussions here (i.e. Reddit, Hacker News, etc). I could specify these in the post's
-  frontmatter #}
+  <!-- {# I could add links to various discussions here (i.e. Reddit, Hacker News, etc). I could specify these in the post's
+  frontmatter #} -->
 
   <a href="{{ page.url | relative_url }}" hidden></a>
 </article>

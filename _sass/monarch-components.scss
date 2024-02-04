@@ -22,6 +22,8 @@
     cursor: pointer;
   }
 
+  // --------------------- Container ---------------------
+
   // padding-left: 100px;
   $content-sizes: (
     sm: (container-width: 700px,  padding: 10px),
@@ -37,8 +39,6 @@
     $container-width: map-get($size-value, container-width);
 
     @include for-media($size-key) {
-      
-
       .container-wrapper {
         width: 100%;
 
