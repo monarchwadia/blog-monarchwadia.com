@@ -40,6 +40,12 @@ social:
     - https://github.com/monarchwadia
 locale: en_US
 
+#code highlighting
+markdown: kramdown
+# kramdown:
+input: GFM
+syntax_highlighter: rouge
+
 # Build settings
 # theme: minima
 plugins:

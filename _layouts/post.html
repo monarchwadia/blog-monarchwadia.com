@@ -4,7 +4,7 @@ layout: default
 
 <article>
   <header>
-    <h1>{{page.title | escape}}</h1>
+    <h1 class="text-6 font-bold">{{page.title | escape}}</h1>
     <p>
       <time datetime="{{ page.date | date_to_xmlschema }}">
         {%- assign date_format = site.config.date_format | default: "%b %-d, %Y" -%}

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $font-size: (
     0: 0,
     1: .75rem,
@@ -21,14 +23,34 @@ $spacing: (
 );
 
 $colors: (
-    primary: (
-        background: #f5f5f5,
-        text: #333
+    base-100-bg: #e6dddd,
+    base-100-fg: #292828,
+    base-200-bg: #c5bebe,
+    base-200-fg: #292828,
+    base-300-bg: #312e2e,
+    base-300-fg: #d3caca,
+    secondary: #6c757d,
+    success: #28a745,
+    danger: #dc3545,
+    warning: #ffc107,
+    info: #17a2b8,
+    light: #f8f9fa,
+    dark: #343a40
+);
+
+$color-archetypes: (
+    base-100: (
+        background: map.get($colors, "base-100-bg"),
+        text: map.get($colors, "base-100-fg"),
     ),
-    secondary: (
-        background: #333,
-        text: #f5f5f5
-    )
+    base-200: (
+        background: map.get($colors, "base-200-bg"),
+        text: map.get($colors, "base-200-fg"),
+    ),
+    base-300: (
+        background: map.get($colors, "base-300-bg"),
+        text: map.get($colors, "base-300-fg"),
+    ),
 );
 
 $radius: (

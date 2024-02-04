@@ -29,7 +29,7 @@
 
     // ------------------------------- Colors -------------------------------
 
-    @each $key, $val in $colors {
+    @each $key, $val in $color-archetypes {
         .bg-#{$key} { background-color: map-get($val, "background"); }
         .text-#{$key} { color: map-get($val, "text"); }
         .#{$key} { @extend .bg-#{$key}; @extend .text-#{$key}; }
@@ -45,4 +45,7 @@
     @each $key, $val in $font-size {
         .text-#{$key} { font-size: $val; }
     }
+
+    .font-bold { font-weight: bold; }
+    
 }
