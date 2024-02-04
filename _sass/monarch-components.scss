@@ -1,3 +1,5 @@
+@import "monarch-utils";
+
 @layer components {
   .link {
     text-decoration: underline;
@@ -9,5 +11,12 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  .btn {
+    @extend .radius-2;
+    @extend .px-2;
+    @extend .py-1;
+    cursor: pointer;
   }
 }

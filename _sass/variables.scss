@@ -1,0 +1,43 @@
+$font-size: (
+    0: 0,
+    1: .75rem,
+    2: .875rem,
+    3: 1rem,
+    4: 1.25rem,
+    5: 1.5rem,
+    6: 2.25rem,
+    7: 3rem
+);
+
+$spacing: (
+    0: 0,
+    1: .25rem,
+    2: .5rem,
+    3: 1rem,
+    4: 2rem,
+    5: 4rem,
+    6: 8rem,
+    7: 16rem
+);
+
+$colors: (
+    primary: (
+        background: #f5f5f5,
+        text: #333
+    ),
+    secondary: (
+        background: #333,
+        text: #f5f5f5
+    )
+);
+
+$radius: (
+    0: 0,
+    1: .25rem,
+    2: .5rem,
+    3: 1rem,
+    4: 2rem,
+    5: 4rem,
+    6: 8rem,
+    7: 16rem
+);

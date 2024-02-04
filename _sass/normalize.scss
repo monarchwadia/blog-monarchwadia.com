@@ -1,3 +1,5 @@
+@import "variables";
+
 @layer normalize {
   /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
@@ -20,7 +22,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
+    @extend .text-4;
     font: inherit;
     vertical-align: baseline;
   }
