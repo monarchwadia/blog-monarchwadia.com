@@ -3,9 +3,9 @@
 # only Main files contain this front matter, not partials.
 ---
 
-@layer normalize, utils, components;
+@layer reset, utils, components;
 
-@import "normalize";
+@import "reset";
 @import "monarch-utils";
 @import "monarch-components";
-@import "code";
+@import "components-code";

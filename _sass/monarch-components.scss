@@ -1,16 +1,17 @@
 @import "variables";
 @import "monarch-utils";
+@import "_mixins";
 
 @layer components {
   .link {
-    text-decoration: underline;
+    text-decoration: none;
 
     &:visited {
       opacity: 0.8
     }
 
     &:hover {
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
 
@@ -21,9 +22,34 @@
     cursor: pointer;
   }
 
+  // padding-left: 100px;
+  $content-sizes: (
+    sm: (container-width: 700px,  padding: 10px),
+    md: (container-width: 700px,  padding: 0),
+    lg: (container-width: 500px,  padding: 0),
+    xl: (container-width: 600px,  padding: 0)
+  );
+
   // this is a top-level container class that can be used to wrap a component.
   // the component will then be sized in a way that is consistent with the rest of the app.
-  .container {
-    @extend .px-4;
+  @each $size-key, $size-value in $content-sizes {
+    $padding: map-get($size-value, padding);
+    $container-width: map-get($size-value, container-width);
+
+    @include for-media($size-key) {
+      
+
+      .container-wrapper {
+        width: 100%;
+
+        .container {
+          width: 100%;
+          margin: auto;
+          max-width: $container-width;
+          padding-left: $padding;
+          padding-right: $padding;
+        }
+      }
+    }
   }
 }

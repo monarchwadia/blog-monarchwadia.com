@@ -1,4 +1,6 @@
-<header role="banner" class="text-4 flex flex-row space-between gap-2 container py-3 base-300 ">
+<header role="banner" class="text-4 flex flex-row space-between gap-2 container-wrapper py-3 base-300 ">
+  <div class="container">
+
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
@@ -13,5 +15,6 @@
           {%- endfor -%}
       </nav>
     {%- endif -%}
+  </div>
 </header>
   

@@ -7,8 +7,10 @@
 
     {%- include header.html -%}
 
-    <main aria-label="Content" class="container py-2">
-        {{ content }}
+    <main aria-label="Content" class="container-wrapper py-2">
+        <div class="container">
+            {{ content }}
+        </div>
     </main>
 
     {%- include footer.html -%}

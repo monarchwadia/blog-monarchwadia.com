@@ -1,0 +1,36 @@
+@use "sass:map";
+
+$breakpoints: (
+    sm: (
+        min: 0px,
+        max: 767px
+    ),
+    md: (
+        min: 768px,
+        max: 1023px
+    ),
+    lg: (
+        min: 1024px,
+        max: 1279px
+    ),
+    xl: (
+        min: 1280px,
+        max: 9999px
+    )
+);
+
+// Mixin for media queries
+@mixin for-media($breakpoint) {
+    $config: map-get($breakpoints, $breakpoint);
+    // if config is not found, throw an error
+    @if not $config {
+        @error "Breakpoint '#{$breakpoint}' not found in $breakpoints";
+    }
+
+    $min: map-get($config, min);
+    $max: map-get($config, max);
+
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}

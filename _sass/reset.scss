@@ -1,6 +1,6 @@
 @import "variables";
 
-@layer normalize {
+@layer reset {
   /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
     License: none (public domain)
@@ -50,8 +50,25 @@
     border-spacing: 0;
   }
 
-    // remove text decoration from links
-    a { text-decoration: inherit; color: inherit; }
-    a:visited { color: inherit }
-    a:hover { text-decoration: inherit; }
+  // remove text decoration from links
+  a {
+  
+    text-decoration: inherit;
+    color: inherit; 
+    
+    &:visited {
+        color: inherit;
+    }
+    &:hover {
+        text-decoration: inherit;
+    }
+  }
+
+  html {
+    box-sizing: border-box;
+ }
+
+  *, *::before, *::after {
+      box-sizing: inherit;
+  }
 }
