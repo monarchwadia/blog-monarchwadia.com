@@ -10,7 +10,7 @@
     margin: 1em 0;
     border-radius: 5px;
     overflow: auto;
-    font-size: 0.9em;
+    font-size: 1em;
     line-height: 1.5;
     font-family: "Fira Code", "Source Code Pro", "Consolas", "Inconsolata", "Courier New", "monospace";
   }
@@ -19,7 +19,7 @@
   // Output from `rougify style monokai.sublime > _sass/code.scss`
   .highlight {
     font-family: "Fira Code", "Source Code Pro", "Consolas", "Inconsolata", "Courier New", "monospace";
-    font-size: 0.9em;
+    font-size: 1em;
     line-height: 1.5;
     color: #f8f8f2;
     background-color: #272822;

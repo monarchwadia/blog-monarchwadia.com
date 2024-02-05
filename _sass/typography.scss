@@ -7,6 +7,10 @@
 
 .font-bold { font-weight: bold; }
 
+html {
+    font-family: 'Archivo', sans-serif;
+    @extend .text-4;
+}
 .font-display {
     font-family: 'Signika Negative', sans-serif;   
 }
