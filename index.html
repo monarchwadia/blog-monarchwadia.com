@@ -16,7 +16,7 @@ layout: default
             </h3>
             <div>
                 <div class="text-2 base-200 p-3 flex flex-col gap-3">
-                    {{ post.excerpt | markdownify }} 
+                    {{ post.excerpt | markdownify | strip_html  }} 
                 </div>
                 <div class="base-300 p-2 flex justify-end">
                     <a class="text-2 link text-info" href="{{ post.url | relative_url }}">Click here to read more{{">>"}}</a>
