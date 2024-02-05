@@ -55,6 +55,7 @@ plugins:
 settings:
   date_format: "%b %-d, %Y"
 
+# Removing content from RSS feed.
 feed:
   excerpt_only: true
 
