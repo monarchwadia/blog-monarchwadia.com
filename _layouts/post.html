@@ -3,13 +3,13 @@ layout: default
 ---
 
 <article>
-  <header>
-    <h1 class="text-6 font-bold">{{page.title | escape}}</h1>
+  <header class="flex flex-col gap-2">
+    <h1 class="header-1">{{page.title | escape}}</h1>
+    <time class="font-display" datetime="{{ page.date | date_to_xmlschema }}">
+      {%- assign date_format = site.config.date_format | default: "%b %-d, %Y" -%}
+      {{ page.date | date: date_format }}
+    </time>
     <p>
-      <time datetime="{{ page.date | date_to_xmlschema }}">
-        {%- assign date_format = site.config.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
 
       {%- if page.author -%}
       <span>{{page.author}}</span>
@@ -17,7 +17,9 @@ layout: default
     </p>
   </header>
 
-  <div class="flex flex-col gap-3">{{ content }}</div>
+  <div class="flex flex-col gap-3">
+    {{ content }}
+  </div>
 
   <!-- {# I could add links to various discussions here (i.e. Reddit, Hacker News, etc). I could specify these in the post's
   frontmatter #} -->
