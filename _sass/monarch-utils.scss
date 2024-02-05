@@ -8,6 +8,7 @@
     .flex { display: flex };
     .flex-row { flex-direction: row; }
     .flex-col { flex-direction: column; }
+    .flex-grow { flex-grow: 1; }
     .space-between { justify-content: space-between; }
 
     // gaps
@@ -47,5 +48,9 @@
     }
 
     .font-bold { font-weight: bold; }
+
+    // ------------------------------- Sizing -------------------------------
+    .h-full { height: 100%; }
+    .w-full { width: 100%; }
     
 }

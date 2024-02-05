@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     {%- include head.html -%}
 </head>
-<body class="base-100">
+<body class="base-100 h-full flex flex-col">
 
     {%- include header.html -%}
 
-    <main aria-label="Content" class="container-wrapper py-2">
-        <div class="container">
+    <main aria-label="Content" class="container-wrapper py-2 flex-grow">
+        <div class="container h-full">
             {{ content }}
         </div>
     </main>
