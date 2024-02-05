@@ -42,6 +42,12 @@
         .text-#{$key} { color: $val; }
     }
 
+    :root {
+        @each $key, $val in $colors {
+            --color-#{$key}: #{$val};
+        }
+    }
+
     // ------------------------------- Borders -------------------------------
     
     @each $key, $val in $radius {

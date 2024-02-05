@@ -5,15 +5,22 @@
 
 @layer components {
   .link {
+    // text-decoration: underline;
     text-decoration: none;
+    color: rgb(175, 118, 192);
     @extend .font-display;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+    color: var(--color-accent-200);
 
     &:visited {
-      opacity: 0.8
+      opacity: 0.8;
+      color: var(--color-accent-100);
     }
 
     &:hover {
-      text-decoration: underline;
+      text-decoration-style: dashed;
     }
   }
 
