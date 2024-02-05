@@ -6,6 +6,7 @@
 }
 
 .font-bold { font-weight: bold; }
+.font-italic { font-style: italic; }
 
 html {
     font-family: 'Archivo', sans-serif;
@@ -16,9 +17,13 @@ html {
 }
 
 @mixin header_commons {
-    @extend .font-bold;
     @extend .font-display;
     line-height: 1.2;
 }
-.header-1 { @include header_commons; @extend .text-6; }
-.header-2 { @include header_commons; @extend .text-5; }
+.header-1 { @include header_commons; @extend .font-bold; @extend .text-7; }
+.header-2 { @include header_commons; @extend .font-bold; @extend .text-6; }
+.header-3 { @include header_commons; @extend .text-6; }
+.header-4 { @include header_commons; @extend .font-bold;  @extend .text-5; }
+.header-5 { @include header_commons; @extend .font-italic; @extend .text-5; }
+.header-6 { @include header_commons; @extend .font-bold; @extend .text-4; }
+.header-7 { @include header_commons; @extend .font-bold; @extend .text-0; }

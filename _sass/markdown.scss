@@ -6,15 +6,57 @@
     gap: 0.45rem;
     line-height: 1.36;
 
+    // --------------------- Typography ---------------------
+    h1 { @extend .header-1; }
+    h2 { @extend .header-2; }
+    h3 { @extend .header-3; }
+    h4 { @extend .header-4; }
+    h5 { @extend .header-5; }
+    h6 { @extend .header-6; }
+    p { @extend .text-4; }
+    strong { @extend .font-bold; }
+    em { @extend .font-italic; }
+
+    //  --------------------- Lists ---------------------
+    ul, ol {
+      @extend .text-4;
+      padding-left: 1.5rem;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+
+
     a {
       @extend .link;
+    }
+
+    blockquote {
+      @extend .base-200;
+      border-left: 8px solid var(--color-base-300-bg);
+      // @extend .bg-gray-100;
+      // @extend .border-l-4;
+      // @extend .border-gray-400;
+      @extend .px-3;
+      @extend .py-3;
+      @extend .text-4;
+      @extend .font-italic;
+
+      & blockquote {
+        @extend .my-2;
+      }
     }
 
     .language-plaintext.highlighter-rouge {
       background-color: #272822;
       color: #f8f8f2;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      @extend .py-0;
+      @extend .px-2;
       border-radius: 5px;
       overflow: auto;
       font-size: 0.9em;
@@ -29,9 +71,9 @@
       line-height: 1.5;
       color: #f8f8f2;
       background-color: #272822;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      border-radius: 10px;
+      @extend .py-1;
+      @extend .px-2;
+      border-radius: 5px;
       overflow: clip;
     }
 
