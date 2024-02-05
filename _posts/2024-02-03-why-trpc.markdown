@@ -3,6 +3,7 @@ layout: post
 title:  "tRPC makes full stack fun again."
 date:   2024-02-03 12:00:00 -0500
 tags: trpc javascript typescript nodejs react
+excerpt: You can add an excerpt to the post by modifying the frontmatter.
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
