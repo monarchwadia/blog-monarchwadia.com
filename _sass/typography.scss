@@ -1,0 +1,20 @@
+@import "variables";
+
+// ------------------------------- Text -------------------------------
+@each $key, $val in $font-size {
+    .text-#{$key} { font-size: $val; }
+}
+
+.font-bold { font-weight: bold; }
+
+.font-display {
+    font-family: 'Signika Negative', sans-serif;   
+}
+
+@mixin header_commons {
+    @extend .font-bold;
+    @extend .font-display;
+    line-height: 1.2;
+}
+.header-1 { @include header_commons; @extend .text-6; }
+.header-2 { @include header_commons; @extend .text-5; }

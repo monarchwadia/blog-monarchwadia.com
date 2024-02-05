@@ -1,10 +1,12 @@
 @import "variables";
+@import "typography";
 @import "monarch-utils";
 @import "_mixins";
 
 @layer components {
   .link {
     text-decoration: none;
+    @extend .font-display;
 
     &:visited {
       opacity: 0.8

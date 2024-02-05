@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="flex flex-col gap-4">
+    
+    <ul class="flex flex-col gap-4">
+        {%- for post in site.posts -%}
+        <li class="flex flex-col gap-1">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="text-3 font-display">{{ post.date | date: date_format }}</span>
+            <h3 class="header-2">
+                <a class="link font-bold text-5" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            <div>
+                <div class="text-2 base-200 p-3 flex flex-col gap-3">
+                    {{ post.excerpt }} 
+                </div>
+                <div class="base-300 p-2 flex justify-end">
+                    <a class="text-2 link text-info" href="{{ post.url | relative_url }}">Click here to read more{{">>"}}</a>
+                </div>
+            </div>
+            
+        </li>
+        {%- endfor -%}
+    </ul>
+
+    <p>subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    
+
+</div>

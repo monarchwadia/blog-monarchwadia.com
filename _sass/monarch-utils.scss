@@ -10,6 +10,7 @@
     .flex-col { flex-direction: column; }
     .flex-grow { flex-grow: 1; }
     .space-between { justify-content: space-between; }
+    .justify-end { justify-content: flex-end; }
 
     // gaps
     @each $key, $val in $spacing {
@@ -36,21 +37,18 @@
         .#{$key} { @extend .bg-#{$key}; @extend .text-#{$key}; }
     }
 
+    @each $key, $val in $colors {
+        .bg-#{$key} { background-color: $val; }
+        .text-#{$key} { color: $val; }
+    }
+
     // ------------------------------- Borders -------------------------------
     
     @each $key, $val in $radius {
         .radius-#{$key} { border-radius: $val; }
     }
 
-    // ------------------------------- Text -------------------------------
-    @each $key, $val in $font-size {
-        .text-#{$key} { font-size: $val; }
-    }
-
-    .font-bold { font-weight: bold; }
-
     // ------------------------------- Sizing -------------------------------
     .h-full { height: 100%; }
     .w-full { width: 100%; }
-    
 }
