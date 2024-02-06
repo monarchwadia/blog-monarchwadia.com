@@ -5,14 +5,13 @@
   
     <div>
   
-      <h2>{{ site.title | escape }}</h2>
-  
-      <div>
-        <div>
-          <p>{{- site.description | escape -}}</p>
-          <p>subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-        </div>
+      
+      <div class="max-w-3 text-1 flex flex-col gap-2">
+        <h2>{{ site.title | escape }}</h2>
+        <p>{{- site.description | escape -}}</p>
+        <p>subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
       </div>
+
     </div>
   </div>
 

@@ -69,6 +69,13 @@
     .h-full { height: 100%; }
     .w-full { width: 100%; }
 
+    @each $key, $val in $percentages {
+        .w-#{$key} { width: #{($val*100)+"%"}; }
+        .max-w-#{$key} { max-width: #{($val*100)+"%"}; }
+        .h-#{$key} { height: #{($val*100)+"%"}; }
+        .max-h-#{$key} { max-height: #{($val*100)+"%"}; }
+    }
+
     // ------------------------------- Opacity -------------------------------
     @each $key, $val in $percentages {
         .opacity-#{$key} { opacity: $val; }

@@ -26,7 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 # Especially jekyll-seo-tag. See https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 title: "Monarch Wadia"
 tagline: "Articles on web development and generative AI."
-description: "A technical blog with a focus on web development and generative AI. But I also write about other things that interest me."
+description: "This is my main technical journal, with a focus on web development and generative AI. But I also write about other things that interest me."
 author: monarchwadia
 twitter:
   username: monarchwadia
