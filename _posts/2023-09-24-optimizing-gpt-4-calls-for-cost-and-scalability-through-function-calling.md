@@ -7,17 +7,17 @@ tags: openai gpt genai
 excerpt: In this article, we will explore a key feature of OpenAI's GPT-4 called function calling. We'll examine how this feature enables us to optimize API calls for cost-efficiency and scalability, and provide a step-by-step example to illustrate the concept.
 ---
 
-## Introduction
+# Introduction
 
 In this article, we will explore a key feature of OpenAI's GPT-4 called function calling. We'll examine how this feature enables us to optimize API calls for cost-efficiency and scalability, and provide a step-by-step example to illustrate the concept.
 
-## The Challenge: Cost and Scalability
+# The Challenge: Cost and Scalability
 
 GPT-4, being a state-of-the-art language model, comes with a cost—both financial and computational. Each token processed by the API contributes to the bill, and API latency can increase as you scale up your usage. For instance, let's assume you're charged $0.03 per 1000 tokens; processing a 5000-token text four times would cost you $0.60.
 
 GPT-4 queries can get quite expensive. Running several of them in parallel can also pose performance challenges when trying to scale up a system.
 
-## How function calling helps
+# How function calling helps
 
 [Function calling](https://platform.openai.com/docs/guides/gpt/function-calling) calling allows you to batch multiple prompts into a single API call, effectively reducing the overhead. However, it's essential to note that function calling is most effective for tasks on the same source text and may not suit all use cases.
 
@@ -30,7 +30,7 @@ GPT-4 queries can get quite expensive. Running several of them in parallel can a
 * Not ideal for unrelated tasks
 * May introduce delay as the text generates in serial.
 
-## Example
+# Example
 
 Let's dive into a practical example to understand this feature better.
 
@@ -74,7 +74,7 @@ text_to_analyze = """
 """
 ```
 
-## BEFORE: Without function calling
+# BEFORE: Without function calling
 
 Without function calling, you will have 4 different prompts, one for each prompt. Each prompt will repeat the entire text.
 
@@ -137,7 +137,7 @@ translation_response = openai.ChatCompletion.create(
 print(translation_response)
 ```
 
-## AFTER: With function calling
+# AFTER: With function calling
 
 With function calling, you will have a single prompt which provides the results of the output.
 
@@ -205,35 +205,35 @@ print(result)
 # }
 ```
 
-## Analysis of Before and After
+# Analysis of Before and After
 
 To better appreciate the benefits of using function calling, let's do a side-by-side analysis of the code blocks for "Without Function Calling" and "With Function Calling."
 
-### API Calls
+## API Calls
 
 - **Without Function Calling**: Four separate API calls are made, each for summarizing, hashtagging, analyzing, and translating the text.
 - **With Function Calling**: A single API call batches all these tasks together, reducing API overhead.
 
-### Cost Efficiency
+## Cost Efficiency
 
 - **Without Function Calling**: You're charged for each of the four API calls separately, adding up the token count for each. The bulk of the token count comes from the source poem.
 - **With Function Calling**: The token count is condensed into a single API call, which can lead to cost savings. In this case, the poem is only included once instead of 4 times, greatly reducing the token count.
 
-### Code Complexity
+## Code Complexity
 
 - **Without Function Calling**: Code structure is straightforward but repetitive, requiring a new API request for each task.
 - **With Function Calling**: A more complex code structure involving JSON schemas and function signatures, but it's more modular and easier to extend.
 
-### Scalability
+## Scalability
 
 - **Without Function Calling**: Less scalable, as you'll hit the API rate limit faster with increasing tasks.
 - **With Function Calling**: More scalable, as fewer API calls are made, thereby reducing the likelihood of hitting rate limits.
 
-### Latency
+## Latency
 
 - **Without Function Calling**: Lower latency for individual tasks, but cumulative latency can add up.
 - **With Function Calling**: Slightly higher latency for the single API call, but it's generally faster for batch processing multiple tasks.
 
-## Conclusion
+# Conclusion
 
 Leveraging GPT-4's function calling feature can be a game-changer for optimizing cost and scalability in NLP applications. As we've dissected in the preceding sections, this approach not only condenses multiple tasks into a single API call but also offers a modular and scalable code architecture. While it may introduce a slight latency for batch processing, the overall gains in cost-efficiency and computational resource management make it a highly advantageous strategy. As we continue to push the boundaries of what's possible with language models, function calling stands as an indispensable tool for smart, efficient, and effective API utilization.
