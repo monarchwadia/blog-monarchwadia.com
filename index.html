@@ -8,7 +8,10 @@ layout: default
         {%- for post in site.posts -%}
         <li class="flex flex-col gap-1">
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <span class="text-3 font-display">{{ post.date | date: date_format }}</span>
+            <div class="flex flex-row space-between">
+                <span class="text-3 font-display">{{ post.date | date: date_format }}</span>
+                <span class="text-3 font-display opacity-2">(Unix Time: {{ post.date | date: "%s" | prepend: '0000000000' | slice: -10, 10  }})</span>
+            </div>
             <h3 class="header-2">
                 <a class="link font-bold text-5" href="{{ post.url | relative_url }}">
                     {{ post.title | escape }}
