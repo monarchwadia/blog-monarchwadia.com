@@ -7,6 +7,10 @@
     line-height: 1.36;
 
     // --------------------- Typography ---------------------
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
     h1 { @extend .header-1; }
     h2 { @extend .header-2; }
     h3 { @extend .header-3; }
