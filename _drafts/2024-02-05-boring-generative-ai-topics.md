@@ -1,17 +1,22 @@
 ---
-title:  Boring Generative AI
+title:  Boring Generative AI Topics
 layout: post
 date:   2024-02-05 2023 -0400
 tags: openai gpt genai
 ---
 
-Reliable and already-boring features that can be enabled by Generative AI API's.
+Reliable and already-boring features, enabled by Generative AI API's.
 
 **Audience**: Web Developers
 
 **Topic**: A novel logic capability that is enabled by new Generative AI API's.
 
 # Ideas
+
+## Excerpts from other places. Just thought I'd put them here, for ease.
+
+- It can enhance search features through customizable semantic search.
+- It makes content suggestions much easier to do.
 
 ## ⭐ Content Tagging & Organization (Zero-shot Classification)
 
