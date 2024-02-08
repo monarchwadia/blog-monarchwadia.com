@@ -4,7 +4,79 @@ layout: post
 tags: boring-ai gpt-4 ai genai generative-ai
 ---
 
-# Outline
+# Outline 2
+
+Generative AI gives us the ability to extract structured data from unstructured data. By doing this, we unlock the ability to query entire natural-language documents such as PDFs and ebooks; store the gleaned information in a structured database; query the structured database; and project the results of the query on a beautiful user interface.
+
+{% plantuml %}
+
+@startuml
+allowmixing
+
+rectangle "Blog Article: The Great Divide by Chris Goiyer, 2019" as doc
+process "GenAI Model (e.g. GPT-4)" as ai
+database "Postgres" as db
+
+
+json "Structured Data Extract" as sd {
+    "type": "Longform Text",
+    "title": "The Great Divide",
+    "excerpt": "Two front-end developers are sitting at a bar...",
+    "summary": "This is a blog post about...",
+    "date": "January 2019",
+    "authorName": {
+        "firstName": "Chris",
+        "lastName":  "Goyier"
+    }
+}
+
+class "DatabaseRow" as row {
+    type TEXT
+    title TEXT
+    excerpt TEXT
+    summary TEXT
+    date DATE
+    author_first_name TEXT
+    author_last_name TEXT
+}
+
+
+doc -d-> ai : A blog article is fed to the AI
+ai -d-> sd : The AI outputs information in structured JSON
+sd -d-> row : The JSON is converted into a SQL record
+row -d-> db : The SQL is INSERTed into PostgreSQL
+
+
+@enduml
+
+{% endplantuml %}
+
+A sequence diagram for this would look like so
+
+{% plantuml %}
+
+
+@startuml
+actor Client as client
+participant "Backend Server" as bs
+participant "OpenAI API" as openai
+database "PostgreSQL" as pg
+
+client -> bs : Sends summarization request
+bs -> openai : Forwards article for processing
+openai -> bs : Returns structured JSON
+bs -> bs : Parses JSON into SQL format
+bs -> pg : Inserts SQL data into database
+bs -> client : Sends results
+@enduml
+
+
+{% endplantuml %}
+
+
+
+
+# Outline 1
 
 > **Title: Data Tagging**
 > 1. What is data tagging?
