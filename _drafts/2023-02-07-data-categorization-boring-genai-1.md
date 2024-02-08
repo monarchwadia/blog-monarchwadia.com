@@ -4,10 +4,38 @@ layout: post
 tags: boring-ai gpt-4 ai genai generative-ai
 ---
 
+# Outline
 
-# Intent
+> **Title: Data Tagging**
+> 1. What is data tagging?
+> 1. How is data tagging done currently?
+>       * User-driven
+>       * Humans doing data entry
+>       * Pattern matching (like regex)
+>       * Traditional Machine learning
+> 1. How can GenAI help?
+>       * Zero-shot classification
+>       * Cheap and easy to use
+>       * High accuracy
+>       * Testable
+> 1. Sample application
+>       * Configuration: Exhaustive list and description of the data tags.
+>       * Input: plain text document.
+>       * Output: JSON string array which contain the names of the tags.
+> 1. App Architecture
+>       * OpenAI
+>           * Function Calling
+> 1. Sample vanilla Python code
+> 1. Technical impact
+> 1. Business Impact 
 
-One of the most common ways to organize data is to tag each individual record with a set of categories that it falls into. For example, consider the following screen.
+# Summary
+
+Todo
+
+# Introduction
+
+One of the most common UX patterns in digital product design is category-based filtering. It lets the user quickly pinpoint items that are relevant to them in the current session. 
 
 {% plantuml %}
 @startsalt
@@ -31,6 +59,26 @@ One of the most common ways to organize data is to tag each individual record wi
 @endsalt
 
 {% endplantuml %}
+
+# Traditional challenges
+
+Heretofore, there are several downsides to this approach.
+
+1. **Human-driven Maintenance:** This feature requires expensive ongoing effort to keep categories updated with new content, and to ensure items are classified correctly.
+2. **Misclassification Risk:** Human error could misclassify items, making them harder to find.
+3. **Inflexibility:** Once tags or categories are implemented, it becomes challenging to modify, remove, or personalize them. This is because they often become deeply integrated with the project's structure.
+
+# The hidden assumption
+
+We are, however, assuming a few things here.
+
+1. **We need humans in the mix.**
+2. **It's expensive and unreliable to remove the human.**
+3. **Writing a technical solution is impossible because computers are stupid.**
+4. **Maintenance will be expensive.**
+5. **We cannot support multiple category ontologies due to cost of implementation.**
+
+# Database Design
 
 There are multiple categories, and posts can belong to many such categories, making it a true many-to-many relationship. This can be represented in a many-to-many table.
 
