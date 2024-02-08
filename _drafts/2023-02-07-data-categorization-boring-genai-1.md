@@ -4,7 +4,95 @@ layout: post
 tags: boring-ai gpt-4 ai genai generative-ai
 ---
 
+
 # Intent
+
+One of the most common ways to organize data is to tag each individual record with a set of categories that it falls into. For example, consider the following screen.
+
+{% plantuml %}
+@startsalt
+{
+  
+  {
+    [Tags]
+        Sports (32)     
+        Culture (14)    
+        Philosophy (9)  
+  } |
+  {
+    [Articles]
+     "The Zen in Martial Arts" (Categories: Sports Philosophy)                         
+     "Digital Art Renaissance" (Categories: Culture)                                   
+     "The Philosophical Underpinnings of Yoga" (Categories: Philosophy, Culture)       
+     "The Evolution of Language in Modern Culture" (Categories: Culture, Philosophy)   
+     "From Chess to eSports" (Categories: Sports, Culture)                             
+  }
+}
+@endsalt
+
+{% endplantuml %}
+
+There are multiple categories, and posts can belong to many such categories, making it a true many-to-many relationship. This can be represented in a many-to-many table.
+
+{% plantuml %}
+
+@startuml
+
+entity "Post" as Post {
+  +id: int
+  title: varchar
+  content: text
+}
+
+entity "Category" as Category {
+  +id: int
+  name: varchar
+}
+
+entity "PostCategories" as PostCategories {
+  +postId: int
+  +categoryId: int
+}
+
+Post ||--|{ PostCategories
+Category ||--|{ PostCategories
+@enduml
+
+{% endplantuml %}
+
+
+
+So you often see web applications whose data is organized into a persistence layer for the core data (Truth Layer), a set of tags that categorize that data (Tag Layer), and a layer that contains the business logic to query, manipulate, and display that data to users (Web Layer).
+
+{% plantuml %}
+
+@startuml
+
+package WebLayer as t1 {
+    rectangle React
+    rectangle NodeJS
+    rectangle Redis
+
+    React<->NodeJS
+    NodeJS<->Redis
+}
+package TagLayer as t2 {
+    rectangle Sports
+    rectangle Culture
+    rectangle Philosophy
+    rectangle News
+}
+package TruthLayer as t3 {
+    rectangle "News Article #ABC-1234"
+    rectangle "Sports Blog #XYZ-3456"
+}
+
+t2 <-> t3
+NodeJS <---> t2
+NodeJS <---> t3
+
+
+{% endplantuml %}
 
 **Data categorization** is a process that generates metadata on top of already-existing objects while leaving those objects unchanged. 
 
@@ -30,10 +118,6 @@ You realize that **OpenAI's GPT-3.5** offers a cost-effective method for perform
 !define Task rectangle
 !define Category rectangle
 !define TransparentCategory rectangle
-
-skinparam rectangle {
-    BackgroundColor transparent
-}
 
 rectangle "Todos" {
     top to bottom direction
@@ -65,10 +149,6 @@ top to bottom direction
 !define Task rectangle
 !define Category rectangle
 !define TransparentCategory rectangle
-
-skinparam rectangle {
-    BackgroundColor transparent
-}
 
 rectangle "Todos" {
     left to right direction
