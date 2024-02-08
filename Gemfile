@@ -37,3 +37,7 @@ gem "webrick", "~> 1.8.1"
 
 # for seo
 gem 'jekyll-seo-tag'
+
+# for plantuml
+
+gem "jekyll-plantuml"

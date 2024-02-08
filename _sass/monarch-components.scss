@@ -24,6 +24,10 @@
     }
   }
 
+  .cursor-pointer { cursor: pointer; }
+  .cursor-default { cursor: default; }
+  .cursor-not-allowed { cursor: not-allowed; }
+
   .btn {
     @extend .radius-2;
     @extend .px-2;
