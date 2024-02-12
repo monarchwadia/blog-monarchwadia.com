@@ -1,12 +1,88 @@
 ---
 title: "GPT-3.5 can result in 97.43% reduction in data entry costs."
 layout: post
-tags: boring-ai gpt-4 ai genai generative-ai
+tags: gpt-4 ai genai generative-ai
 ---
 
 # Executive Summary
 
 A **97.43% reduction in labour costs** can be realized using `GPT-3.5`. In the example below, we show the potential to **reduce costs from $10,000 to $257.50**.
+
+<div id="calculator-root"></div>
+
+<script>
+    const calculatorDom = `
+<div class="flex flex-col gap-2">
+    <label>
+        Number of Articles
+        <input type="range" min="10000" max="100000" value="100000" onInput="onInputChange()" id="numArticles">
+        <span id="numArticlesValue">100000</span>
+    </label>
+    <label>
+        Manual Entry Speed (articles/hour)
+        <input type="range" min="50" max="200" value="100" onInput="onInputChange()" id="manSpeed">
+        <span id="manSpeedValue">100</span> articles per hour
+    </label>
+    <label>
+        Manual Entry Salary ($/hour)
+        <input type="range" min="5" max="20" value="10" onInput="onInputChange()" id="manSalary">
+        <span id="manSalaryValue">10</span>
+    </label>
+    <div>
+        Manual Entry Cost: $<span id="estimatedManualCost">10,000</span>
+    </div>
+    <div>
+        Cost using AI: $<span id="estimatedAiCost">257.50</span>
+    </div>
+</div>
+    `;
+
+    function calculateManualCost() {
+        const numArticles = parseInt(document.getElementById("numArticles").value, 10);
+        const manSpeed = parseInt(document.getElementById("manSpeed").value, 10);
+        const manSalary = parseInt(document.getElementById("manSalary").value, 10);
+        
+        const hours = numArticles / manSpeed;
+        const cost = hours * manSalary;
+        
+        return cost;
+    }
+
+    function calculateAiCost() {
+        const numArticles = parseInt(document.getElementById("numArticles").value, 10);
+
+        const averageInputLength = 5000;
+        const totalInputTokens = numArticles * averageInputLength;
+        const averageInputCostPer1000Tokens = 0.0005;
+        const inputCost = averageInputCostPer1000Tokens * (totalInputTokens / 1000);
+
+        const averageOutputLength = 50;
+        const averageOutputCostPer1000Tokens = 0.0015;
+        const totalOutputTokens = numArticles * averageOutputLength;
+        const outputCost = averageOutputCostPer1000Tokens * (totalOutputTokens / 1000);
+
+        const totalCost = inputCost + outputCost;
+
+        return totalCost;
+    }
+
+    function onInputChange() {
+        document.getElementById("numArticlesValue").innerText = document.getElementById("numArticles").value;
+        document.getElementById("manSpeedValue").innerText = document.getElementById("manSpeed").value;
+        document.getElementById("manSalaryValue").innerText = document.getElementById("manSalary").value;
+        
+        const manCost = calculateManualCost();
+        const aiCost = calculateAiCost();
+        document.getElementById("estimatedManualCost").innerText = manCost.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById("estimatedAiCost").innerText = aiCost.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("calculator-root").innerHTML = calculatorDom;
+        onInputChange(); // Initialize with default values
+    });
+</script>
+
 
 # Conceptual Case Study
 
