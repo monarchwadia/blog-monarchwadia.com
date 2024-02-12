@@ -1,7 +1,7 @@
 ---
 title: "Data Categorization (Boring GenAI #1)"
 layout: post
-tags: boring-ai gpt-4 ai genai generative-ai
+tags: gpt-4 ai genai generative-ai
 ---
 
 # Outline 2

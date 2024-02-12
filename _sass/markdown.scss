@@ -11,12 +11,12 @@
       margin-top: 1.5rem;
       margin-bottom: 0.5rem;
     }
-    h1 { @extend .header-1; }
-    h2 { @extend .header-2; }
-    h3 { @extend .header-3; }
-    h4 { @extend .header-4; }
-    h5 { @extend .header-5; }
-    h6 { @extend .header-6; }
+    h1 { @extend .header-2; }
+    h2 { @extend .header-3; }
+    h3 { @extend .header-4; }
+    h4 { @extend .header-5; }
+    h5 { @extend .header-6; }
+    h6 { @extend .header-7; }
     p { @extend .text-4; }
     strong { @extend .font-bold; }
     em { @extend .font-italic; }
