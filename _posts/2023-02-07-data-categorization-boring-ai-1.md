@@ -34,7 +34,7 @@ A **97.43% reduction in labour costs** can be realized using `OpenAI GPT-3.5 Tur
         <td>Manual Entry Salary ($/hour)</td>
         <td>
             <input type="range" min="1" max="30" value="10" onInput="onInputChange()" id="manSalary">
-            $<span id="manSalaryValue">10.00</span>
+            $<span id="manSalaryValue">10</span> per hour
         </td>
     </tr>
     <tr>
