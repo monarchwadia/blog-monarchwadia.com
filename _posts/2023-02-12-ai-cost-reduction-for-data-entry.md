@@ -111,31 +111,7 @@ There is a set of 100,000 newspaper articles from the past 10 years. Your depart
 
 ## Diagram
 
-{% plantuml %}
-
-database "100,000 Newspaper Articles" as DB #9ff
-
-rectangle "Classification System" as CS #ccc
-
-package Categories {
-    rectangle Art as A #f99
-    rectangle Business as B  #9f9
-    rectangle Culture as C #99f 
-    rectangle Entertainment as E #f9f
-
-    A -[hidden]r- B
-    B -[hidden]d- C
-    C -[hidden]r- E
-}
-
-DB -down-> CS
-CS -down-> A
-CS -down-> B
-CS -down-> C
-CS -down-> E
-
-
-{% endplantuml %}
+![UML diagram showing 100,000 newspaper articles being classified by a classification system into the categories "Art", "Business", "Culture" and "Entertainment".](/assets/2023-02-12-ai-cost-reduction-for-data-entry-puml.png)
 
 ---
 
