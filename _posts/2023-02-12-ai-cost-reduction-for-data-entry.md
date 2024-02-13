@@ -1,7 +1,9 @@
 ---
-title: "GPT-3.5 can result in 97.43% reduction in data entry costs."
+title: "GPT-3.5 can result in 97.43% reduction in operating unit costs for data entry."
 layout: post
+date: 2023-02-12
 tags: gpt-4 ai genai generative-ai data-entry business cost calculator
+excerpt: A 97.43% reduction in labour costs can be realized using OpenAI GPT-3.5 Turbo. In this simulated case study, we show the potential to reduce costs from $10,000 to $257.50.
 ---
 
 # Executive Summary
