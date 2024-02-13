@@ -1,7 +1,7 @@
 ---
 title: "GPT-3.5 can result in 97.43% reduction in data entry costs."
 layout: post
-tags: gpt-4 ai genai generative-ai
+tags: gpt-4 ai genai generative-ai data-entry business cost calculator
 ---
 
 # Executive Summary
