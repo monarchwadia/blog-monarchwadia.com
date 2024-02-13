@@ -1,14 +1,38 @@
 ---
-title: "GPT-3.5 can result in 97.43% reduction in operating unit costs for data entry."
+title: "Generative AI Slashes Data Entry Unit Costs by Over 97%"
 layout: post
 date: 2024-02-12
 tags: gpt-4 ai genai generative-ai data-entry business cost calculator
-excerpt: A 97.43% reduction in labour costs can be realized using OpenAI GPT-3.5 Turbo. In this simulated case study, we show the potential to reduce costs from $10,000 to $257.50.
+excerpt: Generative AI also greatly increases the efficiency, reliability, scalability, and flexibility of processes that are driven by it.
 ---
 
 # Executive Summary
 
-A **97.43% reduction in labour costs** can be realized using `OpenAI GPT-3.5 Turbo`. In the example below, we show the potential to **reduce costs from $10,000 to $257.50**.
+A tremendous **97.43% reduction in unit cost of data entry** can be realized using Generative AI, with zero additional training costs. Since any process created using Generative AI is just a piece of software, we also see great increases in other areas such as efficiency, reliability, scalability, and flexibility of change.
+
+# Simulation & Simulated Case Study
+
+## Goal & Methodology
+
+The goal of this simulated case study is to clearly show the benefits of Generative AI when it comes to data entry tasks. For this task, I chose **Data Classification** as the task to be done. I also created a simple, interactive calculator where you can change the variables very easily and explore the simulation yourself.
+
+## Scenario: Newspaper Article Reclassification
+
+In this scenario, we will take on the role of the IT department in a large online newspaper. A new requirement has been prioritized for the development team which requires manual data entry. I will make the case for using OpenAI to rapidly complete the data entry task instead of involving manual data entry teams, which tend to be expensive and slow.
+
+### The new requirement: Filter by Category
+
+The newspaper's Product and Design teams have been hard at work re-designing the newspaper's main customer-facing website, which sees many millions of visitors per month. 
+
+Part of the redesign involves a Proof of Concept for a brand new "category" filter. This filter will let users rapidly navigate articles using four categories: "Art," "Business," "Culture" and "Entertainment." 
+
+Users can categorize both old articles from the newspaper's archives as well as new articles that were recently published.
+
+### Analysis of the data
+
+Looking at the database, we discover approximately 100,000 articles from the past 10 years that we will have to reclassify.
+
+![UML diagram showing 100,000 newspaper articles being classified by a classification system into the categories "Art", "Business", "Culture" and "Entertainment".](/assets/2024-02-12-ai-cost-reduction-for-data-entry-puml.png)
 
 <div id="calculator-root"></div>
 
@@ -45,7 +69,7 @@ A **97.43% reduction in labour costs** can be realized using `OpenAI GPT-3.5 Tur
     </tr>
     <tr>
         <td>Cost using AI:</td>
-        <td><strong>$<span id="estimatedAiCost">257.50</span></strong></td>
+        <td><strong>$<span id="estimatedAiCost">257.50</span></strong> (Using OpenAI GPT-3.5 Turbo)</td>
     </tr>
     <tr>
         <td>Savings Percentage:</td>
@@ -103,15 +127,6 @@ A **97.43% reduction in labour costs** can be realized using `OpenAI GPT-3.5 Tur
         onInputChange(); // Initialize with default values
     });
 </script>
-
-
-# Conceptual Case Study
-
-There is a set of 100,000 newspaper articles from the past 10 years. Your department been tasked with classifying them as either Art, Business, Culture, or Entertainment.
-
-## Diagram
-
-![UML diagram showing 100,000 newspaper articles being classified by a classification system into the categories "Art", "Business", "Culture" and "Entertainment".](/assets/2024-02-12-ai-cost-reduction-for-data-entry-puml.png)
 
 ---
 

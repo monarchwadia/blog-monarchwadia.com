@@ -8,7 +8,6 @@ layout: default
     <time class="font-display flex flex-row space-between" datetime="{{ page.date | date_to_xmlschema }}">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           <span class="text-3 font-display">{{ page.date | date: date_format }}</span>
-          <span class="text-3 font-display opacity-2">(Unix Time: {{ page.date | date: "%s" | prepend: '0000000000' | slice: -10, 10  }})</span>
     </time>
     <p>
 
