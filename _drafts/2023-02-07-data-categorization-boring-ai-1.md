@@ -6,36 +6,52 @@ tags: gpt-4 ai genai generative-ai
 
 # Executive Summary
 
-A **97.43% reduction in labour costs** can be realized using `GPT-3.5`. In the example below, we show the potential to **reduce costs from $10,000 to $257.50**.
+A **97.43% reduction in labour costs** can be realized using `OpenAI GPT-3.5 Turbo`. In the example below, we show the potential to **reduce costs from $10,000 to $257.50**.
 
 <div id="calculator-root"></div>
 
 <script>
     const calculatorDom = `
-<div class="flex flex-col gap-2">
-    <label>
-        Number of Articles
-        <input type="range" min="10000" max="100000" value="100000" onInput="onInputChange()" id="numArticles">
-        <span id="numArticlesValue">100000</span>
-    </label>
-    <label>
-        Manual Entry Speed (articles/hour)
-        <input type="range" min="50" max="200" value="100" onInput="onInputChange()" id="manSpeed">
-        <span id="manSpeedValue">100</span> articles per hour
-    </label>
-    <label>
-        Manual Entry Salary ($/hour)
-        <input type="range" min="5" max="20" value="10" onInput="onInputChange()" id="manSalary">
-        <span id="manSalaryValue">10</span>
-    </label>
-    <div>
-        Manual Entry Cost: $<span id="estimatedManualCost">10,000</span>
-    </div>
-    <div>
-        Cost using AI: $<span id="estimatedAiCost">257.50</span>
-    </div>
-</div>
-    `;
+<h1>Unit Cost Savings Calculator</h1>
+<p>You can use this calculator to see how much money you could save on data entry by using AI. The calculations are based on the case study below.</p>
+<br/>
+<table>
+    <tr>
+        <td>Number of Articles</td>
+        <td>
+            <input type="range" min="1000" max="1000000" value="100000" onInput="onInputChange()" id="numArticles">
+            <span id="numArticlesValue">100000</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Manual Entry Speed (articles/hour)</td>
+        <td>
+            <input type="range" min="50" max="200" value="100" onInput="onInputChange()" id="manSpeed">
+            <span id="manSpeedValue">100</span> articles per hour
+        </td>
+    </tr>
+    <tr>
+        <td>Manual Entry Salary ($/hour)</td>
+        <td>
+            <input type="range" min="1" max="30" value="10" onInput="onInputChange()" id="manSalary">
+            $<span id="manSalaryValue">10.00</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Manual Entry Cost:</td>
+        <td><strong>$<span id="estimatedManualCost">10,000</span></strong></td>
+    </tr>
+    <tr>
+        <td>Cost using AI:</td>
+        <td><strong>$<span id="estimatedAiCost">257.50</span></strong></td>
+    </tr>
+    <tr>
+        <td>Savings Percentage:</td>
+        <td><strong><span id="estimatedPctSavings">--</span>%</strong></td>
+    </tr>
+</table>
+`;
+
 
     function calculateManualCost() {
         const numArticles = parseInt(document.getElementById("numArticles").value, 10);
@@ -69,12 +85,15 @@ A **97.43% reduction in labour costs** can be realized using `GPT-3.5`. In the e
     function onInputChange() {
         document.getElementById("numArticlesValue").innerText = document.getElementById("numArticles").value;
         document.getElementById("manSpeedValue").innerText = document.getElementById("manSpeed").value;
-        document.getElementById("manSalaryValue").innerText = document.getElementById("manSalary").value;
+        document.getElementById("manSalaryValue").innerText = document.getElementById("manSalary").value.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
         
         const manCost = calculateManualCost();
         const aiCost = calculateAiCost();
         document.getElementById("estimatedManualCost").innerText = manCost.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
         document.getElementById("estimatedAiCost").innerText = aiCost.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+        const savingsPct = ((manCost - aiCost) / manCost) * 100;
+        document.getElementById("estimatedPctSavings").innerText = savingsPct.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
     }
 
     document.addEventListener("DOMContentLoaded", () => {
