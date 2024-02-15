@@ -1,11 +1,14 @@
 ---
 layout: calculator
+tags: calculator
 ---
 
 
 <div id="calculator-root"></div>
 
-<script>
+<script>    
+    let chartInstance;
+
     const calculatorDom = `
 <div class="flex flex-col gap-2">
     <h1 class="header-1">Data Entry AI Cost Savings Calculator</h1>
@@ -25,7 +28,7 @@ layout: calculator
         <tr>
             <td>Frequency</td>
             <td>
-                <select>
+                <select id="frequency" onChange="onInputChange()">
                     <option value="once">Once</option>
                     <option value="daily">Daily</option>
                     <option value="weekly">Weekly</option>
@@ -71,7 +74,7 @@ layout: calculator
         <tr>
             <td>Estimated Project Cost</td>
             <td>
-            <select id="implementationCost">
+            <select id="fixedCost" onChange="onInputChange()">
                 <option value="50000">$50,000</option>
                 <option value="100000">$100,000 (typical small startups)</option>
                 <option value="150000">$150,000</option>
@@ -98,23 +101,22 @@ layout: calculator
             </td>
         </tr>
     </table>
+
+    <h2 class="header-1">Results</h2>
+    <canvas id="chartOut"></canvas>
 </div>
 `;
 
 
-    function calculateManualCost() {
-        const numDocuments = parseInt(document.getElementById("numDocuments").value, 10);
-        const manSpeed = parseInt(document.getElementById("manSpeed").value, 10);
-        const manSalary = parseInt(document.getElementById("manSalary").value, 10);
-        
+    function calculateManualCost({numDocuments, manSpeed, manSalary }) {
         const hours = numDocuments / manSpeed;
         const cost = hours * manSalary;
         
         return cost;
     }
 
-    function calculateAiCost() {
-        const numDocuments = parseInt(document.getElementById("numDocuments").value, 10);
+    function calculateAiCost({numDocuments}) {
+        
 
         const averageInputLength = 5000;
         const totalInputTokens = numDocuments * averageInputLength;
@@ -132,17 +134,48 @@ layout: calculator
     }
 
     function onInputChange() {
-        document.getElementById("numDocumentsValue").innerText = formatWholeNumber(document.getElementById("numDocuments").value)
-        document.getElementById("manSpeedValue").innerText = formatWholeNumber(document.getElementById("manSpeed").value);
-        document.getElementById("manSalaryValue").innerText = formatCurrency(document.getElementById("manSalary").value)
-        
-        const manCost = calculateManualCost();
-        const aiCost = calculateAiCost();
+        // input parsing
+        const numDocuments = parseInt(document.getElementById("numDocuments").value);
+        const manSpeed = parseInt(document.getElementById("manSpeed").value);
+        const manSalary = parseInt(document.getElementById("manSalary").value);
+        const frequency = document.getElementById("frequency").value;
+        const fixedCost = parseInt(document.getElementById("fixedCost").value);
+
+        // calculations
+        const manCost = calculateManualCost({numDocuments, manSpeed, manSalary});
+        const aiCost = calculateAiCost({numDocuments});
+        const savingsPct = ((manCost - aiCost) / manCost) * 100;
+
+        // text outputs
         document.getElementById("estimatedManualCost").innerText = formatCurrency(manCost)
         document.getElementById("estimatedAiCost").innerText = formatCurrency(aiCost)
-
-        const savingsPct = ((manCost - aiCost) / manCost) * 100;
+        document.getElementById("numDocumentsValue").innerText = formatWholeNumber(numDocuments)
+        document.getElementById("manSpeedValue").innerText = formatWholeNumber(manSpeed);
+        document.getElementById("manSalaryValue").innerText = formatCurrency(manSalary);
         document.getElementById("estimatedPctSavings").innerText = formatPercent(savingsPct);
+
+        // update chart
+        if (!chartInstance) {
+            const ctx = document.getElementById("chartOut");
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+                },
+                options: {
+                scales: {
+                    y: {
+                    beginAtZero: true
+                    }
+                }
+                }
+            });
+        }
     }
 
     function formatWholeNumber(num) {
@@ -162,7 +195,12 @@ layout: calculator
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("calculator-root").innerHTML = calculatorDom;
-        onInputChange(); // Initialize with default values
+            const script = document.createElement("script");
+            script.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js";
+            script.onload = function() {
+                document.getElementById("calculator-root").innerHTML = calculatorDom;
+                onInputChange(); // Initialize with default values
+            }
+            document.head.appendChild(script);
     });
 </script>
