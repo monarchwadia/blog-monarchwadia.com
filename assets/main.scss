@@ -3,10 +3,10 @@
 # only Main files contain this front matter, not partials.
 ---
 
-@layer reset, typography, utils, components;
+@layer reset, typography, utils, components, markdown;
 
 @import "reset";
-@import "monarch-utils";
 @import "typography";
-@import "monarch-components";
+@import "components";
+@import "utils";
 @import "markdown";

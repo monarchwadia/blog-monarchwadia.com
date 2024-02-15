@@ -1,6 +1,4 @@
 @import "variables";
-@import "typography";
-@import "monarch-utils";
 @import "_mixins";
 
 @layer components {
@@ -29,10 +27,34 @@
   .cursor-not-allowed { cursor: not-allowed; }
 
   .btn {
-    @extend .radius-2;
     @extend .px-2;
     @extend .py-1;
     cursor: pointer;
+  }
+
+  .btn-base-100 {
+    background-color: var(--color-base-100-bg);
+    color: var(--color-base-100-fg);
+  }
+
+  .btn-base-200 {
+    background-color: var(--color-base-200-bg);
+    color: var(--color-base-200-fg);
+  }
+
+  .btn-base-300 {
+    background-color: var(--color-base-300-bg);
+    color: var(--color-base-300-fg);
+  }
+
+  .btn-accent-200 {
+    background-color: var(--color-accent-200);
+    color: var(--color-base-300-fg);
+  }
+
+  .btn-lg {
+    @extend .px-4;
+    @extend .py-3;
   }
 
   // --------------------- Container ---------------------
@@ -69,7 +91,6 @@
   .table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 1.5rem;
     
     th, td {
       padding: 0.5rem;
