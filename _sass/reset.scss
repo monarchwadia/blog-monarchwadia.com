@@ -24,6 +24,7 @@
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    text-align: unset;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
@@ -69,5 +70,14 @@
 
   *, *::before, *::after {
       box-sizing: inherit;
+  }
+
+  select {
+    cursor: pointer;
+    @extend .text-3;
+  }
+
+  input[type="range"] {
+    cursor: pointer;
   }
 }

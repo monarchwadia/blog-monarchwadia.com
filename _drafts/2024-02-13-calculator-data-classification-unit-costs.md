@@ -8,42 +8,94 @@ layout: calculator
 <script>
     const calculatorDom = `
 <div class="flex flex-col gap-2">
-    <h1 class="header-1">Unit Cost Savings Calculator</h1>
-    <p>You can use this calculator to see how much money you could save on data entry by using AI. The calculations are based on the case study below.</p>
+    <h1 class="header-1">Data Entry AI Cost Savings Calculator</h1>
+    <p>You can use this calculator to see how much money you could save on data entry by using AI for data entry.</p>
     <br/>
     <table class="table">
+        <tr><th colspan="2" class="font-bold">Work Scope</th></tr>
         <tr>
-            <td>Number of Source Documents</td>
+            <td>Number of Documents to Process</td>
             <td>
-                <input type="range" min="1000" max="1000000" value="100000" onInput="onInputChange()" id="numDocuments">
-                <span id="numDocumentsValue">100000</span>
+                <div class="flex flex-col gap-2">
+                    <input type="range" min="1000" max="1000000" value="100000" onInput="onInputChange()" id="numDocuments">
+                    <div><span id="numDocumentsValue">100000</span> docs</div>
+                </div>
             </td>
         </tr>
         <tr>
-            <td>Manual Entry Speed (documents/hour)</td>
+            <td>Frequency</td>
             <td>
-                <input type="range" min="50" max="200" value="100" onInput="onInputChange()" id="manSpeed">
-                <span id="manSpeedValue">100</span> documents per hour
+                <select>
+                    <option value="once">Once</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </td>
+        </tr>
+        <tr><th colspan="2" class="font-bold">With Humans</th></tr>
+        <tr>
+            <td>Human Speed</td>
+            <td>
+                <div class="flex flex-col gap-2">
+                    <input type="range" min="50" max="200" value="100" onInput="onInputChange()" id="manSpeed">
+                    <div><span id="manSpeedValue">100</span> docs per hour</div>
+                </div>
             </td>
         </tr>
         <tr>
-            <td>Manual Entry Salary ($/hour)</td>
+            <td>Human Salary</td>
             <td>
-                <input type="range" min="1" max="30" value="10" onInput="onInputChange()" id="manSalary">
-                <span id="manSalaryValue">10</span> per hour
+                <div class="flex flex-col gap-2">
+                    <input type="range" min="1" max="30" value="10" onInput="onInputChange()" id="manSalary">
+                    <div><span id="manSalaryValue">10</span> per hour</div>
+                </div>
             </td>
         </tr>
         <tr>
-            <td>Manual Entry Cost:</td>
+            <td>Total Human Cost</td>
             <td><strong><span id="estimatedManualCost">10,000</span></strong></td>
         </tr>
+        <tr><th colspan="2" class="font-bold">With Artificial Intelligence</th></tr>
         <tr>
-            <td>Cost using AI:</td>
+            <td>AI Cost</td>
             <td><strong><span id="estimatedAiCost">257.50</span></strong> (Using OpenAI GPT-3.5 Turbo)</td>
         </tr>
         <tr>
-            <td>Savings Percentage:</td>
+            <td>Savings Percentage</td>
             <td><strong><span id="estimatedPctSavings">--</span></strong></td>
+        </tr>
+        <tr><th colspan="2">Fixed Costs</th></tr>
+        <tr>
+            <td>Estimated Project Cost</td>
+            <td>
+            <select id="implementationCost">
+                <option value="50000">$50,000</option>
+                <option value="100000">$100,000 (typical small startups)</option>
+                <option value="150000">$150,000</option>
+                <option value="200000">$200,000</option>
+                <option value="250000">$250,000</option>
+                <option value="300000">$300,000</option>
+                <option value="400000">$400,000</option>
+                <option value="500000">$500,000 (typical large startups)</option>
+                <option value="750000">$750,000</option>
+                <option value="1000000">$1,000,000</option>
+                <option value="1250000">$1,250,000</option>
+                <option value="1500000" selected="true">$1,500,000 (typical midsized)</option>
+                <option value="2000000">$2,000,000</option>
+                <option value="2500000">$2,500,000</option>
+                <option value="3000000">$3,000,000 (typical enterprise)</option>
+                <option value="4000000">$4,000,000</option>
+                <option value="5000000">$5,000,000</option>
+                <option value="6000000">$6,000,000</option>
+                <option value="7000000">$7,000,000</option>
+                <option value="8000000">$8,000,000</option>
+                <option value="9000000">$9,000,000</option>
+                <option value="10000000">$10,000,000</option>
+            </select>
+            </td>
         </tr>
     </table>
 </div>
