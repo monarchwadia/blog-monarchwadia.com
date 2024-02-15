@@ -98,7 +98,7 @@ const calculatorDom = `
               <select id="aiModel" class="text-2" onChange="onInputChange()">
                 <option value="open-source">Open Source</option>
                 <option value="openai-gpt-3.5">OpenAI GPT-3.5 ($)</option>
-                <option value="claude-instant">Claude Instant ($)</option>
+                <option value="claude-instant" selected>Claude Instant ($)</option>
                 <option value="claude-2.1">Claude 2.1 ($$$)</option>
                 <option value="openai-gpt-4">OpenAI GPT-4 ($$$)</option>
               </select>
