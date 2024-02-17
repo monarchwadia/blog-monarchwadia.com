@@ -30,4 +30,11 @@
     .header-7 { @include header_commons; @extend .font-bold; @extend .text-0; }
     
     .text-center { text-align: center; }
+
+    // ------------------------------- Lists -------------------------------
+    .list {
+        &.list-disc { list-style-type: disc; }
+        &.list-decimal { list-style-type: decimal; }
+    }
+
 }
