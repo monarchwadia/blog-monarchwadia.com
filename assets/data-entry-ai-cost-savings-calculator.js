@@ -27,14 +27,12 @@ const calculatorDom = `
             <td>
               <div class="flex flex-col gap-2">
                 <p class="font-bold">Document Type</p>
-                <p class="opacity-4 text-2">Select the type of documents that your team processes. If you have a mix of documents, select "Both."</p>
+                <p class="opacity-4 text-2">Currently, this calculator only supports text-only documents.</p>
               </div>
             </td>
             <td>
-              <select id="documentType" onChange="onInputChange()">
-                <option value="text">Text-only</option>
-                <option value="image">Image-only</option>
-                <option value="both">Both</option>
+              <select id="documentType" onChange="onInputChange()" disabled>
+                <option value="text" selected>Text-only</option>
               </select>
             </td>
           </tr> 
@@ -90,7 +88,7 @@ const calculatorDom = `
               <div class="flex flex-col gap-2">
                 <p class="font-bold">AI Model</p>
                 <p class="opacity-4 text-2">
-                  OpenAI GPT-3.5 and Claude Instant are cheaper but less intelligent models, while OpenAI GPT-4 and Claude 2.1 are smarter but more expensive models. Open Source models have the advantage of total privacy and $0 unit costs, but the disadvantage of not being as reliable. You can adjust this value to see how it affects the cost.
+                  OpenAI GPT-3.5 and Claude Instant are cheaper but less intelligent models, while OpenAI GPT-4 and Claude 2.1 are smarter but more expensive models. Open Source models have the advantage of total privacy and $0 unit costs, but the disadvantage of not being as intelligent or reliable. You can adjust this value to see how it affects the cost.
                 </p>
               </div>
             </td>
@@ -107,9 +105,14 @@ const calculatorDom = `
           <tr><th colspan="2">Fixed Costs</th></tr>
           <tr>
               <td>
-                <p class="font-bold">
-                  Project Development Cost
-                </p>
+                <div class="flex flex-col gap-2">
+                  <p class="font-bold">
+                    Project Development Cost
+                  </p>
+                  <p class="opacity-4 text-2">
+                    This is the cost of setting up the AI model for your project. It includes the cost of data labeling, model training, and deployment. If you're not sure, you can use $300k as a starting point. You can adjust this value to see how it affects the cost.
+                  </p>
+                </div>
               </td>
               <td>
               <select class="text-" id="fixedCost" onChange="onInputChange()">
@@ -118,13 +121,13 @@ const calculatorDom = `
                   <option value="150000">$150k</option>
                   <option value="200000">$200k</option>
                   <option value="250000">$250k</option>
-                  <option value="300000">$300k</option>
+                  <option value="300000" selected="true">$300k</option>
                   <option value="400000">$400k</option>
                   <option value="500000">$500k</option>
                   <option value="750000">$750k</option>
                   <option value="1000000">$1m</option>
                   <option value="1250000">$1.25m</option>
-                  <option value="1500000" selected="true">$1.5m</option>
+                  <option value="1500000">$1.5m</option>
                   <option value="2000000">$2m</option>
                   <option value="2500000">$2.5m</option>
                   <option value="3000000">$3m</option>
@@ -144,15 +147,19 @@ const calculatorDom = `
 
 
     <h2 class="header-1">Results</h2>
+
+
     <p>By using AI for data entry, you could save <strong><span id="estimatedPctSavings">--</span></strong> on data entry costs.</p>
     <div>
     Total Human Cost
     <strong><span id="estimatedManualCost">10,000</span></strong>
     </div>
-    <tr>
-    <td>AI Cost</td>
-    <td><strong><span id="estimatedAiCost">257.50</span></strong></td>
-</tr>
+    <div>
+      <p>AI Cost</p>
+      <p><strong><span id="estimatedAiCost">257.50</span></strong></p>
+    </div>
+    
+    
     <canvas id="chartOut"></canvas>
 </div>
 `;
