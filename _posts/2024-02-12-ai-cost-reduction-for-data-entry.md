@@ -6,29 +6,32 @@ tags: gpt-4 ai genai generative-ai data-entry business cost calculator
 excerpt: According to my calculations, a whopping 97.43% reduction in unit cost of data entry can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model’s behaviour). This is very exciting, because prompting is very cost efficient, comparable to traditional software development methods.
 ---
 
-I was doing a few back-of-the-napkin calculations and found a way to express, using numbers, exactly how tremendously cost-effective generative AI can be. 
+I was doing a few back-of-the-napkin calculations for some business clients about how cost-effective generative AI could be in their project. According to my calculations, a whopping **97.43% reduction in unit cost of data entry** could be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model's behaviour). 
 
-According to my calculations, a whopping **97.43% reduction in unit cost of data entry** can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model's behaviour). This is very exciting, because prompting is very cost efficient, comparable to traditional software development methods.
+I wanted to share my thoughts using a concrete fictional example. There is also a simple calculator embedded inside this case study for folks who are interested in playing around with the numbers.
 
-Now obviously this is only going to be true in a select number cases; AI is not yet mature enough to replace every single human job. The task that I chose was **Data Classification**, which includes things like Document Classification, Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
+# Concrete scenario: Newspaper Article Reclassification
 
-I wanted to share my calculations and make a simple calculator available to folks who are interested in playing around with the numbers.
+In this fictional scenario, we will take on the role of the software engineering department of a large online newspaper. We have just received a request for a new feature which requires manual data entry on an ongoing basis. 
 
-## Scenario: Newspaper Article Reclassification
+I will first describe this new feature request. Then, I will show how this task could be completed by humans; and then show how we can write code to complete this task, and finally compare the two approaches side by side.
 
-Let's use a concrete example. In this scenario, we will take on the role of the IT department in a large online newspaper. A new requirement has been prioritized for the development team which requires manual data entry.
+## "Filter by Category" is a new feature request
 
-### The new requirement: Filter by Category
+Acme News is a large newspaper company. Acme's Product and Design teams have been hard at work re-designing the newspaper's main customer-facing website, which sees many millions of visitors per month. 
 
-The newspaper's Product and Design teams have been hard at work re-designing the newspaper's main customer-facing website, which sees many millions of visitors per month. 
+Part of the redesign involves a Proof of Concept for a brand new "category" filter. This filter will let users rapidly navigate articles using four categories:
 
-Part of the redesign involves a Proof of Concept for a brand new "category" filter. 
+* Art
+* Business
+* Culture
+* Entertainment
 
-This filter will let users rapidly navigate articles using four categories: "Art," "Business," "Culture" and "Entertainment." 
+_(In reality, we could have 100's of categories. This is also feasible and does not make a huge difference for the AI. In this example, I'm going to keep things simple with just 4 categories)_
 
-Users can categorize both old articles from the newspaper's archives as well as new articles that were recently published.
+## Analysis of the data
 
-### Analysis of the data
+This is a **Document Classification** task, which falls under the broader umbrella of Data Classification. Other tasks under the Data Classification umbrella include Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
 
 Looking at the database, we discover approximately 100,000 articles from the past 10 years that we will have to reclassify.
 
@@ -135,24 +138,41 @@ Looking at the database, we discover approximately 100,000 articles from the pas
     });
 </script>
 
-## Impact of using AI in data classificaiton.
+# Impact of using AI in data classificaiton.
 
 In the default example above, we estimate a cost of **$10,000** At an hourly salary of $10/hour, and with an average speed of 100 articles classified per hour. On the other hand, classifying 100,000 newspaper articles using GPT-3.5 Turbo, considering the specified input and output token costs, would approximately cost **$257.50**. This demonstrates the cost-effectiveness of AI-based classification over traditional manual methods.
 
-### Cost Efficiency
+## Cost Efficiency
 AI classification dramatically reduces costs **from $10,000 to just $257.50** (a reduction of **97.43%**), enabling significant savings and operational scaling without major budget increases.
 
-### Scalability
+## Scalability
 AI provides scalable solutions, easily handling large datasets without the cost and time escalation seen with manual labor, essential for modern data growth.
 
-### Accuracy and Consistency
+## Accuracy and Consistency
 AI delivers consistent classification once trained, ensuring dataset uniformity. However, it requires monitoring to avoid biases.
 
-### Time Savings
+## Time Savings
 AI processes 100,000 articles almost instantly, offering massive time savings over manual methods that need 1,000 hours, speeding up decision-making.
 
-### Enhanced Analysis Opportunities
+## Enhanced Analysis Opportunities
 Savings from AI allow for investment in deeper data analysis, yielding richer insights and more strategic outcomes.
 
-### Workforce Shift
+## Workforce Shift
 Transitioning to AI classification changes workforce demands, reducing manual processing roles in favor of AI oversight, training, and maintenance.
+
+# Why is this exciting? (Apart from cost savings)
+
+This is very exciting because it's low-hanging fruit. Not only are there massive cost savings to be realized, but it could actually be very easy to do, too.
+
+* Prompt-based AI work can be performed by web developers and software engineers.
+* There is no need to hire specialists like data scientists or machine learning engineers.
+* The code fits seamlessly into existing software built in Java, JavaScript, Python, etc.
+* There is no need for changes to CI/CD pipelines or development processes.
+
+# What kinds of teams can take advantage of this innovation?
+
+Any software development team can now use AI, regardless of which programming language they are using. This is possible through API-based AI (for example, OpenAI GPT-3.5). If your code can make API calls, it can also take advantage of cheap industrial-grade AI.
+
+# Do I need to train the AI model myself?
+
+No. The AI comes pre-trained on a broad base of source materials which allows it to understand instructions in plain human language. There is no training involved; you only have to provide clear instructions in plain text format, and the AI will do the rest.
