@@ -1,30 +1,28 @@
 ---
-title: "Generative AI Slashes Data Entry Unit Costs by Over 97%"
+title: "Generative AI slashes data entry costs by 97%"
 layout: post
 date: 2024-02-12
 tags: gpt-4 ai genai generative-ai data-entry business cost calculator
 excerpt: Generative AI also greatly increases the efficiency, reliability, scalability, and flexibility of processes that are driven by it.
 ---
 
-# Executive Summary
+I was doing a few back-of-the-napkin calculations and realized how tremendously cost-effective generative AI can be. I wanted to share my calculations and make a simple calculator available to the web.
 
-A tremendous **97.43% reduction in unit cost of data entry** can be realized using Generative AI, with zero additional training costs. Since any process created using Generative AI is just a piece of software, we also see great increases in other areas such as efficiency, reliability, scalability, and flexibility of change.
+According to my calculations, a whopping **97.43% reduction in unit cost of data entry** can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model's behaviour). 
 
-# Simulation & Simulated Case Study
-
-## Goal & Methodology
-
-The goal of this simulated case study is to clearly show the benefits of Generative AI when it comes to data entry tasks. For this task, I chose **Data Classification** as the task to be done. I also created a simple, interactive calculator where you can change the variables very easily and explore the simulation yourself.
+Now obviously this is only going to be true in a select number cases; AI is not yet mature enough to replace every single human job. The task that I chose was **Data Classification**, which includes things like Document Classification, Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
 
 ## Scenario: Newspaper Article Reclassification
 
-In this scenario, we will take on the role of the IT department in a large online newspaper. A new requirement has been prioritized for the development team which requires manual data entry. I will make the case for using OpenAI to rapidly complete the data entry task instead of involving manual data entry teams, which tend to be expensive and slow.
+Let's use a concrete example. In this scenario, we will take on the role of the IT department in a large online newspaper. A new requirement has been prioritized for the development team which requires manual data entry.
 
 ### The new requirement: Filter by Category
 
 The newspaper's Product and Design teams have been hard at work re-designing the newspaper's main customer-facing website, which sees many millions of visitors per month. 
 
-Part of the redesign involves a Proof of Concept for a brand new "category" filter. This filter will let users rapidly navigate articles using four categories: "Art," "Business," "Culture" and "Entertainment." 
+Part of the redesign involves a Proof of Concept for a brand new "category" filter. 
+
+This filter will let users rapidly navigate articles using four categories: "Art," "Business," "Culture" and "Entertainment." 
 
 Users can categorize both old articles from the newspaper's archives as well as new articles that were recently published.
 
@@ -76,8 +74,15 @@ Looking at the database, we discover approximately 100,000 articles from the pas
         <td><strong><span id="estimatedPctSavings">--</span>%</strong></td>
     </tr>
 </table>
+<div class="link float-right cursor-pointer" onClick="resetToDefaults()">Reset To Default</div>
 `;
 
+    function resetToDefaults() {
+        document.getElementById("numArticles").value = 100000;
+        document.getElementById("manSpeed").value = 100;
+        document.getElementById("manSalary").value = 10;
+        onInputChange();
+    }
 
     function calculateManualCost() {
         const numArticles = parseInt(document.getElementById("numArticles").value, 10);
@@ -128,55 +133,9 @@ Looking at the database, we discover approximately 100,000 articles from the pas
     });
 </script>
 
----
-
-# Cost Calculation for Manual Classification - Method #1
-
-We estimated a cost of **$10,000** At an hourly salary of $10/hour, and with an average speed of 100 articles classified per hour.
-
-## Detailed Breakdown
-
-To estimate the cost of manually classifying 100,000 newspaper articles, we consider the hourly wage and the average processing speed.
-
-| Parameter              | Value             |
-|------------------------|-------------------|
-| **Total Articles**     | 100,000           |
-| **Average Speed**      | 100 articles/hour |
-| **Hourly Salary**      | $10               |
-|     **Hours of Effort Needed:**                    |    **1,000 hours** (100,000 articles / 100 articles per hour)               |
-| **Total Cost:** | **$10,000** (1,000 hours * $10/hour) |
-
----
-
-# Cost Calculation for GPT-3.5-Based Classification - Method #2
-
-We estimated a cost of **$257.50** for classifying 100,000 newspaper articles using GPT-3.5 Turbo, taking into account both the input and output processing costs associated with using the API.
-
-## Detailed Breakdown
-
-To calculate the cost of using GPT-3.5 Turbo for classifying 100,000 newspaper articles, we consider both the input and output processing costs.
-
-| Parameter                         | Value                                                  |
-|-----------------------------------|--------------------------------------------------------|
-| **Total Articles**                | 100,000                                                |
-| **Average Article Length**        | 5000 tokens (about 3500 words)                         |
-| **Average Classification Length** | 50 tokens                                              |
-| **Input Cost (per 1,000 tokens)** | $0.0005                                                |
-| **Output Cost (per 1,000 tokens)**| $0.0015                                                |
-| **Total Input Tokens**            | **500,000,000 tokens** (100,000 articles * 5000 tokens/article)  |
-| **Total Output Tokens**           | **5,000,000 tokens** (100,000 classifications * 50 tokens/classification) |
-| **Input Cost**                    | **$250** ((500,000,000 tokens / 1,000) * $0.0005)            |
-| **Output Cost**                   | **$7.5** ((5,000,000 tokens / 1,000) * $0.0015)             |
-| **Total Cost:**                   | **$257.5** (Input Cost + Output Cost)                   |
-
-Classifying 100,000 newspaper articles using GPT-3.5 Turbo, considering the specified input and output token costs, would approximately cost **$257.50**. This demonstrates the cost-effectiveness of AI-based classification over traditional manual methods.
-
-
----
-
 ## Impact of using AI in data classificaiton.
 
-AI adoption in data classification brings immediate cost and time benefits while promoting a strategic, analytical approach to large dataset utilization.
+In the default example above, we estimate a cost of **$10,000** At an hourly salary of $10/hour, and with an average speed of 100 articles classified per hour. On the other hand, classifying 100,000 newspaper articles using GPT-3.5 Turbo, considering the specified input and output token costs, would approximately cost **$257.50**. This demonstrates the cost-effectiveness of AI-based classification over traditional manual methods.
 
 ### Cost Efficiency
 AI classification dramatically reduces costs **from $10,000 to just $257.50** (a reduction of **97.43%**), enabling significant savings and operational scaling without major budget increases.
