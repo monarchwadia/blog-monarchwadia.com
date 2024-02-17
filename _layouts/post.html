@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article>
-  <header class="flex flex-col gap-2">
+  <header class="flex flex-col gap-2 pb-2">
     <h1 class="header-1">{{page.title | escape}}</h1>
     <time class="font-display flex flex-row space-between" datetime="{{ page.date | date_to_xmlschema }}">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}

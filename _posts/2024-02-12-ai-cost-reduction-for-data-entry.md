@@ -3,14 +3,16 @@ title: "Generative AI slashes data entry costs by 97%"
 layout: post
 date: 2024-02-12
 tags: gpt-4 ai genai generative-ai data-entry business cost calculator
-excerpt: Generative AI also greatly increases the efficiency, reliability, scalability, and flexibility of processes that are driven by it.
+excerpt: According to my calculations, a whopping 97.43% reduction in unit cost of data entry can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model’s behaviour). This is very exciting, because prompting is very cost efficient, comparable to traditional software development methods.
 ---
 
-I was doing a few back-of-the-napkin calculations and realized how tremendously cost-effective generative AI can be. I wanted to share my calculations and make a simple calculator available to the web.
+I was doing a few back-of-the-napkin calculations and found a way to express, using numbers, exactly how tremendously cost-effective generative AI can be. 
 
-According to my calculations, a whopping **97.43% reduction in unit cost of data entry** can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model's behaviour). 
+According to my calculations, a whopping **97.43% reduction in unit cost of data entry** can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model's behaviour). This is very exciting, because prompting is very cost efficient, comparable to traditional software development methods.
 
 Now obviously this is only going to be true in a select number cases; AI is not yet mature enough to replace every single human job. The task that I chose was **Data Classification**, which includes things like Document Classification, Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
+
+I wanted to share my calculations and make a simple calculator available to folks who are interested in playing around with the numbers.
 
 ## Scenario: Newspaper Article Reclassification
 

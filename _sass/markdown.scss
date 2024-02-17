@@ -3,12 +3,12 @@
     // inline styles
     @extend .flex;
     @extend .flex-col;
-    gap: 0.45rem;
-    line-height: 1.36;
+    gap: 1.6rem;
+    line-height: 1.50;
 
     // --------------------- Typography ---------------------
     h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
     h1 { @extend .header-2; }
