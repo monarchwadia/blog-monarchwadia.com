@@ -45,3 +45,5 @@ gem 'jekyll-seo-tag'
 gem "jekyll-plantuml"
 
 gem 'jekyll-toc'
+
+gem 'jekyll-relative-links'

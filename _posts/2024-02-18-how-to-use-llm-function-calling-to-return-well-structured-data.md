@@ -1,19 +1,26 @@
 ---
 
-title:  Generative AI function calling opens the door to true interoperability with traditional software
+title:  How to use LLM function calling to return well-structured data.
 layout: post
-date:   2023-09-24 19:43:42 2023 -0400
+date:   2024-02-17
 tags: openai gpt genai
 excerpt: GenAI often requires interoperability with traditional software. In this article, we will explore how function calling enables GenAI to interoperate with traditional software, and provide a step-by-step example to illustrate the concept.
 ---
 
 # Introduction
 
-Previously, I wrote an article on how AI can reduce the cost of data entry through content classification. One of the key challenges in that article was the need for interoperability between AI and traditional software. 
+One of the key concepts needed to truly harness the power of Large Language Models is getting it to play nicely with traditional software systems written in Java, JavaScript, Python, and other languages.
+
+The problem is that traditional software systems rely on structured data, such as JSON, XML, and CSV, to communicate with other systems. Large Language Models, on the other hand, are not designed to work with structured data. They are designed to work with natural language, which is unstructured.
+
+In this article, I will explore how function calling enables Large Language Models to interoperate with traditional software, and provide code snippets to illustrate the concept.
+
+
+# Using simple prompts to classify articles
 
 Let's say we wanted to classify newspaper articles into categories such as sports, politics, and entertainment. We could use a traditional software system to collect and store the articles, and then use GenAI to classify them.
 
-# Using simple prompts to classify articles
+> 🎓 **Want to learn more?** This example is taken from my article, [How Generative AI slashes data entry costs by 97% without training](/_posts/2024-02-12-ai-cost-reduction-for-data-entry.md). If you're actually working on a data classification or data entry problem right now (or if you're just curious), the case study in that article might be super useful and interesting to you!
 
 Using API calls to OpenAI, we could classify the articles using simple prompts such as "classify this article as sports" or "classify this article as politics".
 
@@ -161,5 +168,9 @@ response_string = response.choices[0].message.tool_calls[0].function.arguments
 response_json = json.loads(response_string)
 print(response_json['classifications'])
 ```
+
+# Conclusion
+
+If you'd like to play around with the source code, you can grab it from [this GitHub repository](https://github.com/monarchwadia/blog-monarchwadia.com/tree/main/_code-samples/2024-02-18-function-calling-allows-interop-with-traditional-software.md)
 
 
