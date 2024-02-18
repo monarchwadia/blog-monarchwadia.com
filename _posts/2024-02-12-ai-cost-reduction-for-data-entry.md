@@ -2,7 +2,7 @@
 title: "How Generative AI slashes data entry costs by 97% without training."
 layout: post
 date: 2024-02-12
-tags: gpt-4 ai genai generative-ai data-entry business cost calculator
+tags: gpt-4 ai genai generative-ai data-entry business cost calculator boring-ai
 toc: true
 excerpt: I show how a 97.84% reduction in unit cost of data entry can be realized using Generative AI, without custom AI model training. This is a case study along with a technical overview of architecture and implementation. 
 ---
