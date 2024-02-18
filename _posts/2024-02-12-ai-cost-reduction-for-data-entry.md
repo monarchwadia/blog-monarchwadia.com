@@ -262,6 +262,8 @@ The implementation of such technology not only promises immediate financial savi
 
 I am excited to see how this will change the way we think about data entry and classification. I hope this case study has been useful for anyone who is interested in Generative AI from a practical, cost-effective perspective.
 
+_Special thanks to my friend [Paul Wujek](https://www.linkedin.com/in/paulwujek) for his feedback and suggestions on this article._
+
 
 <script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
 <script>
