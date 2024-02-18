@@ -65,9 +65,21 @@ Generative AI is a type of AI that can understand and generate human-like text. 
 
 If we used Generative AI, this would be much faster, cheaper, and more accurate than using data entry clerks. The AI could read the articles and then classify them into one or more categories. As the categories change, the AI could be modified to understand the new categories as well.
 
-Currently, Acme Inc is not using AI for any of its projects. They believe that AI is expensive and that it requires a team of data scientists and machine learning engineers to implement. They also believe that AI is only useful for large companies like Google and Facebook. However, this is not true. AI is now accessible to small and medium-sized companies. This is because of a new type of AI called Generative AI. 
+## The unit cost advantage
 
-## The architecture of the new AI-driven system
+Unit costs are the costs associated with producing one unit of output. In this case, the unit cost is the cost of classifying one article.
+
+I have created a simple calculator below to compare the unit cost of using data entry clerks versus using Generative AI. As you can see, the unit cost of using Generative AI is much lower than that of using data entry clerks.
+
+<div id="calculator-root"></div>
+
+## Generative AI does not require specialists, and is friendly for small and medium-sized companies too.
+
+Currently, Acme Inc is not using AI for any of its projects. They believe that AI is expensive and that it requires a team of data scientists and machine learning engineers to implement. They also believe that AI is only useful for large companies like Google and Facebook. 
+
+However, this is not true. AI is now accessible to small and medium-sized companies. This is because of a new type of AI called Generative AI. 
+
+# The technical architecture of the new AI-driven system
 
 The new system will be designed to be a batch process. It will read the articles from the database, and then use a Generative AI model to classify the articles into the given categories. 
 
@@ -161,46 +173,95 @@ sequenceDiagram
 ```
 
 
-<div id="calculator-root"></div>
+# Impact of using AI in data classificaiton.
+
+In the default example above, we estimate a cost of **$10,000** At an hourly salary of $10/hour, and with an average speed of 100 articles classified per hour. On the other hand, classifying 100,000 newspaper articles using GPT-3.5 Turbo, considering the specified input and output token costs, would approximately cost **$257.50**. This demonstrates the cost-effectiveness of AI-based classification over traditional manual methods.
+
+## Cost Efficiency
+AI classification dramatically reduces costs **from $10,000 to just $257.50** (a reduction of **97.43%**), enabling significant savings and operational scaling without major budget increases.
+
+## Scalability
+AI provides scalable solutions, easily handling large datasets without the cost and time escalation seen with manual labor, essential for modern data growth.
+
+## Accuracy and Consistency
+AI delivers consistent classification once trained, ensuring dataset uniformity. However, it requires monitoring to avoid biases.
+
+## Time Savings
+AI processes 100,000 articles almost instantly, offering massive time savings over manual methods that need 1,000 hours, speeding up decision-making.
+
+## Enhanced Analysis Opportunities
+Savings from AI allow for investment in deeper data analysis, yielding richer insights and more strategic outcomes.
+
+## Workforce Shift
+Transitioning to AI classification changes workforce demands, reducing manual processing roles in favor of AI oversight, training, and maintenance.
+
+# Why is this exciting? (Apart from cost savings)
+
+This is very exciting because it's low-hanging fruit. Not only are there massive cost savings to be realized, but it could actually be very easy to do, too.
+
+* Generative AI work can be performed by web developers and software engineers.
+* There is no need to hire specialists like data scientists or machine learning engineers.
+* The code fits seamlessly into existing software built in Java, JavaScript, Python, etc.
+* There is no need for changes to CI/CD pipelines or development processes.
+
+# What kinds of teams can take advantage of this innovation?
+
+Any software development team can now use AI, regardless of which programming language they are using. This is possible through API-based AI (for example, OpenAI GPT-3.5). If your code can make API calls, it can also take advantage of cheap industrial-grade AI.
+
+# Do I need to train the AI model myself?
+
+No. The AI comes pre-trained on a broad base of source materials which allows it to understand instructions in plain human language. There is no training involved; you only have to provide clear instructions in plain text format, and the AI will do the rest.
+
+<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        mermaid.initialize({
+            startOnLoad:true,
+            theme: "default",
+        });
+        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    });
+</script>
 
 <script>
     const calculatorDom = `
-<h1>Unit Cost Savings Calculator</h1>
-<p>You can use this calculator to see how much money you could save on data entry by using AI. The calculations are based on the case study below.</p>
-<br/>
-<table>
+<table class="table">
     <tr>
-        <td>Number of Articles</td>
+        <th>Number of Articles</th>
         <td>
             <input type="range" min="1000" max="1000000" value="100000" onInput="onInputChange()" id="numArticles">
             <span id="numArticlesValue">100000</span>
         </td>
     </tr>
     <tr>
-        <td>Manual Entry Speed (articles/hour)</td>
+        <th>Manual Entry Speed (articles/hour)</th>
         <td>
             <input type="range" min="50" max="200" value="100" onInput="onInputChange()" id="manSpeed">
             <span id="manSpeedValue">100</span> articles per hour
         </td>
     </tr>
     <tr>
-        <td>Manual Entry Salary ($/hour)</td>
+        <th>Manual Entry Salary ($/hour)</th>
         <td>
             <input type="range" min="1" max="30" value="10" onInput="onInputChange()" id="manSalary">
             $<span id="manSalaryValue">10</span> per hour
         </td>
     </tr>
     <tr>
-        <td>Manual Entry Cost:</td>
-        <td><strong>$<span id="estimatedManualCost">10,000</span></strong></td>
+        <th>Manual Entry Cost:</th>
+        <td class="text-error"><strong>$<span id="estimatedManualCost">10,000</span></strong></td>
     </tr>
     <tr>
-        <td>Cost using AI:</td>
+        <th>Cost using AI:</th>
         <td><strong>$<span id="estimatedAiCost">257.50</span></strong> (Using OpenAI GPT-3.5 Turbo)</td>
     </tr>
     <tr>
-        <td>Savings Percentage:</td>
-        <td><strong><span id="estimatedPctSavings">--</span>%</strong></td>
+        <th>Savings in Dollars:</th>
+        <td class="text-success"><strong>$<span id="estimatedSavings">--</span></strong></td>
+    </tr>
+    <tr>
+        <th>Savings Percentage:</th>
+        <td class="text-success"><strong><span id="estimatedPctSavings">--</span>%</strong></td>
     </tr>
 </table>
 <div class="link float-right cursor-pointer" onClick="resetToDefaults()">Reset To Default</div>
@@ -252,62 +313,14 @@ sequenceDiagram
         document.getElementById("estimatedManualCost").innerText = manCost.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
         document.getElementById("estimatedAiCost").innerText = aiCost.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
-        const savingsPct = ((manCost - aiCost) / manCost) * 100;
+        const savings = manCost - aiCost;
+        document.getElementById("estimatedSavings").innerText = savings.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        const savingsPct = ((savings) / manCost) * 100;
         document.getElementById("estimatedPctSavings").innerText = savingsPct.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
     }
 
     document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("calculator-root").innerHTML = calculatorDom;
         onInputChange(); // Initialize with default values
-    });
-</script>
-
-# Impact of using AI in data classificaiton.
-
-In the default example above, we estimate a cost of **$10,000** At an hourly salary of $10/hour, and with an average speed of 100 articles classified per hour. On the other hand, classifying 100,000 newspaper articles using GPT-3.5 Turbo, considering the specified input and output token costs, would approximately cost **$257.50**. This demonstrates the cost-effectiveness of AI-based classification over traditional manual methods.
-
-## Cost Efficiency
-AI classification dramatically reduces costs **from $10,000 to just $257.50** (a reduction of **97.43%**), enabling significant savings and operational scaling without major budget increases.
-
-## Scalability
-AI provides scalable solutions, easily handling large datasets without the cost and time escalation seen with manual labor, essential for modern data growth.
-
-## Accuracy and Consistency
-AI delivers consistent classification once trained, ensuring dataset uniformity. However, it requires monitoring to avoid biases.
-
-## Time Savings
-AI processes 100,000 articles almost instantly, offering massive time savings over manual methods that need 1,000 hours, speeding up decision-making.
-
-## Enhanced Analysis Opportunities
-Savings from AI allow for investment in deeper data analysis, yielding richer insights and more strategic outcomes.
-
-## Workforce Shift
-Transitioning to AI classification changes workforce demands, reducing manual processing roles in favor of AI oversight, training, and maintenance.
-
-# Why is this exciting? (Apart from cost savings)
-
-This is very exciting because it's low-hanging fruit. Not only are there massive cost savings to be realized, but it could actually be very easy to do, too.
-
-* Generative AI work can be performed by web developers and software engineers.
-* There is no need to hire specialists like data scientists or machine learning engineers.
-* The code fits seamlessly into existing software built in Java, JavaScript, Python, etc.
-* There is no need for changes to CI/CD pipelines or development processes.
-
-# What kinds of teams can take advantage of this innovation?
-
-Any software development team can now use AI, regardless of which programming language they are using. This is possible through API-based AI (for example, OpenAI GPT-3.5). If your code can make API calls, it can also take advantage of cheap industrial-grade AI.
-
-# Do I need to train the AI model myself?
-
-No. The AI comes pre-trained on a broad base of source materials which allows it to understand instructions in plain human language. There is no training involved; you only have to provide clear instructions in plain text format, and the AI will do the rest.
-
-<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        mermaid.initialize({
-            startOnLoad:true,
-            theme: "default",
-        });
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
     });
 </script>

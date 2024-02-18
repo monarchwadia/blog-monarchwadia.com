@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:color";
 @import "variables";
 @import "_mixins";
 
@@ -101,6 +103,7 @@
       font-weight: bold;
       background-color: var(--color-base-300-bg);
       color: var(--color-base-300-fg);
+      border-bottom-color: adjust-color(map-get($map: $colors, $key: "base-300-bg"), $whiteness: 30%); // lighten
     }
   }
 }
