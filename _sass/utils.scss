@@ -68,6 +68,7 @@
     // ------------------------------- Sizing -------------------------------
     .h-full { height: 100%; }
     .w-full { width: 100%; }
+    .w-fit { width: fit-content; }
 
     @each $key, $val in $percentages {
         .w-#{$key} { width: #{($val*100)+"%"}; }
@@ -84,4 +85,5 @@
     // ------------------------------- Alignment -------------------------------
     .float-left { float: left; }
     .float-right { float: right; }
+
 }

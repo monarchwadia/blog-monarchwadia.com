@@ -18,7 +18,9 @@ I was doing some cost calculations for some clients who were interested in the e
 * How does the cost of using Generative AI compare to the cost of hiring a team of data entry clerks?
 * Are there any advantages to using Generative AI over traditional methods of data entry?
 
-Before doing my calculations, I had some idea about how much money could be saved using GenAI. But, to be honest, the result was so dramatic that even I was surprised. According to my calculations, a whopping **97.84% reduction in unit cost of data entry** (!!) could be realized using Generative AI, using just prompting, without any custom fine-tuning or training of models.
+Before doing my calculations, I had some idea about how much money could be saved using GenAI. But, to be honest, the result was so dramatic that even I was surprised. 
+
+According to my calculations, a whopping **97.84% reduction in unit cost of data entry** (🤯!!) could be realized using Generative AI, using just prompting, without any custom fine-tuning or training of models.
 
 I am sharing my results here in the form of a fictional case study. I hope this will be useful for anyone who is interested in the cost-effectiveness of Generative AI, especially in a data entry setting.
 
@@ -35,8 +37,6 @@ Generative AI is also inexpensive. It is much cheaper than hiring data entry cle
 # Case Study
 
 ## A new requirement for Acme News
-
-> 📖 **What is Data classification?** Data Classification is a common task in software development. It involves taking a piece of data and assigning it to one or more categories. This is a common task in many industries, including news, e-commerce, and social media.
 
 In this hypothetical scenario, Acme News is a large newspaper company. Acme's Product and Design teams have been hard at work re-designing the newspaper's main customer-facing website, which sees many millions of visitors per month.
 
@@ -65,8 +65,6 @@ Acme has previously used data entry clerks to classify the articles. From experi
 * **And it isn't flexible, either.** As more categories are added, the data entry clerks need to be re-trained for each new category, which is an additional cost.
 
 ## 🧮 Calculating the cost difference
-
-To compare the cost of using data entry clerks versus using Generative AI, we need to calculate the unit cost of each method. The unit cost is the cost associated with producing one unit of output. In this case, the unit cost is the cost of classifying one article. Then, we can compare the unit cost of using data entry clerks versus using Generative AI, and the cost savings of using Generative AI over traditional methods of data entry.
 
 I have created a simple calculator below to compare the unit cost of using data entry clerks versus using Generative AI. As you can see, the unit cost of using Generative AI is much lower than that of using data entry clerks.
 
@@ -104,19 +102,23 @@ As AI models improve, the cost of using AI will continue to decrease, while the 
 
 >💡 **Did you know:** Generative AI systems are flexible. They can be rolled into either  a **batch process** or an **API action**. AI-driven processes can read database entries, classify them, and save the new information back to the database.
 
+The implementation is straightforward. The AI model will be used to classify the articles into the given categories. The AI model will return a list of categories that it believes the article belongs to. This list will then be stored in the database.
+
 ## No need to hire new specialists
 
-Previously, AI was only feasible for large corporations like Google and Facebook. This is because AI previously required data scientists and ML engineers to implement. 
+Generative AI work can be performed by traditional web developers and software engineers. The code fits seamlessly into existing software built in Java, JavaScript, Python, etc. There are probably very few changes required to CI/CD pipelines or development processes.
 
-However, this is no longer true. Generative AI makes the power of AI accessible to small and medium-sized companies. Now, any software development team can use AI, regardless of which programming language they are using. This is possible through API-based AI (for example, OpenAI GPT-3.5). 
+Previously, AI was only feasible for large corporations like Google and Facebook. This is because AI previously required data scientists and ML engineers to implement. However, this is no longer true. Generative AI makes the power of AI accessible to small and medium-sized companies. Now, any software development team can use AI, regardless of which programming language they are using. 
 
-Acme's code is already making API calls, and so it can also take advantage of cheap industrial-grade AI.
+This is possible through API-based AI (for example, OpenAI GPT-3.5 and Claude Instant) or through open source models that can run on consumer hardware or on a relatively inexpensive server (such as Mistral 7B). 
 
-## The classification batch process
+In our case, Acme's code is already making API calls, and so it can also take advantage of cheap industrial-grade AI like OpenAI GPT-3.5. 
 
-The new system will be designed to be a simple batch process. It will read the articles from the database, and then use a Generative AI model to classify the articles into the given categories. The AI model will return a list of categories that it believes the article belongs to. This list will then be stored in the database.
+## The re-classification batch process
 
-In traditional data science terms, this is a **Document Classification** task, which falls under the broader umbrella of Data Classification. Other tasks under the Data Classification umbrella include Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
+> 📖 **What is Data classification?** Data Classification is a common task in software development. It involves taking a piece of data and assigning it to one or more categories. This is a common task in many industries, including news, e-commerce, and social media.
+
+The new re-classification system will be designed to be a simple batch process. It will read the articles from the database, and then use a Generative AI model to classify the articles into the given categories. The AI model will return a list of categories that it believes the article belongs to. This list will then be stored in the database.
 
 ```mermaid
 flowchart TD
@@ -135,6 +137,8 @@ flowchart TD
     cs-->Culture
     cs-->Entertainment
 ```
+
+## Data structures and database changes
 
 The input data is a newspaper article that already exists inside Acme's SQL database. For example, here is a sample newspaper article as retrieved from their database.
 
@@ -163,6 +167,8 @@ We need to add a new field to the database called "category" which will contain 
 ```
 
 We will write a script that will read the article from the database, and then use a Generative AI model to classify the article into one or more categories. The AI model will a list of categories that it believes the article belongs to. We will then store this list in the database.
+
+## The AI model prompt
 
 Ideally, the prompt should be a clear and concise question that the AI model can understand. It should also be a question that the AI model can answer accurately. The prompt should also be easy to understand and easy to maintain.
 
@@ -197,24 +203,52 @@ sequenceDiagram
 
 ```
 
-# Frequently Asked Questions
+## Future expansion for new categories
 
-## Why is this exciting? (Apart from cost savings)
+As the number of categories grows, the AI prompt can be easily modified to understand the new categories without additional training. The prompt can be modified to include the new categories, and the AI model will be able to understand the new categories as well.
 
-This is very exciting because it's low-hanging fruit. Not only are there massive cost savings to be realized, but it could actually be very easy to do, too.
+For example, if Acme News decides to add a new category called "Technology", the prompt can be modified to include the new category. The AI model will then be able to understand the new category as well.
 
-* Generative AI work can be performed by web developers and software engineers.
-* There is no need to hire specialists like data scientists or machine learning engineers.
-* The code fits seamlessly into existing software built in Java, JavaScript, Python, etc.
-* There is no need for changes to CI/CD pipelines or development processes.
+Here is a sample updated prompt that we could use to classify an article into the new "Technology" category:
 
-## What kinds of teams can take advantage of this innovation?
+```markdown
+There are five categories that an article can belong to: Art, Business, Culture, Entertainment, and Technology. Here are their definitions:
+
+* Art: Articles about art, including visual arts, music, and literature.
+* Business: Articles about business, including finance, economics, and entrepreneurship.
+* Culture: Articles about culture, including traditions, customs, and social issues.
+* Entertainment: Articles about entertainment, including movies, music, and television.
+* Technology: Articles about technology, including computers, software, and the internet.
+
+Please classify this article into one or more categories: Art, Business, Culture, Entertainment. Return the categories as a JSON list of strings. For example, `["art", "business"]` or `["culture"]` or `["technology", "entertainment"]`.
+
+If the article does not belong to any of these categories, please return an empty list, `[]`.
+```
+
+## Live API-driven classification
+
+In addition to the batch process, the AI model can also be used to classify articles in real-time as they are published. This can be done by creating an API endpoint that accepts an article as input, and then uses the AI model to classify the article into one or more categories. The API endpoint can then return the list of categories that the article belongs to.
+
+```mermaid
+sequenceDiagram
+    Journalist->>Server: Publish Article
+    Server->>AI: Prompt AI
+    AI->>Server: Returns Categories
+    Server->>DB: INSERT Article + Categories
+```
+
+This is a significant advantage over manual methods, which require re-training for each new category, as well as a similar lead time for re-classifying the existing articles.
+
+# Conclusion
+
+This application of Generative AI is very exciting because it's low-hanging fruit. Not only are there massive cost savings to be realized, but it is also relatively easy to do. 
+
+This is possible because modern Generative AI comes pre-trained on a broad base of source materials which allows it to understand instructions in plain human language. There is no training involved; you only have to provide clear instructions in plain text format, and the AI will do the rest. 
 
 Any software development team can now use AI, regardless of which programming language they are using. This is possible through API-based AI (for example, OpenAI GPT-3.5). If your code can make API calls, it can also take advantage of cheap industrial-grade AI.
 
-## Do I need to train the AI model myself?
+I am excited to see how this will change the way we think about data entry and classification. I hope this case study has been useful for anyone who is interested in Generative AI from a practical, cost-effective perspective.
 
-No. The AI comes pre-trained on a broad base of source materials which allows it to understand instructions in plain human language. There is no training involved; you only have to provide clear instructions in plain text format, and the AI will do the rest.
 
 <script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
 <script>

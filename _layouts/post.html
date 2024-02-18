@@ -18,8 +18,15 @@ layout: default
   </header>
 
   <div class="markdown">
-    <h1>Table of Contents</h1>
-    {{ content | toc }}
+    {%- if page.toc -%}
+      <details>
+        <summary class="btn btn-accent-200">
+          Click to see table of contents
+        </summary>
+        {% toc %}
+      </details>
+    {%- endif -%}
+    {{ content }}
     
   </div>
 
