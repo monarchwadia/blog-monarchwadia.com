@@ -231,29 +231,37 @@ No. The AI comes pre-trained on a broad base of source materials which allows it
     <tr>
         <th>Number of Articles</th>
         <td>
-            <input type="range" min="1000" max="1000000" value="100000" onInput="onInputChange()" id="numArticles">
-            <span id="numArticlesValue">100000</span>
+            <div class="flex flex-col gap-2">
+                <input class="w-full" type="range" min="1000" max="1000000" value="100000" onInput="onInputChange()" id="numArticles">
+                <p><span id="numArticlesValue">100000</span> Articles</p>
+            </div>
         </td>
     </tr>
     <tr>
         <th>Manual Entry Speed (articles/hour)</th>
         <td>
-            <input type="range" min="50" max="200" value="100" onInput="onInputChange()" id="manSpeed">
-            <span id="manSpeedValue">100</span> articles per hour
+            <div class="flex flex-col gap-2">
+                <input type="range" min="50" max="200" value="100" onInput="onInputChange()" id="manSpeed">
+                <p><span id="manSpeedValue">100</span> articles per hour</p>
+            </div>
         </td>
     </tr>
     <tr>
         <th>Manual Entry Salary ($/hour)</th>
         <td>
-            <input type="range" min="1" max="30" value="10" onInput="onInputChange()" id="manSalary">
-            $<span id="manSalaryValue">10</span> per hour
+            <div class="flex flex-col gap-2">
+                <input type="range" min="1" max="30" value="10" onInput="onInputChange()" id="manSalary">
+                <p>$<span id="manSalaryValue">10</span> per hour</p>
+            </div>
         </td>
     </tr>
     <tr>
         <th>Average Article Length (words)</th>
         <td>
-            <input type="range" min="300" max="10000" value="5000" onInput="onInputChange()" id="avgArticleLength">
-            <span id="avgArticleLengthValue">5000</span> words
+            <div class="flex flex-col gap-2">
+                <input type="range" min="300" max="10000" value="5000" onInput="onInputChange()" id="avgArticleLength">
+                <p><span id="avgArticleLengthValue">5000</span> words</p>
+            </div>
         </td>
     </tr>
     <tr>
@@ -270,17 +278,17 @@ No. The AI comes pre-trained on a broad base of source materials which allows it
         <td>
             <div>
                 <strong>$<span id="estimatedAiCost">257.50</span></strong>
-                <p class="font-italic opacity-4">($<span id="aiPerArticleCost">--</span> per article)</p>
+                <p class="font-italic opacity-4">($<span id="aiPerArticleCost">--</span> per article, using OpenAI GPT-3.5)</p>
             </div>
         </td>
     </tr>
     <tr>
         <th>Savings in Dollars:</th>
-        <td class="text-success"><strong>$<span id="estimatedSavings">--</span></strong></td>
+        <td class="text-success"><strong class="text-5">$<span id="estimatedSavings">--</span></strong></td>
     </tr>
     <tr>
         <th>Savings Percentage:</th>
-        <td class="text-success"><strong><span id="estimatedPctSavings">--</span>%</strong></td>
+        <td class="text-success"><strong class="text-5"><span id="estimatedPctSavings">--</span>%</strong></td>
     </tr>
 </table>
 <div class="link float-right cursor-pointer" onClick="resetToDefaults()">Reset To Default</div>
@@ -290,6 +298,7 @@ No. The AI comes pre-trained on a broad base of source materials which allows it
         document.getElementById("numArticles").value = 100000;
         document.getElementById("manSpeed").value = 100;
         document.getElementById("manSalary").value = 10;
+        document.getElementById("avgArticleLength").value = 5000;
         onInputChange();
     }
 
