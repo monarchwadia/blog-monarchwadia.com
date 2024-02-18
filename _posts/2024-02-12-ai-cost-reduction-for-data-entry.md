@@ -6,13 +6,15 @@ tags: gpt-4 ai genai generative-ai data-entry business cost calculator
 excerpt: According to my calculations, a whopping 97.43% reduction in unit cost of data entry can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model’s behaviour). This is very exciting, because prompting is very cost efficient, comparable to traditional software development methods.
 ---
 
-I was doing a few back-of-the-napkin calculations for some business clients about how cost-effective generative AI could be in their project. According to my calculations, a whopping **97.43% reduction in unit cost of data entry** could be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model's behaviour). 
+I was doing a few back-of-the-napkin calculations for some business clients about how cost-effective generative AI could be in their project. 
 
-I wanted to share my thoughts using a concrete fictional example. There is also a simple calculator embedded inside this case study for folks who are interested in playing around with the numbers.
+According to my calculations, a whopping **97.43% reduction in unit cost of data entry** could be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model's behaviour). 
 
-# Concrete scenario: Newspaper Article Reclassification
+I wanted to share my thoughts using a concrete example. There is also a simple calculator embedded inside this case study for folks who are interested in playing around with the numbers.
 
-In this fictional scenario, we will take on the role of the software engineering department of a large online newspaper. We have just received a request for a new feature which requires manual data entry on an ongoing basis. 
+# The Scenario: Newspaper Article Reclassification
+
+In this hypothetical scenario, we will take on the role of the software engineering department of a large online newspaper. We have just received a request for a new feature which requires manual data entry on an ongoing basis. 
 
 I will first describe this new feature request. Then, I will show how this task could be completed by humans; and then show how we can write code to complete this task, and finally compare the two approaches side by side.
 
@@ -29,13 +31,65 @@ Part of the redesign involves a Proof of Concept for a brand new "category" filt
 
 _(In reality, we could have 100's of categories. This is also feasible and does not make a huge difference for the AI. In this example, I'm going to keep things simple with just 4 categories)_
 
-## Analysis of the data
+
+### Diagram of the new system to be designed
+
+![UML diagram showing 100,000 newspaper articles being classified by a classification system into the categories "Art", "Business", "Culture" and "Entertainment".](/assets/2024-02-12-ai-cost-reduction-for-data-entry-puml.png)
+
+### What kind of task is this?
 
 This is a **Document Classification** task, which falls under the broader umbrella of Data Classification. Other tasks under the Data Classification umbrella include Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
 
-Looking at the database, we discover approximately 100,000 articles from the past 10 years that we will have to reclassify.
+### What is the source data format?
 
-![UML diagram showing 100,000 newspaper articles being classified by a classification system into the categories "Art", "Business", "Culture" and "Entertainment".](/assets/2024-02-12-ai-cost-reduction-for-data-entry-puml.png)
+The input data is a newspaper article that already exists inside Acme's SQL database. For example, here is a sample newspaper article as retrieved from their database.
+
+```json
+{
+  "title": "The Renaissance of Artisan Crafts in the Digital Age",
+  "author": "Jordan Lee",
+  "date_published": "2024-02-17",
+  "category": "Art & Business",
+  "tags": ["Artisan Crafts", "Digital Marketplace", "Cultural Preservation"],
+  "content": "In an era dominated by mass production and digital technology, there's a growing movement towards the renaissance of artisan crafts, blending tradition with innovation....."
+}
+```
+
+### What do we need to do with the source data?
+
+We need to add a new field to the database called "category" which will contain an array of strings. Each string will represent a category that the article belongs to. For example, the above article could be classified as "business" and "culture."
+
+```js
+{
+    "title": "The Renaissance of Artisan Crafts in the Digital Age",
+    "author": "Jordan Lee",
+    // ... etc
+    "category": ["art", "business"] // this is a new JSON field
+}
+```
+
+### How will we do this?
+
+We will write a script that will read the article from the database, and then use a Generative AI model to classify the article into one or more categories. The AI model will a list of categories that it believes the article belongs to. We will then store this list in the database.
+
+### What should the prompt look like?
+
+Ideally, the prompt should be a clear and concise question that the AI model can understand. It should also be a question that the AI model can answer accurately. The prompt should also be easy to understand and easy to maintain.
+
+Here is an example of a prompt that we could use:
+
+```markdown
+There are four categories that an article can belong to: Art, Business, Culture, and Entertainment. Here are their definitions:
+
+* Art: Articles about art, including visual arts, music, and literature.
+* Business: Articles about business, including finance, economics, and entrepreneurship.
+* Culture: Articles about culture, including traditions, customs, and social issues.
+* Entertainment: Articles about entertainment, including movies, music, and television.
+
+Please classify this article into one or more categories: Art, Business, Culture, Entertainment. Return the categories as a JSON list of strings. For example, `["art", "business"]` or `["culture"]`.
+
+If the article does not belong to any of these categories, please return an empty list, `[]`.
+```
 
 <div id="calculator-root"></div>
 

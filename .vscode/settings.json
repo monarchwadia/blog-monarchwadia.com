@@ -1,4 +1,7 @@
 {
     "editor.formatOnSave": false,
-    "html.format.enable": false
+    "html.format.enable": false,
+    "github.copilot.enable": {
+        "markdown": "true"
+    }
 }
