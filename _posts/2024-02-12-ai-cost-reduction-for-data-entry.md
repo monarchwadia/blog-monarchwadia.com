@@ -1,10 +1,10 @@
 ---
-title: "Generative AI slashes data entry costs by 97% without model training or fine-tuning. Here's how."
+title: "How Generative AI slashes data entry costs by 97% without training."
 layout: post
 date: 2024-02-12
 tags: gpt-4 ai genai generative-ai data-entry business cost calculator
 toc: true
-excerpt: According to my calculations, a whopping 97.84% reduction in unit cost of data entry can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model’s behaviour). This is very exciting, because prompting is very cost efficient, comparable to traditional software development methods.
+excerpt: I show how a 97.84% reduction in unit cost of data entry can be realized using Generative AI, without custom AI model training. This is a case study along with a technical overview of architecture and implementation. 
 ---
 
 # Introduction
@@ -20,7 +20,7 @@ I was doing some cost calculations for some clients who were interested in the e
 
 Before doing my calculations, I had some idea about how much money could be saved using GenAI. But, to be honest, the result was so dramatic that even I was surprised. 
 
-According to my calculations, a whopping **97.84% reduction in unit cost of data entry** (🤯!!) could be realized using Generative AI, using just prompting, without any custom fine-tuning or training of models.
+According to my calculations, a whopping **97.84% reduction in unit cost of data entry** (!!) could be realized using Generative AI, using just prompting, without any custom fine-tuning or training of models.
 
 I am sharing my results here in the form of a fictional case study. I hope this will be useful for anyone who is interested in the cost-effectiveness of Generative AI, especially in a data entry setting.
 
@@ -98,7 +98,7 @@ Transitioning to AI classification changes workforce demands, reducing manual pr
 
 As AI models improve, the cost of using AI will continue to decrease, while the cost of using data entry clerks will continue to increase. This is because the cost of using AI is based on the cost of computing power, which is decreasing, while the cost of using data entry clerks is based on the cost of labor, which is increasing.
 
-# The technical architecture of the new AI-driven system
+# Technical Implementation
 
 >💡 **Did you know:** Generative AI systems are flexible. They can be rolled into either  a **batch process** or an **API action**. AI-driven processes can read database entries, classify them, and save the new information back to the database.
 
@@ -241,11 +241,9 @@ This is a significant advantage over manual methods, which require re-training f
 
 # Conclusion
 
-This application of Generative AI is very exciting because it's low-hanging fruit. Not only are there massive cost savings to be realized, but it is also relatively easy to do. 
+This exploration into Generative AI's application for data entry reveals a transformative potential for cost, efficiency, and scalability across various industries. This case study demonstrates that by leveraging pre-trained AI models, businesses can achieve a staggering 97.84% reduction in data entry costs without the need for specialized AI training or expertise. 
 
-This is possible because modern Generative AI comes pre-trained on a broad base of source materials which allows it to understand instructions in plain human language. There is no training involved; you only have to provide clear instructions in plain text format, and the AI will do the rest. 
-
-Any software development team can now use AI, regardless of which programming language they are using. This is possible through API-based AI (for example, OpenAI GPT-3.5). If your code can make API calls, it can also take advantage of cheap industrial-grade AI.
+The implementation of such technology not only promises immediate financial savings but also introduces a new paradigm in how we approach data processing tasks. It underscores the accessibility of advanced AI solutions to a broader range of businesses, including those without in-house AI expertise. The case of Acme News illustrates a practical application, showcasing the seamless integration of Generative AI into existing systems to streamline operations and future-proof against the increasing demands of data management. 
 
 I am excited to see how this will change the way we think about data entry and classification. I hope this case study has been useful for anyone who is interested in Generative AI from a practical, cost-effective perspective.
 
