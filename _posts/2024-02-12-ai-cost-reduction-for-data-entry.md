@@ -4,7 +4,7 @@ layout: post
 date: 2024-02-12
 tags: gpt-4 ai genai generative-ai data-entry business cost calculator
 toc: true
-excerpt: According to my calculations, a whopping 97.43% reduction in unit cost of data entry can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model’s behaviour). This is very exciting, because prompting is very cost efficient, comparable to traditional software development methods.
+excerpt: According to my calculations, a whopping 97.84% reduction in unit cost of data entry can be realized using Generative AI, without any custom fine-tuning or training of models (i.e. through using just prompts to guide the model’s behaviour). This is very exciting, because prompting is very cost efficient, comparable to traditional software development methods.
 ---
 
 # Introduction
@@ -18,9 +18,19 @@ I was doing some cost calculations for some clients who were interested in the e
 * How does the cost of using Generative AI compare to the cost of hiring a team of data entry clerks?
 * Are there any advantages to using Generative AI over traditional methods of data entry?
 
-Before doing my calculations, I had some idea about how much money could be saved using GenAI. But, to be honest, the result was so dramatic that even I was surprised. According to my calculations, a whopping **97.43% reduction in unit cost of data entry** (!!) could be realized using Generative AI, using just prompting, without any custom fine-tuning or training of models.
+Before doing my calculations, I had some idea about how much money could be saved using GenAI. But, to be honest, the result was so dramatic that even I was surprised. According to my calculations, a whopping **97.84% reduction in unit cost of data entry** (!!) could be realized using Generative AI, using just prompting, without any custom fine-tuning or training of models.
 
 I am sharing my results here in the form of a fictional case study. I hope this will be useful for anyone who is interested in the cost-effectiveness of Generative AI, especially in a data entry setting.
+
+# What is Generative AI?
+
+Before we dive into the case study, let's take a moment to understand what Generative AI is.
+
+Generative AI is a type of AI that can understand and generate human-like text. It can be used to perform a wide range of tasks, including data entry. It is also very cost-effective, as **it does not require a team of data scientists and machine learning engineers to implement.** 
+
+There are also no training costs, as the AI comes pre-trained on a broad base of source materials. You only have to provide clear instructions in plain text format, and the AI will do the rest. It is very scalable and flexible as a result.
+
+Generative AI is also inexpensive. It is much cheaper than hiring data entry clerks. For a single article, the cost of using Generative AI is only a few cents.
 
 # Case Study
 
@@ -54,23 +64,19 @@ Acme has previously used data entry clerks to classify the articles. From experi
 * **This process is not scalable.** As the number of categories grows, it requires a re-classification of all the old articles for each new category. This is a significant amount of work, and it is also expensive.
 * **And it isn't flexible, either.** As more categories are added, the data entry clerks need to be re-trained for each new category, which is an additional cost.
 
-## Generative AI to the rescue
+## 🧮 Calculating the cost difference
 
-Generative AI is a type of AI that can understand and generate human-like text. It can be used to perform a wide range of tasks, including data entry. It is also very cost-effective, as **it does not require a team of data scientists and machine learning engineers to implement.** There are also no training costs, as the AI comes pre-trained on a broad base of source materials. You only have to provide clear instructions in plain text format, and the AI will do the rest.
+To compare the cost of using data entry clerks versus using Generative AI, we need to calculate the unit cost of each method. The unit cost is the cost associated with producing one unit of output. In this case, the unit cost is the cost of classifying one article. Then, we can compare the unit cost of using data entry clerks versus using Generative AI, and the cost savings of using Generative AI over traditional methods of data entry.
 
-If we used Generative AI, this would be much faster, cheaper, and more accurate than using data entry clerks. The AI could read the articles and then classify them into one or more categories. As the categories change, the AI could be modified to understand the new categories as well.
+I have created a simple calculator below to compare the unit cost of using data entry clerks versus using Generative AI. As you can see, the unit cost of using Generative AI is much lower than that of using data entry clerks.
 
 <div id="calculator-root"></div>
 
-# Impact of using AI in data classificaiton.
+As we can see, if we used Generative AI, this would be much faster, cheaper, and more accurate than using data entry clerks. The AI could read the articles and then classify them into one or more categories. As the categories change, the AI could be modified to understand the new categories as well.
+
+# Impact of using AI in data classification.
 
 >💡 **Did you know:** Most commercial Generative AI projects **do not require data scientists or ML engineers**. Thanks to prompting, traditional web developers and software engineers can easily and cost-effectively implement AI-driven processes without the need for ML/AI specialists.
-
-## 🧮 Calculating the cost difference
-
-Unit costs are the costs associated with producing one unit of output. In this case, the unit cost is the cost of classifying one article.
-
-I have created a simple calculator below to compare the unit cost of using data entry clerks versus using Generative AI. As you can see, the unit cost of using Generative AI is much lower than that of using data entry clerks.
 
 ## Analysis of the cost difference
 
@@ -79,7 +85,7 @@ In the default example above, we estimate a cost of **$10,000** At an hourly sal
 ## Advantages of using AI for data classification
 
 ### Cost Efficiency
-AI classification dramatically reduces costs **from $10,000 to just $257.50** (a reduction of **97.43%**), enabling significant savings and operational scaling without major budget increases.
+AI classification dramatically reduces costs **from $10,000 to just $257.50** (a reduction of **97.84%**), enabling significant savings and operational scaling without major budget increases.
 
 ### Scalability
 AI provides scalable solutions, easily handling large datasets without the cost and time escalation seen with manual labor, essential for modern data growth.
@@ -244,12 +250,29 @@ No. The AI comes pre-trained on a broad base of source materials which allows it
         </td>
     </tr>
     <tr>
-        <th>Manual Entry Cost:</th>
-        <td class="text-error"><strong>$<span id="estimatedManualCost">10,000</span></strong></td>
+        <th>Average Article Length (words)</th>
+        <td>
+            <input type="range" min="300" max="10000" value="5000" onInput="onInputChange()" id="avgArticleLength">
+            <span id="avgArticleLengthValue">5000</span> words
+        </td>
     </tr>
     <tr>
-        <th>Cost using AI:</th>
-        <td><strong>$<span id="estimatedAiCost">257.50</span></strong> (Using OpenAI GPT-3.5 Turbo)</td>
+        <th>Total Manual Cost:</th>
+        <td>
+            <div>
+                <strong class="text-error">$<span id="estimatedManualCost">10,000</span></strong>
+                <p class="font-italic opacity-4">($<span id="manPerArticleCost">--</span> per article)</p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Total Cost Using AI:</th>
+        <td>
+            <div>
+                <strong>$<span id="estimatedAiCost">257.50</span></strong>
+                <p class="font-italic opacity-4">($<span id="aiPerArticleCost">--</span> per article)</p>
+            </div>
+        </td>
     </tr>
     <tr>
         <th>Savings in Dollars:</th>
@@ -283,9 +306,10 @@ No. The AI comes pre-trained on a broad base of source materials which allows it
 
     function calculateAiCost() {
         const numArticles = parseInt(document.getElementById("numArticles").value, 10);
+        const avgArticleLength = parseInt(document.getElementById("avgArticleLength").value, 10);
 
-        const averageInputLength = 5000;
-        const totalInputTokens = numArticles * averageInputLength;
+        const AVG_TOKENS_PER_WORD = 1.2;
+        const totalInputTokens = (numArticles * avgArticleLength) / AVG_TOKENS_PER_WORD;
         const averageInputCostPer1000Tokens = 0.0005;
         const inputCost = averageInputCostPer1000Tokens * (totalInputTokens / 1000);
 
@@ -303,11 +327,14 @@ No. The AI comes pre-trained on a broad base of source materials which allows it
         document.getElementById("numArticlesValue").innerText = document.getElementById("numArticles").value;
         document.getElementById("manSpeedValue").innerText = document.getElementById("manSpeed").value;
         document.getElementById("manSalaryValue").innerText = document.getElementById("manSalary").value.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById("avgArticleLengthValue").innerText = document.getElementById("avgArticleLength").value;
         
         const manCost = calculateManualCost();
         const aiCost = calculateAiCost();
         document.getElementById("estimatedManualCost").innerText = manCost.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
         document.getElementById("estimatedAiCost").innerText = aiCost.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById("manPerArticleCost").innerText = (manCost / parseInt(document.getElementById("numArticles").value, 10)).toLocaleString("en-US", {minimumFractionDigits: 3, maximumFractionDigits: 3});
+        document.getElementById("aiPerArticleCost").innerText = (aiCost / parseInt(document.getElementById("numArticles").value, 10)).toLocaleString("en-US", {minimumFractionDigits: 4, maximumFractionDigits: 4});
 
         const savings = manCost - aiCost;
         document.getElementById("estimatedSavings").innerText = savings.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});

@@ -8,6 +8,7 @@
     
     .font-bold { font-weight: bold; }
     .font-italic { font-style: italic; }
+    .underline { text-decoration: underline; }
     
     html {
         font-family: 'Archivo', sans-serif;
@@ -36,5 +37,4 @@
         &.list-disc { list-style-type: disc; }
         &.list-decimal { list-style-type: decimal; }
     }
-
 }
