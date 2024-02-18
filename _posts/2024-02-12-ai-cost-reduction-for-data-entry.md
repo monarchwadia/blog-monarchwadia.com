@@ -78,41 +78,43 @@ As we can see, if we used Generative AI, this would be much faster, cheaper, and
 
 >💡 **Did you know:** Most commercial Generative AI projects **do not require data scientists or ML engineers**. Thanks to prompting, traditional web developers and software engineers can easily and cost-effectively implement AI-driven processes without the need for ML/AI specialists.
 
-## Analysis of the cost difference
-
-In the default example above, we estimate a cost of **$10,000** At an hourly salary of $10/hour, and with an average speed of 100 articles classified per hour. On the other hand, classifying 100,000 newspaper articles using GPT-3.5 Turbo, considering the specified input and output token costs, would approximately cost **$257.50**. This demonstrates the cost-effectiveness of AI-based classification over traditional manual methods.
-
-## Advantages of using AI for data classification
+## Analysis of Advantages of using AI for data classification
 
 ### Cost Efficiency
-AI classification dramatically reduces costs **from $10,000 to just $257.50** (a reduction of **97.84%**), enabling significant savings and operational scaling without major budget increases.
 
-### Scalability
-AI provides scalable solutions, easily handling large datasets without the cost and time escalation seen with manual labor, essential for modern data growth.
+In the default example above, we estimate a cost of **$10,000** At an hourly salary of $10/hour, and with an average speed of 100 articles classified per hour. On the other hand, classifying 100,000 newspaper articles using GPT-3.5 Turbo, considering the specified input and output token costs, would approximately cost **$215.83**. This demonstrates the cost-effectiveness of AI-based classification over traditional manual methods.
 
-### Accuracy and Consistency
-AI delivers consistent classification once trained, ensuring dataset uniformity. However, it requires monitoring to avoid biases.
+### Speed and time savings
 
-### Time Savings
-AI processes 100,000 articles almost instantly, offering massive time savings over manual methods that need 1,000 hours, speeding up decision-making.
+The time savings are also significant. The AI processes 100,000 articles **almost instantly** (within a matter of hours when parallelized properly), offering massive time savings over manual methods. This is especially important for Acme News, as the new feature cannot be launched until all 100,000 articles have been classified.
 
-### Enhanced Analysis Opportunities
-Savings from AI allow for investment in deeper data analysis, yielding richer insights and more strategic outcomes.
+### Scalability & Flexibility
+
+As the number of categories grows, the AI prompt can be easily modified to understand the new categories without additional training, making it a flexible solution for future expansion. Also, since the AI can re-classify the existing 100,000+ articles almost instantly, it is a scalable solution for future growth. This is a significant advantage over manual methods, which require re-training for each new category, as well as a similar lead time for re-classifying the existing articles.
 
 ### Workforce Shift
-Transitioning to AI classification changes workforce demands, reducing manual processing roles in favor of AI oversight, training, and maintenance.
+
+Transitioning to AI classification changes workforce demands, reducing manual processing roles in favor of AI oversight, training, and maintenance. This is a significant advantage for Acme News, as it reduces the need for manual data entry clerks, and the associated costs of hiring, training, and re-training.
+
+### Future-proofing
+
+As AI models improve, the cost of using AI will continue to decrease, while the cost of using data entry clerks will continue to increase. This is because the cost of using AI is based on the cost of computing power, which is decreasing, while the cost of using data entry clerks is based on the cost of labor, which is increasing.
 
 # The technical architecture of the new AI-driven system
 
 >💡 **Did you know:** Generative AI systems are flexible. They can be rolled into either  a **batch process** or an **API action**. AI-driven processes can read database entries, classify them, and save the new information back to the database.
 
-Currently, Acme Inc is not using AI for any of its projects. They believe that AI is expensive and that it requires a team of data scientists and machine learning engineers to implement. They also believe that AI is only useful for large companies like Google and Facebook. 
+## No need to hire new specialists
 
-However, this is not true. AI is now accessible to small and medium-sized companies. This is because of a new type of AI called Generative AI. 
+Previously, AI was only feasible for large corporations like Google and Facebook. This is because AI previously required data scientists and ML engineers to implement. 
 
-The new system will be designed to be a simple batch process. It will read the articles from the database, and then use a Generative AI model to classify the articles into the given categories. 
+However, this is no longer true. Generative AI makes the power of AI accessible to small and medium-sized companies. Now, any software development team can use AI, regardless of which programming language they are using. This is possible through API-based AI (for example, OpenAI GPT-3.5). 
 
-The AI model will return a list of categories that it believes the article belongs to. This list will then be stored in the database.
+Acme's code is already making API calls, and so it can also take advantage of cheap industrial-grade AI.
+
+## The classification batch process
+
+The new system will be designed to be a simple batch process. It will read the articles from the database, and then use a Generative AI model to classify the articles into the given categories. The AI model will return a list of categories that it believes the article belongs to. This list will then be stored in the database.
 
 In traditional data science terms, this is a **Document Classification** task, which falls under the broader umbrella of Data Classification. Other tasks under the Data Classification umbrella include Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
 
@@ -277,7 +279,7 @@ No. The AI comes pre-trained on a broad base of source materials which allows it
         <th>Total Cost Using AI:</th>
         <td>
             <div>
-                <strong>$<span id="estimatedAiCost">257.50</span></strong>
+                <strong>$<span id="estimatedAiCost">215.83</span></strong>
                 <p class="font-italic opacity-4">($<span id="aiPerArticleCost">--</span> per article, using OpenAI GPT-3.5)</p>
             </div>
         </td>
