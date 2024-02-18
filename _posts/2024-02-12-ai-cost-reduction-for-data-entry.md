@@ -28,9 +28,9 @@ I am sharing my results here in the form of a fictional case study. I hope this 
 
 Before we dive into the case study, let's take a moment to understand what Generative AI is.
 
-Generative AI is a type of AI that can understand and generate human-like text. It can be used to perform a wide range of tasks, including data entry. It is also very cost-effective, as **it does not require a team of data scientists and machine learning engineers to implement.** 
+Generative AI is a type of AI that can understand and generate human-like text. It can be used to perform a wide range of tasks, including data entry. It is also very cost-effective, as **it does not require a team of data scientists and machine learning engineers to use.** Instead, there are many AI models that are open source or, even more simple, made available by 3rd party vendors over API.
 
-There are also no training costs, as the AI comes pre-trained on a broad base of source materials. You only have to provide clear instructions in plain text format, and the AI will do the rest. It is very scalable and flexible as a result.
+Because these AI models come pre-trained on a broad base of source materials, they are very simple to use. You only have to provide clear instructions in plain text format, and the AI will do the rest. It is very scalable and flexible as a result. This also means that there are no training costs involved.
 
 Generative AI is also inexpensive. It is much cheaper than hiring data entry clerks. For a single article, the cost of using Generative AI is only a few cents.
 
@@ -72,6 +72,10 @@ I have created a simple calculator below to compare the unit cost of using data 
 
 As we can see, if we used Generative AI, this would be much faster, cheaper, and more accurate than using data entry clerks. The AI could read the articles and then classify them into one or more categories. As the categories change, the AI could be modified to understand the new categories as well.
 
+***Note:** The data entry costs are assumptions, but the actual costs don't matter for this comparison since the difference is so great.*
+
+***Also worth noting:** There is a cost for building the system that loads the articles into the AI and saves the classifications to the DB. This is not included in the calculator, but it is likely to be a one-time cost based on implementation effort.*
+
 # Impact of using AI in data classification.
 
 >💡 **Did you know:** Most commercial Generative AI projects **do not require data scientists or ML engineers**. Thanks to prompting, traditional web developers and software engineers can easily and cost-effectively implement AI-driven processes without the need for ML/AI specialists.
@@ -84,15 +88,15 @@ In the default example above, we estimate a cost of **$10,000** At an hourly sal
 
 ### Speed and time savings
 
-The time savings are also significant. The AI processes 100,000 articles **almost instantly** (within a matter of hours when parallelized properly), offering massive time savings over manual methods. This is especially important for Acme News, as the new feature cannot be launched until all 100,000 articles have been classified.
+The time savings are also significant. The AI processes 100,000 articles **within a handful of hours** when parallelized properly, offering massive time savings over manual methods. This is especially important for Acme News, as the new feature cannot be launched until all 100,000 articles have been classified.
 
 ### Scalability & Flexibility
 
-As the number of categories grows, the AI prompt can be easily modified to understand the new categories without additional training, making it a flexible solution for future expansion. Also, since the AI can re-classify the existing 100,000+ articles almost instantly, it is a scalable solution for future growth. This is a significant advantage over manual methods, which require re-training for each new category, as well as a similar lead time for re-classifying the existing articles.
+As the number of categories grows, the AI prompt can be easily modified to understand the new categories without additional training, making it a flexible solution for future expansion. Also, since the AI can re-classify the existing 100,000+ articles almost instantly (i.e. potentially within a handful of hours, when parallelized properly), it is a scalable solution for future growth. This is a significant advantage over manual methods, which require re-training for each new category, as well as a similar lead time for re-classifying the existing articles.
 
 ### Workforce Shift
 
-Transitioning to AI classification changes workforce demands, reducing manual processing roles in favor of AI oversight, training, and maintenance. This is a significant advantage for Acme News, as it reduces the need for manual data entry clerks, and the associated costs of hiring, training, and re-training.
+Transitioning to AI classification changes workforce demands, reducing manual processing roles in favor of software engineers. This is a significant advantage for Acme News, as it allows them to use their existing software development team to implement the AI-driven process. There is no need for specialized AI expertise, and the code fits seamlessly into existing software built in Java, JavaScript, Python, etc.
 
 ### Future-proofing
 
@@ -102,7 +106,9 @@ As AI models improve, the cost of using AI will continue to decrease, while the 
 
 >💡 **Did you know:** Generative AI systems are flexible. They can be rolled into either  a **batch process** or an **API action**. AI-driven processes can read database entries, classify them, and save the new information back to the database.
 
-The implementation is straightforward. The AI model will be used to classify the articles into the given categories. The AI model will return a list of categories that it believes the article belongs to. This list will then be stored in the database.
+The implementation is straightforward for any software engineer with prompt engineering skills. Without prompt engineering skills, there is a learning curve, but it is not as steep as traditional education in AI/ML skills.
+
+The AI model will be used to classify the articles into the given categories. The AI model will return a list of categories that it believes the article belongs to. This list will then be stored in the database, which will require a new field to store the categories.
 
 ## No need to hire new specialists
 
@@ -112,7 +118,7 @@ Previously, AI was only feasible for large corporations like Google and Facebook
 
 This is possible through API-based AI (for example, OpenAI GPT-3.5 and Claude Instant) or through open source models that can run on consumer hardware or on a relatively inexpensive server (such as Mistral 7B). 
 
-In our case, Acme's code is already making API calls, and so it can also take advantage of cheap industrial-grade AI like OpenAI GPT-3.5. 
+In our case, Acme's code is (probably) already making API calls for external integrations, and so the skillset (probably) already exists in the team. Therefore, Acme can easily take advantage of cheap industrial-grade AI over APIs, like OpenAI GPT-3.5. 
 
 ## The re-classification batch process
 
@@ -155,6 +161,8 @@ The input data is a newspaper article that already exists inside Acme's SQL data
 ```
 
 We need to add a new field to the database called "category" which will contain an array of strings. Each string will represent a category that the article belongs to. For example, the above article could be classified as "business" and "culture."
+
+***Note:** It might be a better idea to create a separate table for categories and then link the articles to the categories. This would follow the principles of database normalization and would make it easier to add new categories in the future. But for simplicity, we will use a single table for this example.*
 
 ```js
 // changes to the database
@@ -238,6 +246,13 @@ sequenceDiagram
 ```
 
 This is a significant advantage over manual methods, which require re-training for each new category, as well as a similar lead time for re-classifying the existing articles.
+
+# What are the gotchas?
+
+* **Accuracy:** The AI model may not always classify the articles correctly. It is important to have a human review process in place to catch any mistakes made by the AI model.
+* **Implementation Cost:** Integrating with an AI requires software engineering work. It is important to calculate the cost of using the AI model before deciding to use it.
+* **Advanced use cases require skill:** Prompt design and understanding of the AI model's capabilities are important. This skill is not as common as traditional software engineering skills.
+
 
 # Conclusion
 
