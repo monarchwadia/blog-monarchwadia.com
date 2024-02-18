@@ -52,7 +52,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-plantuml
-
+  - jekyll-toc
 
 settings:
   date_format: "%b %-d, %Y"

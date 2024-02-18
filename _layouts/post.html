@@ -18,7 +18,9 @@ layout: default
   </header>
 
   <div class="markdown">
-    {{ content }}
+    <h1>Table of Contents</h1>
+    {{ content | toc }}
+    
   </div>
 
   <!-- {# I could add links to various discussions here (i.e. Reddit, Hacker News, etc). I could specify these in the post's

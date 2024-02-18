@@ -43,3 +43,5 @@ gem 'jekyll-seo-tag'
 # for plantuml
 
 gem "jekyll-plantuml"
+
+gem 'jekyll-toc'

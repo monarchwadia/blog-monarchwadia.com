@@ -68,6 +68,12 @@
       margin: 1.5rem 0;
     }
 
+    .section-nav {
+      a {
+        color: inherit;
+      }
+    }
+
     .highlighter-rouge {
       border-radius: 5px;
       font-family: "Fira Code", "Source Code Pro", "Consolas", "Inconsolata", "Courier New", "monospace";
