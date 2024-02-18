@@ -31,14 +31,69 @@ Part of the redesign involves a Proof of Concept for a brand new "category" filt
 
 _(In reality, we could have 100's of categories. This is also feasible and does not make a huge difference for the AI. In this example, I'm going to keep things simple with just 4 categories)_
 
+## The problem: We need to classify 100,000 newspaper old articles, and continuously classify new articles as they are published.
+
+There's just one problem. The four categories presented above are brand new, and the newspaper's database contains 100,000 past articles that need to be classified into one or more of these four new categories.
+
+Furthermore, new articles will be added to the database every day, and these will also need to be classified into one or more of these four new categories.
+
+## The current process: Manual data entry
+
+Acme has previously built features that require data entry. Each time, they have hired a team of data entry clerks to manually read each article and then enter the categories into the database. When a new article is published, the data entry clerks are responsible for classifying the article into one or more categories.
+
+## Disadvantages of the current process
+
+From experience, this has a few disadvantages: 
+
+* **Slow.** It takes a long time to read each article and then enter the categories into the database. This is a bottleneck for the project, since the new feature cannot be launched until all 100,000 articles have been classified.
+* **Expensive.** The data entry clerks are paid by the hour, and the cost of hiring them adds up quickly. When a clerk leaves and a new one is hired, there is also a cost associated with training the new clerk.
+* **Error-prone.** The data entry clerks are human, and they can make mistakes. This can lead to incorrect categorization of articles. This is especially problematic when the categories change, as the data entry clerks need to be re-trained.
+* **Not scalable.** As the number of articles grows, the cost of hiring data entry clerks grows too. This is a problem for Acme, as they are planning to grow their database to 1,000,000 articles in the next 12 months.
+* **Not flexible.** If the categories change, the data entry clerks need to be re-trained. 
+
+The current process for classifying articles is manual. A team of data entry clerks are responsible for reading each article and then manually entering the categories into the database.
+
+## Exploring AI-based data entry
+
+Someone suggests that we could use AI to classify the articles. This would be much faster, cheaper, and more accurate than using data entry clerks. The AI could read the articles and then classify them into one or more categories. As the categories change, the AI could be modified to understand the new categories as well.
+
+## Busting the myth: AI is not expensive
+
+Currently, Acme Inc is not using AI for any of its projects. They believe that AI is expensive and that it requires a team of data scientists and machine learning engineers to implement. They also believe that AI is only useful for large companies like Google and Facebook.
+
+However, this is not true. AI is now accessible to small and medium-sized companies. This is because of a new type of AI called Generative AI. 
+
+## What is Generative AI?
+
+Generative AI is a type of AI that can understand and generate human-like text. It can be used to perform a wide range of tasks, including data entry. It is also very cost-effective, as it does not require a team of data scientists and machine learning engineers to implement. There are also no training costs, as the AI comes pre-trained on a broad base of source materials. You only have to provide clear instructions in plain text format, and the AI will do the rest.
+
+## The architecture of the new AI-driven system
+
+The new system will be designed to be a batch process. It will read the articles from the database, and then use a Generative AI model to classify the articles into the given categories. 
+
+The AI model will return a list of categories that it believes the article belongs to. This list will then be stored in the database.
+
+In traditional data science terms, this is a **Document Classification** task, which falls under the broader umbrella of Data Classification. Other tasks under the Data Classification umbrella include Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
 
 ### Diagram of the new system to be designed
 
-![UML diagram showing 100,000 newspaper articles being classified by a classification system into the categories "Art", "Business", "Culture" and "Entertainment".](/assets/2024-02-12-ai-cost-reduction-for-data-entry-puml.png)
+```mermaid
+flowchart TD
+    subgraph "Categories"
+        Art
+        Business
+        Culture
+        Entertainment
+    end
 
-### What kind of task is this?
+    db[(SQL DB with 100,000 \n Newspaper Articles)]-->article{Newspaper Article}
+    article["Newspaper Article"]-->cs{AI-based \n Classification System}
 
-This is a **Document Classification** task, which falls under the broader umbrella of Data Classification. Other tasks under the Data Classification umbrella include Named Entity Recognition (NER), Sentiment Analysis, and Intent Recognition.
+    cs-->Art
+    cs-->Business
+    cs-->Culture
+    cs-->Entertainment
+```
 
 ### What is the source data format?
 
@@ -230,3 +285,14 @@ Any software development team can now use AI, regardless of which programming la
 # Do I need to train the AI model myself?
 
 No. The AI comes pre-trained on a broad base of source materials which allows it to understand instructions in plain human language. There is no training involved; you only have to provide clear instructions in plain text format, and the AI will do the rest.
+
+<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        mermaid.initialize({
+            startOnLoad:true,
+            theme: "default",
+        });
+        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    });
+</script>
