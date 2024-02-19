@@ -391,8 +391,19 @@
 
   }
 
-  .language-mermaid svg {
+  .language-mermaid {
+    width: 100%;
+    margin: auto;
     @extend .shadow-1;
-    @extend .py-3
+    @extend .radius-2;
+    @extend .py-2;
+    @extend .px-2;
+    display: inline-block;
+    text-align: center;;
+
+    svg {
+      margin: auto;
+    }
   }
+
 }
