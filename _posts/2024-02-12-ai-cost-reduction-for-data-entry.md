@@ -178,7 +178,7 @@ We will write a script that will read the article from the database, and then us
 
 ## The AI model prompt
 
-> 🎓 **Are you implementing this right now?** You might be interested in my other article, [How to reliably return well-structured JSON from LLMs using Function Calling](/2024/02/17/how-to-reliably-return-well-structured-json-from-llms-using-function-calling), which shows how developers can get the LLM to play nicely with traditional code that expects structured JSON responses.
+> 🎓 **Are you implementing this right now?** You might be interested in my other article, [How to reliably return well-structured JSON from LLMs using Function Calling](/2024/02/18/how-to-reliably-return-well-structured-json-from-llms-using-function-calling), which shows how developers can get the LLM to play nicely with traditional code that expects structured JSON responses.
 
 Ideally, the prompt should be a clear and concise question that the AI model can understand. It should also be a question that the AI model can answer accurately. The prompt should also be easy to understand and easy to maintain.
 
