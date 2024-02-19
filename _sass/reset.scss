@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:color";
 @import "variables";
 
 @layer reset {
@@ -32,7 +34,7 @@
     display: block;
   }
   body {
-    line-height: 1;
+    line-height: 1.5;
   }
   ol, ul {
     list-style: none;
@@ -84,4 +86,11 @@
   summary {
     cursor: unset;
   }
+
+  ::selection {
+    background-color: color.adjust(map-get($colors, "accent-200"), $alpha: -0.6);
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+  } 
 }
