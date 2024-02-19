@@ -49,16 +49,11 @@ syntax_highlighter: rouge
 # Build settings
 # theme: minima
 plugins:
-  - jekyll-relative-links
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-plantuml
   - jekyll-toc
-
-relative_links:
-  enabled:     true
-  collections: true
-
+  
 settings:
   date_format: "%b %-d, %Y"
 

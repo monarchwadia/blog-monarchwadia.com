@@ -22,7 +22,7 @@ In this article, I will explore how function calling enables Large Language Mode
 
 # Using simple prompts to classify articles
 
-> 🎓 **Interested in Data Classification or Data Entry using LLMs?** This example is taken from my article, [How Generative AI slashes data entry costs by 97% without training](/_posts/2024-02-12-ai-cost-reduction-for-data-entry.md). If you're actually working on a data classification or data entry problem right now (or if you're just curious), the case study in that article might be super useful and interesting to you!
+> 🎓 **Interested in Data Classification or Data Entry using LLMs?** This example is taken from my article, [How Generative AI slashes data entry costs by 97% without training](/2024/02/12/ai-cost-reduction-for-data-entry). If you're actually working on a data classification or data entry problem right now (or if you're just curious), the case study in that article might be super useful and interesting to you!
 
 Let's say we wanted to classify 100,000 newspaper articles into categories such as sports, politics, and entertainment. Instead of doing this work manually, we could use GenAI to classify them. Using API calls to OpenAI, we could classify the articles using simple prompts such as "classify this article as sports" or "classify this article as politics".
 
