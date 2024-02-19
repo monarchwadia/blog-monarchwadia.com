@@ -63,6 +63,9 @@
     table {
       @extend .table;
       @extend .mb-2;
+      @extend .radius-2;
+      overflow: clip;
+      outline: none;
     }
 
     hr {
@@ -82,7 +85,7 @@
       @extend .py-1;
       @extend .bg-base-300;
       @extend .text-base-300;
-      border-radius: 5px;
+      @extend .radius-1;
       font-family: "Fira Code", "Source Code Pro", "Consolas", "Inconsolata", "Courier New", "monospace";
       word-break: break-all;
 

@@ -30,6 +30,8 @@
   .btn {
     @extend .px-2;
     @extend .py-1;
+    @extend .shadow-1;
+    @extend .radius-1;
     cursor: pointer;
   }
 
@@ -90,19 +92,25 @@
   }
 
   .table {
+    @extend .bg-base-300;
+    @extend .radius-2;
+    @extend .shadow-4;
     width: 100%;
-    border-collapse: collapse;
+    border: 2px solid var(--color-base-300-bg);
+    border-spacing: 3px;
+    border-collapse: separate;
     
     th, td {
       padding: 0.5rem;
-      border: 1px solid var(--color-base-300-bg);
+    }
+
+    td {
+      @extend .bg-base-100;
     }
 
     th {
+      @extend .base-200;
       font-weight: bold;
-      background-color: var(--color-base-300-bg);
-      color: var(--color-base-300-fg);
-      border-bottom-color: adjust-color(map-get($map: $colors, $key: "base-300-bg"), $whiteness: 30%); // lighten
     }
   }
 }
