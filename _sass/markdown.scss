@@ -50,9 +50,12 @@
       @extend .py-3;
       @extend .text-4;
       @extend .font-italic;
+      @extend .shadow-2;
 
       & blockquote {
         @extend .my-2;
+        @extend .shadow-6;
+        
       }
     }
 
@@ -75,7 +78,7 @@
     }
 
     .highlighter-rouge {
-      @extend .px-2;
+      @extend .px-1;
       @extend .py-1;
       @extend .bg-base-300;
       @extend .text-base-300;
@@ -87,6 +90,11 @@
         word-break: keep-all;
         white-space: pre-wrap;
       }
+
+      
+    }
+    div.highlighter-rouge {
+      @extend .shadow-6;
     }
 
 
@@ -380,5 +388,11 @@
       color: #f92672;
     }
 
+  }
+
+  .language-mermaid svg {
+    @extend .shadow-1;
+    @extend .py-3
+    
   }
 }
