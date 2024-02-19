@@ -10,3 +10,9 @@
 @import "components";
 @import "utils";
 @import "markdown";
+
+// To avoid FOUC. This is set to hidden in <head> tag.
+html {
+    visibility: visible;
+    opacity: 1;
+}

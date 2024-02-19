@@ -2,6 +2,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- To avoid FOUC. This will get unset at the end of the CSS files. -->
+  <style>html{visibility: hidden;opacity:0;}</style>
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
