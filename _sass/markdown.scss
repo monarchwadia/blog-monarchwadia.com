@@ -8,8 +8,7 @@
 
     // --------------------- Typography ---------------------
     h1, h2, h3, h4, h5, h6 {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
     }
     h1 { @extend .header-1; @extend .font-bold; }
     h2 { @extend .header-2; }
@@ -65,7 +64,6 @@
       @extend .mb-2;
       @extend .radius-2;
       overflow: clip;
-      outline: none;
     }
 
     hr {
