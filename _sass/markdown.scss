@@ -75,10 +75,16 @@
     }
 
     .highlighter-rouge {
+      @extend .px-2;
+      @extend .py-1;
+      @extend .bg-base-300;
+      @extend .text-base-300;
       border-radius: 5px;
       font-family: "Fira Code", "Source Code Pro", "Consolas", "Inconsolata", "Courier New", "monospace";
+      word-break: break-all;
 
       pre {
+        word-break: keep-all;
         white-space: pre-wrap;
       }
     }

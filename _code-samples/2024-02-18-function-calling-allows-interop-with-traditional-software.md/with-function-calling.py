@@ -2,7 +2,7 @@ from openai import OpenAI
 import json
 
 # Enter your own API key here.
-OPENAI_API_KEY='sk-_______________________';
+OPENAI_API_KEY = "sk-_______________________"
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # This is the system prompt. This instructs the model what to do.
@@ -47,21 +47,15 @@ response = client.chat.completions.create(
                             "description": "The classifications of the article. An article can have multiple classifications. However, classifications cannot repeat. If the article has no classifications, then this array should be empty.",
                             "items": {
                                 "type": "string",
-                                "enum": [
-                                    "sports",
-                                    "politics",
-                                    "entertainment"
-                                ]
-                            }
+                                "enum": ["sports", "politics", "entertainment"],
+                            },
                         }
                     },
-                    "required": [
-                        "classifications"
-                    ]
-                }
-            }
+                    "required": ["classifications"],
+                },
+            },
         }
-    ]
+    ],
 )
 
 # The response will be in JSON format.
@@ -69,4 +63,4 @@ response = client.chat.completions.create(
 # ['politics']
 response_string = response.choices[0].message.tool_calls[0].function.arguments
 response_json = json.loads(response_string)
-print(response_json['classifications'])
+print(response_json["classifications"])
