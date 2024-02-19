@@ -15,7 +15,7 @@ One of the key concepts needed to truly harness the power of Large Language Mode
 
 The problem is that traditional software systems rely on structured data, such as JSON, XML, and CSV to communicate with other systems. Large Language Models, on the other hand, are not designed to work with structured data. They are designed to work with natural language, which is unstructured.
 
-For example, if we wanted to classify an article using a large language model,  `This article is classified as Politics` is not useful. Instead, a much more useful format would be `["politics"]`, which is a JSON array.
+For example, if we wanted to classify an article using a large language model,  `This article is classified as Politics` is not a useful response from the LLM. We could try and parse this text with Regex, but this is not a foolproof solution. Instead, what if the LLM could return  `["politics"]`, which is a JSON array? Wouldn't that be easier to work with?
 
 In this article, I will explore how function calling enables Large Language Models to interoperate with traditional software, and provide code snippets to illustrate the concept.
 
@@ -83,9 +83,9 @@ With this code, the response would be simple plain text. `GPT-3.5` is trained to
 This article is classified as politics.
 ```
 
-Unfortunately, this is not a useful response, as the output is in plain text.  Plain text is not a format that is easily interoperable with traditional software systems. It needs flaky parsing and is not easily machine-readable.
+Unfortunately, this is not a useful response, as the output is in plain text.  Plain text is not a format that is easily interoperable with traditional software systems. It needs flaky parsing and is not easily machine-readable. What we need is a response in a structured format, such as a JSON array of string.
 
-What we need is a response in a structured format, such as JSON. This would allow us to easily integrate the response with traditional software systems. Something like the following:
+For example:
 
 ```json
 ["politics"]
@@ -115,7 +115,7 @@ You can read more about Function Calling in the [OpenAI API documentation](https
 
 Function calling gives us two advantages:
 
-1. It allows us to collect the output in JSON, which is a machine-readable format. In essence, it lets us create an interface, and tries to make the AI system work like a traditional software system.
+1. It allows us to collect the output in JSON, which is a machine-readable format. This is much easier to work with than plain text, which is not machine-readable.
 2. It allows us to provide additional information about the article, such as the title, author, and publication date. This information could include data types such as `string`, `integer`, `float`, `date`, etc. This informs the AI system about the data types it should expect and how to handle them.
 
 # So, how can we use Function Calling to classify an article?
@@ -274,7 +274,7 @@ The response will be in JSON format. Here's what the typical response looks like
 ["politics"]
 ```
 
-Since this is plain JSON, it becomes much easier for our JavaScript code to use the response. It is now machine-readable and can be easily integrated with traditional software systems. Awesome!
+Since this is plain JSON, it becomes much easier for our JavaScript code to use the response. It is now machine-readable and can be easily integrated with our Java or JavaScript code. Awesome!
 
 # Conclusion
 
