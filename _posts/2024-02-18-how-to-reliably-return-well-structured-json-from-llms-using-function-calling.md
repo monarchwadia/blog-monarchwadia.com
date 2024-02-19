@@ -13,7 +13,7 @@ excerpt: GenAI often requires interoperability with traditional code. In this ar
 
 One of the key concepts needed to truly harness the power of Large Language Models is getting it to play nicely with traditional software systems written in Java, JavaScript, Python, and other languages.
 
-The problem is that traditional software systems rely on structured data, such as JSON, XML, and CSV, to communicate with other systems. Large Language Models, on the other hand, are not designed to work with structured data. They are designed to work with natural language, which is unstructured.
+The problem is that traditional software systems rely on structured data, such as JSON, XML, and CSV to communicate with other systems. Large Language Models, on the other hand, are not designed to work with structured data. They are designed to work with natural language, which is unstructured.
 
 For example, if we wanted to classify an article using a large language model,  `This article is classified as Politics` is not useful. Instead, a much more useful format would be `["politics"]`, which is a JSON array.
 
