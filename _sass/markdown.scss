@@ -392,11 +392,9 @@
   }
 
   .language-mermaid {
+    display: inline-block;
     width: 100%;
     margin: auto;
-    @extend .shadow-1;
-    @extend .radius-2;
-    display: inline-block;
     text-align: center;
 
     svg {
