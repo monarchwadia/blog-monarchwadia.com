@@ -83,11 +83,21 @@ With this code, the response would be simple plain text. `GPT-3.5` is trained to
 This article is classified as politics.
 ```
 
-Unfortunately, this is not a useful response, as the output is in plain text. 
+Unfortunately, this is not a useful response, as the output is in plain text.  Plain text is not a format that is easily interoperable with traditional software systems. It needs flaky parsing and is not easily machine-readable.
 
-Plain text is not a format that is easily interoperable with traditional software systems. It needs flaky parsing and is not easily machine-readable.
+What we need is a response in a structured format, such as JSON. This would allow us to easily integrate the response with traditional software systems. Something like the following:
 
-What we need is a response in a structured format, such as JSON. This would allow us to easily integrate the response with traditional software systems.
+```json
+["politics"]
+```
+
+But unfortunately, that's not what we get.
+
+But how can we get the LLM to return a response in JSON format? Speaking from experience, it is almost impossible to coax the OpenAI API to return the response in machine-readable JSON just by prompting.
+
+So, what can we do?
+
+This is where Function Calling comes in.
 
 # The Solution: Function Calling lets us reliably return well-structured JSON
 
@@ -110,9 +120,11 @@ Function calling gives us two advantages:
 
 # So, how can we use Function Calling to classify an article?
 
-In short, we will provide the LLM with a hypothetical function called `setClassification()`. that takes an array of strings which contains the classifications of the article.
+Let's look into how we can use Function Calling to classify an article.
 
-Upon being prompted, the LLM will respond with a function call request. In other words, the LLM will ask us to call the `setClassification()` function with a set of parameters.
+First, we will provide the LLM with a hypothetical function called `setClassification()`. that takes an array of strings which contains the classifications of the article.
+
+Then, upon being prompted, the LLM will respond with a function call request. In other words, the LLM will ask us to execute the `setClassification()` function on our own machine with a set of parameters that it provides.
 
 We will capture this request, parse it, and store the classifications in a JSON format.
 
