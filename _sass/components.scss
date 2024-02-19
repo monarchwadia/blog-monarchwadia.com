@@ -93,15 +93,16 @@
 
   .table {
     @extend .bg-base-300;
-    @extend .radius-2;
     @extend .shadow-4;
+    @extend .radius-1;
     width: 100%;
-    border: 2px solid var(--color-base-300-bg);
-    border-spacing: 3px;
+    border: 1px solid var(--color-base-300-bg);
+    border-spacing: 2px;
     border-collapse: separate;
     
     th, td {
-      padding: 0.5rem;
+      @extend .py-2;
+      @extend .px-3;
     }
 
     td {

@@ -62,8 +62,6 @@
     table {
       @extend .table;
       @extend .mb-2;
-      @extend .radius-2;
-      overflow: clip;
     }
 
     hr {
