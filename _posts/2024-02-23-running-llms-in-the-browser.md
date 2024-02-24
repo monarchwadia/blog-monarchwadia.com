@@ -8,12 +8,18 @@ excerpt: Web LLM is a new project that lets you run LLMs in the browser. This me
 toc: true
 ---
 
-I recently discovered a new project called [Web LLM](https://webllm.mlc.ai/), which provides a runtime inside the browser for running LLMs. This means:
+I recently discovered a new project called [Web LLM](https://webllm.mlc.ai/), which provides a runtime inside the browser for running LLMs. It's great because it directly accesses the GPU via the new WebGPU standard, and it's a huge step forward for privacy and cost savings, among other advantages. 
+
+Using Web LLM for your SaaS or enterprise project, you get several benefits:
 
 1. LLMs no longer run on expensive servers.
 2. Inference is done locally on users' machines.
 3. It's private because user data never leaves their browser.
 4. There is no vendor lock-in.
+
+This is because the LLM weights are downloaded directly to the user's machine, the LLM is run directly inside the browser, and inference happens in the browser itself. There is no need to purchase and maintain a subscription to an LLM API like OpenAI or Claude. There is no need to self-host your own LLM on your own servers, either. Nor does the user need to install any software on their machine, as is the case in LM Studio and Ollama. The user just needs a modern browser that supports WebGPU, and a machine that is powerful enough to run LLMs, and they're good to go. 
+
+Best of all, it's free open source software (FOSS) with an Apache 2.0 license, so you can use it without needing to pay for a license.
 
 
 # Baseline state diagram: Here's a typical example of current LLM usage:
