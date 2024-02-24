@@ -37,11 +37,25 @@ sequenceDiagram
 
 This is a huge step forward for privacy and cost savings. It means that you can run LLMs on your users' machines, without needing to send data to a server.
 
+## Huge cost savings enable scale
+
+The thing I'm most excited about is the cost savings.
+
 Since the unit costs of inference are now borne by the user, our cost for providing LLM-powered services is $0. This is a huge improvement from the current state, where we have to pay for the server costs of running LLMs.
+
+This means that we can provide LLM-powered services to many more users, without needing to worry about the cost of running the LLMs. Scaling up is as simple as adding more users, and we don't need to worry about the cost of running the LLMs.
+
+## Privacy
 
 There are also privacy implications. Since the data never leaves the user's machine, it's much more private than the current state, where data is sent to a server for processing.
 
+## No vendor lock-in
+
 Also, since all the models are open source, there is no vendor lock-in. You can run any model you want, without needing to pay for a license. You can even provide users with the ability to choose which model they want to use, or proactively switch between models based on the user's needs.
+
+## No more need for Ollama to run local LLMs
+
+This also means that we no longer need to use Ollama to run LLMs. We can run LLMs natively in the browser, without needing to send data to a server. The WebGPU standard lets the LLM punch through the browser and access the GPU directly.
 
 # How to install and use Web LLM
 
