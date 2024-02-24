@@ -5,6 +5,7 @@ layout: post
 date:   2024-02-23
 tags: openai gpt genai boring-ai
 excerpt: Web LLM is a new project that lets you run LLMs in the browser. This means you can run LLMs on your own machine, without needing to send data to a server. It's a huge step forward for privacy and cost savings. Here's how to use it.
+toc: true
 ---
 
 I recently discovered a new project called [Web LLM](https://webllm.mlc.ai/), which provides a runtime inside the browser for running LLMs. This means:
@@ -15,7 +16,7 @@ I recently discovered a new project called [Web LLM](https://webllm.mlc.ai/), wh
 4. There is no vendor lock-in.
 
 
-# Baseline state: Here's a typical example of current LLM usage:
+# Baseline state diagram: Here's a typical example of current LLM usage:
 
 ```mermaid
 sequenceDiagram
@@ -25,7 +26,7 @@ sequenceDiagram
     Backend->>Browser: Inference Response
 ```
 
-# New capability: Here's how Web LLM works:
+# New capability diagram: Here's how Web LLM works:
 
 ```mermaid
 sequenceDiagram
