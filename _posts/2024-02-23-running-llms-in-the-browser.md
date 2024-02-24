@@ -122,3 +122,19 @@ Since it's a new project, Web LLM has a few limitations:
 * It has a [limited number of LLMs](https://github.com/mlc-ai/mlc-llm) available.
 * It doesn't support function calling, although it's [actively being worked on](https://github.com/mlc-ai/web-llm/issues/276).
 * The LLMs are local models (3B, 7B and 13B), and won't be as powerful as GPT-4, Claude, or other cloud-based models.
+
+# FAQs
+
+## Isn't this useless for RAG?
+
+This is a semi-valid concern. This client-side library will not be able to do inference close to the database. However, it is possible to run a RAG-like architecture on the client side. For example, you can run a RAG-like architecture on the client side by using a local SQLite database. You can also surface search results from a server-side database, and then run the LLM on the client side. This is a good way to get the best of both worlds: free LLM inference on the client side, and a full RAG pipeline with embeddings on the server side.
+
+Also, RAG is not the only capability or architecture that LLMs enable. For example, think about the situation where you want a UI that is commanded by a chatbot assistant. "Hey Gmail, compose an email about _____ for me." Or, another example, "Hey Figma, create a button that's blue and has a border radius of 5px." These things can be free for the company if they run on the client side.
+
+## How is this different from Ollama?
+
+Ollama is a great project that exposes an LLM via an OpenAI-compatible API. It can either deploy on the server side or locally on your laptop. 
+
+If deployed on the server side, the company needs to bear the costs of a powerful server instance, which can be $100's to $1000's of dollars per month. On the other hand, if deployed on the user's laptop, Ollama requires local installation. 
+
+Web LLM is different because it runs LLMs in the browser. This means you get the best of both worlds: any average used with a powerful enough laptop will be able to run LLMs without installing any additional software; and, the company doesn't need to bear the cost of running LLMs on a server, either.
