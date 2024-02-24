@@ -37,7 +37,7 @@ sequenceDiagram
 
 This is a huge step forward for privacy and cost savings. It means that you can run LLMs on your users' machines, without needing to send data to a server.
 
-## Huge cost savings enable scale
+## Huge cost savings & unlimited scalability
 
 The thing I'm most excited about is the cost savings.
 
