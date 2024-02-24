@@ -138,3 +138,7 @@ Ollama is a great project that exposes an LLM via an OpenAI-compatible API. It c
 If deployed on the server side, the company needs to bear the costs of a powerful server instance, which can be $100's to $1000's of dollars per month. On the other hand, if deployed on the user's laptop, Ollama requires local installation. 
 
 Web LLM is different because it runs LLMs in the browser. This means you get the best of both worlds: any average used with a powerful enough laptop will be able to run LLMs without installing any additional software; and, the company doesn't need to bear the cost of running LLMs on a server, either.
+
+## Is there a live demo?
+
+Yes! You can try out the live demo at [https://webllm.mlc.ai](https://webllm.mlc.ai). Note that right now (Feb 2024), it only supports the latest browsers on desktop only, excluding Firefox. (Chrome works for sure)
