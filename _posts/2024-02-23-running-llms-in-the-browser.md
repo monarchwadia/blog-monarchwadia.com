@@ -12,7 +12,7 @@ I recently discovered a new project called [Web LLM](https://webllm.mlc.ai/), wh
 1. LLMs no longer run on expensive servers.
 2. Inference is done locally on users' machines.
 3. It's private because user data never leaves their browser.
-4. There is no vendor lock-in
+4. There is no vendor lock-in.
 
 
 # Baseline state: Here's a typical example of current LLM usage:
@@ -40,6 +40,8 @@ This is a huge step forward for privacy and cost savings. It means that you can 
 Since the unit costs of inference are now borne by the user, our cost for providing LLM-powered services is $0. This is a huge improvement from the current state, where we have to pay for the server costs of running LLMs.
 
 There are also privacy implications. Since the data never leaves the user's machine, it's much more private than the current state, where data is sent to a server for processing.
+
+Also, since all the models are open source, there is no vendor lock-in. You can run any model you want, without needing to pay for a license. You can even provide users with the ability to choose which model they want to use, or proactively switch between models based on the user's needs.
 
 # How to install and use Web LLM
 
