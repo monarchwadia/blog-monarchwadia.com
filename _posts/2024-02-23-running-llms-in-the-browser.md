@@ -37,11 +37,13 @@ sequenceDiagram
 
 This is a huge step forward for privacy and cost savings. It means that you can run LLMs on your users' machines, without needing to send data to a server.
 
-## Huge cost savings & unlimited scalability
+## Huge cost savings for SaaS companies & unlimited scalability
 
-The thing I'm most excited about is the cost savings.
+The thing I'm most excited about is the cost savings for SaaS companies.
 
-Since the unit costs of inference are now borne by the user, our cost for providing LLM-powered services is $0. This is a huge improvement from the current state, where we have to pay for the server costs of running LLMs.
+As long as the user has a machine that can run LLMs, the cost of running LLMs is now $0 for the company. The cost is now borne by the user (and is effectively $0 for them, too, since our SaaS will now be using the user's own GPU).
+
+This is a huge improvement from the current state, where we have to pay for the server costs of running LLMs.
 
 This means that we can provide LLM-powered services to many more users, without needing to worry about the cost of running the LLMs. Scaling up is as simple as adding more users, and we don't need to worry about the cost of running the LLMs.
 
