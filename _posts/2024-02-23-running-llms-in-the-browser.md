@@ -133,9 +133,7 @@ Also, RAG is not the only capability or architecture that LLMs enable. For examp
 
 ## How is this different from Ollama?
 
-Ollama is a great project that exposes an LLM via an OpenAI-compatible API. It can either deploy on the server side or locally on your laptop. 
-
-If deployed on the server side, the company needs to bear the costs of a powerful server instance, which can be $100's to $1000's of dollars per month. On the other hand, if deployed on the user's laptop, Ollama requires local installation. 
+Ollama is a great project that exposes an LLM via an OpenAI-compatible API. It can either deploy on the server side or locally on your laptop. If deployed on the server side, the company needs to bear the costs of a powerful server instance, which can be $100's to $1000's of dollars per month. On the other hand, if deployed on the user's laptop, Ollama requires local installation; this is a hard "no" for SaaS companies. 
 
 Web LLM is different because it runs LLMs in the browser. This means you get the best of both worlds: any average used with a powerful enough laptop will be able to run LLMs without installing any additional software; and, the company doesn't need to bear the cost of running LLMs on a server, either.
 
