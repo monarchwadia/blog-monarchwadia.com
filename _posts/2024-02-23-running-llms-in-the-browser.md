@@ -19,18 +19,18 @@ I recently discovered a new project called [Web LLM](https://webllm.mlc.ai/), wh
 
 ```mermaid
 sequenceDiagram
-    Browser->>Backend: Request
-    Backend->>LLM API: Request
-    LLM API->>Backend: Response
-    Backend->>Browser: Response
+    Browser->>Backend: Inference Request
+    Backend->>LLM API: Inference Request
+    LLM API->>Backend: Inference Response
+    Backend->>Browser: Inference Response
 ```
 
 # New capability: Here's how Web LLM works:
 
 ```mermaid
 sequenceDiagram
-    Browser->>Browser: Request
-    Browser->>Browser: Response
+    Browser->>Browser: Inference Request
+    Browser->>Browser: Inference Response
 ```
 
 # Implications
