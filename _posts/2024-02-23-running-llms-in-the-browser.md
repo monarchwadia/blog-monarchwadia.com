@@ -33,6 +33,14 @@ sequenceDiagram
     Browser->>Browser: Response
 ```
 
+# Implications
+
+This is a huge step forward for privacy and cost savings. It means that you can run LLMs on your users' machines, without needing to send data to a server.
+
+Since the unit costs of inference are now borne by the user, our cost for providing LLM-powered services is $0. This is a huge improvement from the current state, where we have to pay for the server costs of running LLMs.
+
+There are also privacy implications. Since the data never leaves the user's machine, it's much more private than the current state, where data is sent to a server for processing.
+
 # How to install and use Web LLM
 
 You can use Web LLM simply by `npm install`
@@ -87,8 +95,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 ![http://localhost:4000/assets/2024-02-23-running-llms-in-the-browser/web%20llm.gif](http://localhost:4000/assets/2024-02-23-running-llms-in-the-browser/web%20llm.gif)
 
-I personally find this amazing. It's a huge step forward for so many reasons.
-
 ## Current limitations
 
 Since it's a new project, Web LLM has a few limitations:
@@ -96,3 +102,4 @@ Since it's a new project, Web LLM has a few limitations:
 * Right now, it only supports the latest desktop browsers (because WebGPU is only available on these). [Check latest availability here](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API#browser_compatibility)
 * It has a [limited number of LLMs](https://github.com/mlc-ai/mlc-llm) available.
 * It doesn't support function calling, although it's [actively being worked on](https://github.com/mlc-ai/web-llm/issues/276).
+* The LLMs are local models (3B, 7B and 13B), and won't be as powerful as GPT-4, Claude, or other cloud-based models.
