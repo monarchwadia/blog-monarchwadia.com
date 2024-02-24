@@ -266,18 +266,6 @@ I am excited to see how this will change the way we think about data entry and c
 
 _Special thanks to my friend [Paul Wujek](https://www.linkedin.com/in/paulwujek) for his valuable feedback on this article._
 
-
-<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        mermaid.initialize({
-            startOnLoad:true,
-            theme: "default",
-        });
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-    });
-</script>
-
 <script>
     const calculatorDom = `
 <table class="table">

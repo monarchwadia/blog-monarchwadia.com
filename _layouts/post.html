@@ -36,4 +36,17 @@ layout: default
   frontmatter #} -->
 
   <a href="{{ page.url | relative_url }}" hidden></a>
+
+  <!-- mermaid -->
+  <script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          mermaid.initialize({
+              startOnLoad:true,
+              theme: "default",
+          });
+          window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+      });
+  </script>
+
 </article>

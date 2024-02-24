@@ -279,16 +279,3 @@ Since this is plain JSON, it becomes much easier for our JavaScript code to use 
 # Conclusion
 
 Function calling is a powerful feature that allows LLMs to interoperate with traditional software systems. It allows us to collect the output in JSON, which is a machine-readable format. In this article, I have shown how to use function calling to retrieve structured JSON responses reliably from LLMs. I have also provided an example using OpenAI GPT-3.5, with an explanatory diagram. I hope this article has been helpful to you!
-
-
-
-<script src="https://unpkg.com/mermaid@8.9.3/dist/mermaid.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        mermaid.initialize({
-            startOnLoad:true,
-            theme: "default",
-        });
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-    });
-</script>
