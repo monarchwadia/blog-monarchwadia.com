@@ -21,8 +21,14 @@ This is because the LLM weights are downloaded directly to the user's machine, t
 
 Best of all, it's free open source software (FOSS) with an Apache 2.0 license, so you can use it without needing to pay for a license.
 
+# Diagrams: Before and After
 
-# Baseline state diagram: Here's a typical example of current LLM usage:
+Here are a couple of sequence diagrams to illustrate the difference between the current state and the new capability:
+
+
+## Baseline state diagram: Here's a typical example of current LLM usage:
+
+Over here, the browser sends an inference request to the backend, which then sends an inference request to the LLM API. The LLM API sends an inference response to the backend, which then forwards the inference response back to the browser.
 
 ```mermaid
 sequenceDiagram
@@ -32,7 +38,9 @@ sequenceDiagram
     Backend->>Browser: Inference Response
 ```
 
-# New capability diagram: Here's how Web LLM works:
+## New capability diagram: Here's how Web LLM works:
+
+Now, using Web LLM, the browser sends an inference request to... itself! The LLM runs on the user's own laptop, using the user's own GPU. There is not even a need for a backend server, let alone an LLM API.
 
 ```mermaid
 sequenceDiagram
@@ -142,6 +150,10 @@ Also, RAG is not the only capability or architecture that LLMs enable. For examp
 Ollama is a great project that exposes an LLM via an OpenAI-compatible API. It can either **deploy on the server side** or **locally on your laptop**. If deployed on the **server side**, the company needs to bear the costs of a powerful server instance, which can be $100's to $1000's of dollars per month. On the other hand, if deployed on the **user's laptop**, Ollama requires local installation; this is a hard "no" for SaaS companies. 
 
 Web LLM is different because it **runs LLMs entirely in the browser via the new WebGPU standard**. It downloads the model weights directly from Hugging Face, and caches them in browser application storage. This means you get the best of both worlds: any average user with a powerful enough laptop will be able to run LLMs without installing any additional software; and, the company doesn't need to bear the cost of running LLMs on a server, either.
+
+## Does the user need to install anything?
+
+No. The user just needs a modern browser that supports WebGPU, and a machine that is powerful enough to run LLMs. Web LLM is a JavaScript library that can be added to any project with a simple `npm install`, and weights are downlodaded directly from Hugging Face and onto the user's machine upon first use. There is no need for the user to install any software, and the user experience is not affected at all. Traditional SaaS companies will love this, as will enterprise companies.
 
 ## Is there a live demo?
 
