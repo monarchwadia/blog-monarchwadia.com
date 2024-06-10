@@ -7,8 +7,6 @@ toc: false
 excerpt: Learn how to easily integrate OpenAI's API into your JavaScript projects using Ragged. This tutorial provides a step-by-step guide to set up Ragged and create a basic application, enabling seamless interaction with OpenAI's models.
 ---
 
-# Use OpenAI in your JavaScript project the easy way with Ragged
-
 ## Introduction
 
 Welcome to this simple tutorial on how to use OpenAI’s API in JavaScript. In this tutorial, we will be taking the help of Ragged, which is a library that makes working with OpenAI very easy and uncomplicated.
@@ -43,9 +41,9 @@ Next, install Ragged:
 npm install ragged
 ```
 
-## Writing the Hello World Application
+## Writing a simple chat application
 
-Now, let’s write our “Hello World” application using Ragged. Create a new file named `index.js` and add the following code:
+Now, let’s write our application using Ragged. Create a new file named `index.js` and add the following code:
 
 ```javascript
 import { Chat } from "ragged/chat";
@@ -96,6 +94,6 @@ Ragged offers more than just basic chat capabilities. You can access and manipul
 
 ## Conclusion
 
-In this tutorial, we covered the basics of setting up Ragged and creating a simple “Hello World” application using OpenAI’s API. Ragged makes it easy to integrate LLM capabilities into your JavaScript projects with minimal setup and effort.
+In this tutorial, we covered the basics of setting up Ragged and creating a simple application using OpenAI’s API. Ragged makes it easy to integrate LLM capabilities into your JavaScript projects with minimal setup and effort.
 
 Feel free to explore the [Ragged documentation](https://github.com/monarchwadia/ragged) for more advanced features and use cases. Happy coding!
