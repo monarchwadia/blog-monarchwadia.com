@@ -92,10 +92,10 @@ If you got a “non-200 response” or an indicator that the “Status was 401�
 
 ## Exploring More Features
 
-Ragged offers more than just basic chat capabilities. You can access and manipulate the message history, use tools, and create autonomous agents. To learn more, you can read Ragged’s documentation.
+Ragged offers more than just basic chat capabilities. You can access and manipulate the message history, use tools, and create autonomous agents. To learn more, you can read [Ragged’s documentation](https://github.com/monarchwadia/ragged).
 
 ## Conclusion
 
 In this tutorial, we covered the basics of setting up Ragged and creating a simple “Hello World” application using OpenAI’s API. Ragged makes it easy to integrate LLM capabilities into your JavaScript projects with minimal setup and effort.
 
-Feel free to explore the Ragged documentation for more advanced features and use cases. Happy coding!
+Feel free to explore the [Ragged documentation](https://github.com/monarchwadia/ragged) for more advanced features and use cases. Happy coding!
