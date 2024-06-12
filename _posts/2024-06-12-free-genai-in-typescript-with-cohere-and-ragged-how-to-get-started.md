@@ -1,5 +1,5 @@
 ---
-title: "Cohere and Ragged are a great way to start programming with LLMs in Typescript"
+title: "Free GenAI in Typescript with Cohere and Ragged: How to Get Started"
 layout: post
 date: 2024-06-12
 tags: javascript openai gpt-4 generative-ai typescript web-development ragged tutorial
@@ -25,11 +25,13 @@ Once you have your account, you can access the "API Keys" page where you will fi
 
 [Ragged](https://github.com/monarchwadia/ragged) is an intuitive library that facilitates communication with different AI models, including Cohere's LLMs. Here’s a step-by-step guide on setting up a simple project using Ragged:
 
-1. **Install Node.js and npm**  
-   Ensure you have Node.js and npm installed on your computer. If not, you can download and install them from [nodejs.org](https://nodejs.org/).
+### 1. Install Node.js and npm
 
-2. **Setup Your Project**  
-   Create a new directory for your project and initialize a new npm project:
+Ensure you have Node.js and npm installed on your computer. If not, you can download and install them from [nodejs.org](https://nodejs.org/).
+
+### 2. Setup Your Project
+
+Create a new directory for your project and initialize a new npm project:
 
 ```bash
 mkdir my-cohere-project
@@ -38,22 +40,25 @@ npm init -y
 npm pkg set type="module"
 ```
 
-3. **Install Dependencies**  
-   Install the `dotenv` package for managing environment variables and `ragged` for interfacing with Cohere:
+### 3. Install Dependencies
+
+Install the `dotenv` package for managing environment variables and `ragged` for interfacing with Cohere:
 
 ```bash
 npm install dotenv ragged
 ```
 
-4. **Configure Environment**  
-   Create a `.env` file in your project directory and add your Cohire API key:
+### 4. Configure Environment
+
+Create a `.env` file in your project directory and add your Cohire API key:
 
 ```sh
 COHERE_API_KEY=your_cohere_api_key_here
 ```
 
-5. **Create Your Chat Application**  
-   Now, create a file named `app.js` and input the following code:
+### 5. Create Your Chat Application
+
+Now, create a file named `app.js` and input the following code:
 
 ```javascript
 import { config } from 'dotenv';
@@ -67,17 +72,22 @@ async function getResponse() {
     console.log(messages.at(-1)?.text); // Prints the response
 }
 
-getResponse().then(() => console.log("Done!")).catch(e => console.error(e));
+getResponse().catch(e => console.error(e));
 ```
 
-6. **Running Your Application**
-    To run your application, simply execute the following command in your terminal:
+### 6. Running Your Application
+
+To run your application, simply execute the following command in your terminal:
 
 ```bash
 node app.js
 ```
 
 This will trigger your application to ask Cohere "What is a rickroll?", and you'll receive an AI-generated definition in your console.
+
+```
+A rickroll is an Internet meme involving an unexpected appearance of the music video for the 1987 song "Never Gonna Give You Up" by English singer Rick Astley. The meme is a type of bait and switch, usually using a disguised hyperlink that leads to the music video. The trend began in 2007 and has been called "the decade's most enduring meme" by the *Los Angeles Times*.
+```
 
 ## Conclusion
 
