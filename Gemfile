@@ -43,10 +43,10 @@ gem 'jekyll-seo-tag'
 # for plantuml
 
 gem "jekyll-plantuml"
+gem 'nokogiri', platforms: :ruby
 
 gem 'jekyll-toc'
 
 gem 'csv'
 gem 'base64'
 gem 'bigdecimal'
-gem 'nokogiri', platforms: :ruby
