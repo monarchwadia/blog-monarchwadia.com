@@ -130,6 +130,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-toc
   minima (~> 2.5)
+  nokogiri
   rake
   tzinfo (>= 1, < 3)
   tzinfo-data
