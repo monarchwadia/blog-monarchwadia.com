@@ -7,6 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
+gem 'nokogiri', platforms: :ruby
 gem "jekyll", "~> 4.3.3"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # Need rake for minima
@@ -43,7 +44,6 @@ gem 'jekyll-seo-tag'
 # for plantuml
 
 gem "jekyll-plantuml"
-gem 'nokogiri', platforms: :ruby
 
 gem 'jekyll-toc'
 
