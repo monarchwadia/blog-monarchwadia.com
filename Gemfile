@@ -35,7 +35,7 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # For ruby 3.3.0
-gem "webrick", "~> 1.8.1"
+gem "webrick"
 
 # for seo
 gem 'jekyll-seo-tag'
