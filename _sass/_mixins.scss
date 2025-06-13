@@ -1,4 +1,6 @@
 @use "sass:map";
+@use "sass:color";
+@import "variables";
 
 $breakpoints: (
     sm: (
@@ -33,4 +35,26 @@ $breakpoints: (
     @media (min-width: $min) and (max-width: $max) {
         @content;
     }
+}
+
+// Gradient Mixins
+@mixin subtle-gradient($base-color, $intensity: 5%) {
+  $lighter: color.scale($base-color, $lightness: $intensity);
+  $darker: color.scale($base-color, $lightness: -$intensity);
+  background: linear-gradient(to bottom, $lighter, $base-color, $darker);
+}
+
+@mixin subtle-radial-gradient($base-color, $intensity: 5%) {
+  $lighter: color.scale($base-color, $lightness: $intensity);
+  background: radial-gradient(circle at center, $lighter, $base-color);
+}
+
+@mixin accent-gradient($direction: 135deg) {
+  background: linear-gradient($direction, var(--color-accent-100), var(--color-base-300-bg));
+}
+
+@mixin glass-effect($base-color, $opacity: 0.9, $blur: 10px) {
+  background-color: color.change($base-color, $alpha: $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
 }

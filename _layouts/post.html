@@ -3,27 +3,27 @@ layout: default
 ---
 
 <article>
-  <header class="flex flex-col gap-2 pb-2">
+  <header class="flex flex-col gap-3 pb-4 mb-4" style="border-bottom: 1px solid var(--color-base-300-bg);">
     <h1 class="header-1">{{page.title | escape}}</h1>
-    <time class="font-display flex flex-row space-between" datetime="{{ page.date | date_to_xmlschema }}">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="text-3 font-display">{{ page.date | date: date_format }}</span>
-    </time>
-    <p>
-
+    <div class="flex space-between items-center">
+      <time class="font-display" datetime="{{ page.date | date_to_xmlschema }}">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="text-3 font-display opacity-5">{{ page.date | date: date_format }}</span>
+      </time>
+      
       {%- if page.author -%}
-      <span>{{page.author}}</span>
+      <span class="font-display text-4">{{page.author}}</span>
       {%- endif -%}
-    </p>
+    </div>
   </header>
 
   <div class="markdown">
     {%- if page.toc -%}
-      <details>
-        <summary class="btn btn-accent-200">
-          Click to see table of contents
+      <details class="mb-4">
+        <summary class="btn btn-accent-200 cursor-pointer">
+          Table of Contents
         </summary>
-        <div class="pt-4 pb-2">
+        <div class="pt-4 pb-2 pl-4 border-l-2" style="border-left: 2px solid var(--color-accent-200); margin-top: 1rem;">
           {% toc %}
         </div>
       </details>

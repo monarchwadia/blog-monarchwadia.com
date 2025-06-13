@@ -1,16 +1,16 @@
-<header role="banner" class="text-4 container-wrapper py-3 base-300 shadow-1">
-  <div class="container flex flex-row space-between gap-2">
+<header role="banner" class="text-4 container-wrapper py-3 base-300 shadow-2 gradient-subtle-base-300">
+  <div class="container flex flex-row space-between gap-2 items-center">
 
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="font-bold text-5 font-display" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <a class="font-bold text-5 font-display hover:opacity-7 transition-all" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
     {%- if page_paths -%}
       <nav class="flex flex-row gap-4">
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
-            <a class="font-display text-3" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            <a class="font-display text-3 hover:opacity-7 transition-all py-1 px-2" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             {%- endif -%}
           {%- endfor -%}
       </nav>

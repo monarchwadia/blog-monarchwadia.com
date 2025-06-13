@@ -11,6 +11,10 @@
     .flex-grow { flex-grow: 1; }
     .space-between { justify-content: space-between; }
     .justify-end { justify-content: flex-end; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .items-end { align-items: flex-end; }
+    .justify-center { justify-content: center; }
 
     // gaps
     @each $key, $val in $spacing {
@@ -96,5 +100,65 @@
                 0 4px 6px -1px rgba(0, 0, 0, ($val * 0.4) + 0.1), 
                 0 2px 4px -2px rgba(0, 0, 0, ($val * 0.1) + 0.1);
         }
+    }
+
+    // ------------------------------- Transitions -------------------------------
+    .transition-all {
+      transition: all 0.2s ease;
+    }
+    
+    // ------------------------------- Hover effects -------------------------------
+    .hover\:opacity-7:hover {
+      opacity: 0.7;
+    }
+    
+    .hover\:text-accent-100:hover {
+      color: var(--color-accent-100);
+    }
+    
+    // ------------------------------- Other -------------------------------
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    // ------------------------------- Gradients -------------------------------
+    .gradient-subtle-base-100 {
+      @include subtle-gradient(map-get($colors, "base-100-bg"));
+    }
+    
+    .gradient-subtle-base-200 {
+      @include subtle-gradient(map-get($colors, "base-200-bg"));
+    }
+    
+    .gradient-subtle-base-300 {
+      @include subtle-gradient(map-get($colors, "base-300-bg"), 10%);
+    }
+    
+    .gradient-accent {
+      @include accent-gradient();
+    }
+    
+    .gradient-accent-reverse {
+      @include accent-gradient(315deg);
+    }
+    
+    .gradient-radial-base-100 {
+      @include subtle-radial-gradient(map-get($colors, "base-100-bg"));
+    }
+    
+    .gradient-radial-base-200 {
+      @include subtle-radial-gradient(map-get($colors, "base-200-bg"));
+    }
+    
+    .gradient-radial-base-300 {
+      @include subtle-radial-gradient(map-get($colors, "base-300-bg"));
     }
 }

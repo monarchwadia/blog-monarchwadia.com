@@ -2,8 +2,12 @@
 
 ```bash
 # first install ruby
+apt install 
 
 bundle install
+
+# install plantuml
+apt install plantuml
 
 # Local dev mode with drafts and livereload
 bundle exec jekyll serve --livereload --drafts

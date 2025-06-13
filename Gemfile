@@ -45,3 +45,7 @@ gem 'jekyll-seo-tag'
 gem "jekyll-plantuml"
 
 gem 'jekyll-toc'
+
+gem 'csv'
+gem 'base64'
+gem 'bigdecimal'

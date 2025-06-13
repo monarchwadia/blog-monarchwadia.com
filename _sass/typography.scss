@@ -13,6 +13,8 @@
     html {
         font-family: 'Lora', sans-serif;
         @extend .text-3;
+        font-feature-settings: "liga" 1, "kern" 1;
+        text-rendering: optimizeLegibility;
     }
     .font-display {
         font-family: 'Signika Negative', sans-serif;   
@@ -20,12 +22,14 @@
     
     @mixin header_commons {
         @extend .font-display;
-        line-height: 1.5;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
     }
     .header-1 { @include header_commons; @extend .font-bold; @extend .text-7; }
     .header-2 { @include header_commons; @extend .font-bold; @extend .text-6; }
     .header-3 { @include header_commons; @extend .text-6; }
-    .header-4 { @include header_commons; @extend .font-italic;  @extend .text-5; }
+    .header-4 { @include header_commons; @extend .font-italic; @extend .text-5; }
     .header-5 { @include header_commons; @extend .text-5; }
     .header-6 { @include header_commons; @extend .font-bold; @extend .text-4; }
     .header-7 { @include header_commons; @extend .font-bold; @extend .text-0; }
