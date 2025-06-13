@@ -49,3 +49,4 @@ gem 'jekyll-toc'
 gem 'csv'
 gem 'base64'
 gem 'bigdecimal'
+gem 'nokogiri', platforms: :ruby
