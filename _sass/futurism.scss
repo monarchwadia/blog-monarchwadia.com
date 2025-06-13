@@ -1,0 +1,88 @@
+/* Futurism Post Styles */
+.futurism-post {
+  background: linear-gradient(to bottom right, rgba(72, 0, 120, 0.05), rgba(0, 72, 120, 0.05));
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.futurism-post::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #8a2be2, #4b0082);
+}
+
+/* Regular Post Styles */
+.regular-post {
+  background: linear-gradient(to bottom right, rgba(0, 72, 0, 0.05), rgba(0, 120, 72, 0.05));
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.regular-post::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #2be28a, #00824b);
+}
+
+.futurism-badge {
+  display: inline-block;
+  background: linear-gradient(to right, #8a2be2, #4b0082);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.category-filter {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.category-button {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: var(--color-base-200-bg);
+  color: var(--color-base-200-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-button:hover {
+  background-color: var(--color-accent-100-bg);
+  color: var(--color-accent-100-text);
+}
+
+.category-button.active {
+  background-color: var(--color-accent-200-bg);
+  color: var(--color-accent-200-text);
+}
+
+/* Removed purple left border from futurism items */
+
+.post-card {
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+}
+
+.futurism-title::before {
+  content: "🔮 ";
+}

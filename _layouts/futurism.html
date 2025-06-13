@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<article class="regular-post">
+<article class="futurism-post">
   <header class="flex flex-col gap-3 pb-4 mb-4" style="border-bottom: 1px solid var(--color-base-300-bg);">
-    <h1 class="header-1">{{page.title | escape}}</h1>
+    <h1 class="header-1">🔮 {{page.title | escape}}</h1>
     <div class="flex space-between items-center">
       <time class="font-display" datetime="{{ page.date | date_to_xmlschema }}">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -14,6 +14,8 @@ layout: default
       {%- if page.author -%}
       <span class="font-display text-4">{{page.author}}</span>
       {%- endif -%}
+      
+      <span class="futurism-badge">🔮 Futurism</span>
     </div>
   </header>
 
@@ -32,9 +34,6 @@ layout: default
     
   </div>
 
-  <!-- {# I could add links to various discussions here (i.e. Reddit, Hacker News, etc). I could specify these in the post's
-  frontmatter #} -->
-
   <a href="{{ page.url | relative_url }}" hidden></a>
 
   <!-- mermaid -->
@@ -48,5 +47,4 @@ layout: default
           window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
       });
   </script>
-
 </article>

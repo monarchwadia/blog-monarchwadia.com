@@ -1,5 +1,5 @@
 ---
-title: "Data Categorization (Boring GenAI #1)"
+title: "Data Categorization"
 layout: post
 tags: gpt-4 ai genai generative-ai
 ---

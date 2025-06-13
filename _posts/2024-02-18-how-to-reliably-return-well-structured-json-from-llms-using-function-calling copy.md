@@ -3,7 +3,7 @@
 title:  How to reliably return well-structured JSON from LLMs using Function Calling.
 layout: post
 date:   2024-02-18
-tags: openai gpt genai boring-ai
+tags: openai gpt genai
 excerpt: GenAI often requires interoperability with traditional code. In this article, I show how to use function calling to retrieve structured JSON responses reliably from LLMs. An example using OpenAI GPT-3.5, with an explanatory diagram, is included.
 ---
 

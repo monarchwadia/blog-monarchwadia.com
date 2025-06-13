@@ -3,15 +3,23 @@ layout: default
 ---
 
 <div class="flex flex-col gap-4">
+    <div class="category-filter">
+        <button class="category-button active" data-category="all">All Posts</button>
+        {% assign all_categories = site.posts | map: "categories" | compact | uniq | reject: "futurism" %}
+        {% for category in all_categories %}
+            <button class="category-button" data-category="{{ category }}">{{ category | capitalize }}</button>
+        {% endfor %}
+    </div>
     
     <ul class="flex flex-col gap-4">
         {%- for post in site.posts -%}
-        <li class="flex flex-col gap-1">
+        {% assign post_categories = post.categories | join: " " %}
+        <li class="flex flex-col gap-1 post-card {% if post.categories contains 'futurism' %}futurism-item{% endif %}" data-categories="{{ post_categories }}">
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             <div class="flex flex-row space-between">
                 <span class="text-3 font-display">{{ post.date | date: date_format }}</span>
             </div>
-            <h3 class="header-2">
+            <h3 class="header-2 {% if post.categories contains 'futurism' %}futurism-title{% endif %}">
                 <a class="font-bold text-5 text-accent-100" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
             </h3>
             <a href="{{ post.url | relative_url }}">
@@ -27,3 +35,39 @@ layout: default
         {%- endfor -%}
     </ul>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.category-button');
+        const postItems = document.querySelectorAll('.post-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Show all posts if "All" is selected
+                if (category === 'all') {
+                    postItems.forEach(item => {
+                        item.style.display = 'flex';
+                    });
+                } else {
+                    // Show only posts with the selected category
+                    postItems.forEach(item => {
+                        const itemCategories = item.getAttribute('data-categories');
+                        if (itemCategories && itemCategories.includes(category)) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>

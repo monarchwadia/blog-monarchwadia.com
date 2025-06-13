@@ -3,7 +3,7 @@
 title:  Web LLM lets you run LLMs natively in your frontend using the new WebGPU standard.
 layout: post
 date:   2024-02-23
-tags: openai gpt genai boring-ai
+tags: openai gpt genai
 excerpt: Web LLM is a new project that lets you run LLMs in the browser. This means you can run LLMs on your own machine, without needing to send data to a server. It's a huge step forward for privacy and cost savings. Here's how to use it.
 toc: true
 ---
