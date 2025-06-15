@@ -3,7 +3,6 @@
 # only Main files contain this front matter, not partials.
 ---
 
-@layer reset, typography, utils, components, markdown;
 
 @import "reset";
 @import "typography";
@@ -11,6 +10,8 @@
 @import "utils";
 @import "markdown";
 @import "futurism";
+
+@layer reset, typography, utils, components, markdown;
 
 // To avoid FOUC. This is set to hidden in <head> tag.
 html {

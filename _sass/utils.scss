@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "variables";
 
 @layer utils {
@@ -47,8 +48,8 @@
     // ------------------------------- Colors -------------------------------
 
     @each $key, $val in $color-archetypes {
-        .bg-#{$key} { background-color: map-get($val, "background"); }
-        .text-#{$key} { color: map-get($val, "text"); }
+        .bg-#{$key} { background-color: map.get($val, "background"); }
+        .text-#{$key} { color: map.get($val, "text"); }
         .#{$key} { @extend .bg-#{$key}; @extend .text-#{$key}; }
     }
 
@@ -131,15 +132,15 @@
 
     // ------------------------------- Gradients -------------------------------
     .gradient-subtle-base-100 {
-      @include subtle-gradient(map-get($colors, "base-100-bg"));
+      @include subtle-gradient(map.get($colors, "base-100-bg"));
     }
     
     .gradient-subtle-base-200 {
-      @include subtle-gradient(map-get($colors, "base-200-bg"));
+      @include subtle-gradient(map.get($colors, "base-200-bg"));
     }
     
     .gradient-subtle-base-300 {
-      @include subtle-gradient(map-get($colors, "base-300-bg"), 10%);
+      @include subtle-gradient(map.get($colors, "base-300-bg"), 10%);
     }
     
     .gradient-accent {
@@ -151,14 +152,14 @@
     }
     
     .gradient-radial-base-100 {
-      @include subtle-radial-gradient(map-get($colors, "base-100-bg"));
+      @include subtle-radial-gradient(map.get($colors, "base-100-bg"));
     }
     
     .gradient-radial-base-200 {
-      @include subtle-radial-gradient(map-get($colors, "base-200-bg"));
+      @include subtle-radial-gradient(map.get($colors, "base-200-bg"));
     }
     
     .gradient-radial-base-300 {
-      @include subtle-radial-gradient(map-get($colors, "base-300-bg"));
+      @include subtle-radial-gradient(map.get($colors, "base-300-bg"));
     }
 }

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layers of Abstraction</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; text-align: center; }
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .sparkle {
+            animation: twinkle 1.5s infinite;
+        }
+        .sparkle2 {
+            animation: twinkle 2s infinite;
+        }
+        .sparkle3 {
+            animation: twinkle 1.8s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Layers of Abstraction in Computing</h1>
+        <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+            <!-- Main Title -->
+            <text x="400.0" y="30" 
+                  text-anchor="middle" font-weight="bold" font-size="20">
+                Language Abstraction Layers
+            </text>
+
+            <!-- Block for Natural Language - Centered -->
+            <rect x="150" y="50" width="500" height="50" 
+                  fill="#8A2BE2" stroke="white" stroke-width="2" />
+            <text x="400.0" y="75.0" 
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="white" font-weight="bold" font-size="16">
+                Prompts in English Language
+            </text>
+
+            <!-- Block for Large Language Model - Centered -->
+            <rect x="150" y="100" width="500" height="50" 
+                  fill="#4169E1" stroke="white" stroke-width="2" />
+            <text x="400.0" y="125.0" 
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="white" font-weight="bold" font-size="16">
+                Large Language Model
+            </text>
+
+            <!-- Block for High-Level Programming Language - Centered -->
+            <rect x="150" y="150" width="500" height="50" 
+                  fill="#00CED1" stroke="white" stroke-width="2" />
+            <text x="400.0" y="175.0" 
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="black" font-weight="bold" font-size="16">
+                High-Level Programming Language (C, Java)
+            </text>
+
+            <!-- Block for Compiler - Centered -->
+            <rect x="150" y="200" width="500" height="50" 
+                  fill="#32CD32" stroke="white" stroke-width="2" />
+            <text x="400.0" y="225.0" 
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="black" font-weight="bold" font-size="16">
+                Compiler
+            </text>
+
+            <!-- Block for Assembler - Centered -->
+            <rect x="150" y="250" width="500" height="50" 
+                  fill="#FFD700" stroke="white" stroke-width="2" />
+            <text x="400.0" y="275.0" 
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="black" font-weight="bold" font-size="16">
+                Assembly
+            </text>
+
+            <!-- Block for Machine Code - Centered -->
+            <rect x="150" y="300" width="500" height="50" 
+                  fill="#FF8C00" stroke="white" stroke-width="2" />
+            <text x="400.0" y="325.0" 
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="black" font-weight="bold" font-size="16">
+                Assembler
+            </text>
+
+            <!-- Block for Loader/Linker - Centered -->
+            <rect x="150" y="350" width="500" height="50" 
+                  fill="#FF4500" stroke="white" stroke-width="2" />
+            <text x="400.0" y="375.0" 
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="white" font-weight="bold" font-size="16">
+                Machine Code
+            </text>
+
+            <!-- Block for Binary - Centered -->
+            <rect x="150" y="400" width="500" height="50" 
+                  fill="#FF0000" stroke="white" stroke-width="2" />
+            <text x="400.0" y="425.0" 
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="white" font-weight="bold" font-size="16">
+                Loader/Linker
+            </text>
+
+            <!-- Block for Hardware - Centered -->
+            <rect x="150" y="450" width="500" height="50" 
+                  fill="#8B0000" stroke="white" stroke-width="2" />
+            <text x="400.0" y="475.0"
+
+                  text-anchor="middle" dominant-baseline="middle" 
+                  fill="white" font-weight="bold" font-size="16">
+                Hardware
+            </text>
+            
+
+            <!-- Left Side: Abstraction Arrow (Thick) - Adjusted height -->
+            <rect x="100" y="69" width="10" height="380" fill="black" />
+            <!-- Arrow Head -->
+            <path d="M 105 50 L 95 70 L 115 70 Z" fill="black" />
+
+            <!-- Right Side: Complexity Arrow (Thick) - Adjusted height -->
+            <rect x="690" y="50" width="10" height="380" fill="black" />
+            <!-- Arrow Head -->
+            <path d="M 695 450 L 685 430 L 705 430 Z" fill="black" />
+            
+            <!-- Left Side: Abstraction Text (Positioned outward) -->
+            <text x="70" y="250.0" 
+                  transform="rotate(270, 70, 250.0)"
+                  text-anchor="middle" font-weight="bold" font-size="24">
+                More Simplicity
+            </text>
+            
+            <!-- Right Side: Complexity Text (Positioned outward) -->
+            <text x="730" y="250.0" 
+                  transform="rotate(90, 730, 250.0)"
+                  text-anchor="middle" font-weight="bold" font-size="24">
+                More Precision
+            </text>
+            
+
+            
+            <!-- MOVED TO END: "NEW!" labels for top two layers (to appear on top) -->
+            <rect x="525" y="60" width="50" height="25" rx="12" ry="12" fill="#FF5733" stroke="gold" stroke-width="2" />
+            <text x="550" y="78" text-anchor="middle" fill="white" font-weight="bold" font-size="14">NEW!</text>
+            
+            <rect x="525" y="115" width="50" height="25" rx="12" ry="12" fill="#FF5733" stroke="gold" stroke-width="2" />
+            <text x="550" y="132" text-anchor="middle" fill="white" font-weight="bold" font-size="14">NEW!</text>
+        </svg>
+    </div>
+</body>
+</html>

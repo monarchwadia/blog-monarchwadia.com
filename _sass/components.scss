@@ -56,19 +56,19 @@
   .btn-base-100 {
     background-color: var(--color-base-100-bg);
     color: var(--color-base-100-fg);
-    @include subtle-gradient(map-get($colors, "base-100-bg"), 7%);
+    @include subtle-gradient(map.get($colors, "base-100-bg"), 7%);
   }
 
   .btn-base-200 {
     background-color: var(--color-base-200-bg);
     color: var(--color-base-200-fg);
-    @include subtle-gradient(map-get($colors, "base-200-bg"), 7%);
+    @include subtle-gradient(map.get($colors, "base-200-bg"), 7%);
   }
 
   .btn-base-300 {
     background-color: var(--color-base-300-bg);
     color: var(--color-base-300-fg);
-    @include subtle-gradient(map-get($colors, "base-300-bg"), 12%);
+    @include subtle-gradient(map.get($colors, "base-300-bg"), 12%);
   }
 
   .btn-accent-200 {
@@ -94,8 +94,8 @@
   // this is a top-level container class that can be used to wrap a component.
   // the component will then be sized in a way that is consistent with the rest of the app.
   @each $size-key, $size-value in $content-sizes {
-    $padding: map-get($size-value, padding);
-    $container-width: map-get($size-value, container-width);
+    $padding: map.get($size-value, padding);
+    $container-width: map.get($size-value, container-width);
 
     @include for-media($size-key) {
       .container-wrapper {
@@ -156,17 +156,17 @@
   
   .card-base-100 {
     @extend .base-100;
-    @include subtle-gradient(map-get($colors, "base-100-bg"), 6%);
+    @include subtle-gradient(map.get($colors, "base-100-bg"), 6%);
   }
   
   .card-base-200 {
     @extend .base-200;
-    @include subtle-gradient(map-get($colors, "base-200-bg"), 6%);
+    @include subtle-gradient(map.get($colors, "base-200-bg"), 6%);
   }
   
   .card-base-300 {
     @extend .base-300;
-    @include subtle-gradient(map-get($colors, "base-300-bg"), 10%);
+    @include subtle-gradient(map.get($colors, "base-300-bg"), 10%);
   }
   
   .card-accent {
@@ -175,7 +175,7 @@
   }
   
   .card-glass {
-    @include glass-effect(map-get($colors, "base-100-bg"), 0.85, 5px);
+    @include glass-effect(map.get($colors, "base-100-bg"), 0.85, 5px);
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
 

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @layer markdown {
   .markdown {
     // inline styles
@@ -91,7 +93,7 @@
       margin: 1.5rem 0;
       border-radius: 0 0.25rem 0.25rem 0;
       position: relative;
-      @include subtle-gradient(map-get($colors, "base-200-bg"), 5%);
+      @include subtle-gradient(map.get($colors, "base-200-bg"), 5%);
       
       &::before {
         position: absolute;
@@ -140,7 +142,7 @@
       @extend .text-4;
       font-family: "Fira Code", "Source Code Pro", "Consolas", "Inconsolata", "Courier New", monospace;
       word-break: break-all;
-      @include subtle-gradient(map-get($colors, "base-300-bg"), 8%);
+      @include subtle-gradient(map.get($colors, "base-300-bg"), 8%);
 
       pre {
         word-break: keep-all;
